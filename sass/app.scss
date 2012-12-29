@@ -49,7 +49,7 @@
 // Media Queries Overrides
 // @import "foundation/components/modules/mqueries";
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-family: 'PT Sans Narrow', sans-serif;
     clear: both;
 }
@@ -69,8 +69,8 @@ h4 {
     font-size: 20px;
 }
 
-strong {
-    color: $strongColor;
+h5 {
+    font-size: 18px;
 }
 
 .aboutme {
@@ -101,6 +101,10 @@ strong {
     }
     .duration {
         font-family: 'News Cycle', sans-serif;
+    }
+    h4 {
+        text-decoration: underline;
+        color: $black;
     }
 }
 
