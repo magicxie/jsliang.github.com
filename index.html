@@ -34,8 +34,8 @@
         <div class="four columns aboutme">
             <div class="panel">
                 <h3>About Me</h4>
-                <p>
-                    <img alt="Photo of Jenny, Jui-Shan Liang (梁睿珊)" class="align-center" src="http://www.gravatar.com/avatar/e200bf58d1fa8df717f5f8bc6bb0e95e?s=200">
+                <p class="img">
+                    <img alt="Photo of Jenny, Jui-Shan Liang (梁睿珊)" src="http://www.gravatar.com/avatar/e200bf58d1fa8df717f5f8bc6bb0e95e?s=200">
                 </p>
                 <p>I'm <strong>Jui-Shan Liang <span class="zh">(梁睿珊)</span></strong> and I'm often called by my nickname <strong>Jenny</strong>.</p>
                 <p>I write small programs for fun and contribute codes to open source at my leisure.</p>
@@ -64,73 +64,136 @@
         </div>
 
         <div class="eight columns">
-            <h3>The Grid</h3>
-
-            <!-- Grid Example -->
-            <div class="row">
-                <div class="twelve columns">
-                    <div class="panel">
-                        <p>This is a twelve column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="six columns">
-                    <div class="panel">
-                        <p>Six columns</p>
-                    </div>
-                </div>
-                <div class="six columns">
-                    <div class="panel">
-                        <p>Six columns</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="four columns">
-                    <div class="panel">
-                        <p>Four columns</p>
-                    </div>
-                </div>
-                <div class="four columns">
-                    <div class="panel">
-                        <p>Four columns</p>
-                    </div>
-                </div>
-                <div class="four columns">
-                    <div class="panel">
-                        <p>Four columns</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3>Tabs</h3>
+            
             <dl class="tabs">
-                <dd class="active"><a href="#simple1">Simple Tab 1</a></dd>
-                <dd><a href="#simple2">Simple Tab 2</a></dd>
-                <dd><a href="#simple3">Simple Tab 3</a></dd>
+                <dd class="active"><a href="#skills">Skills & Experience</a></dd>
+                <dd><a href="#education">Education & Publications</a></dd>
+                <dd><a href="#simple2">Others</a></dd>
             </dl>
 
             <ul class="tabs-content">
-                <li class="active" id="simple1Tab">This is simple tab 1's content. Pretty neat, huh?</li>
-                <li id="simple2Tab">This is simple tab 2's content. Now you see it!</li>
-                <li id="simple3Tab">This is simple tab 3's content. It's, you know...okay.</li>
+                <li class="active" id="skillsTab">
+                    <div class="row">
+                        <h3>Skills</h3>
+                        
+                        <div class="six columns">
+                            <h4>Web-related skills</h4>
+                            <ul class="square">
+                                <li><strong>Client-side:</strong> CSS, HTML, JavaScript (jQuery)</li>
+                                <li><strong>Server-side:</strong> ASP.NET with VB.NET & SSIS, PHP, Python</li>
+                                <li><strong>Web servers:</strong> Apache, Django, Google App Engine, IIS</li>
+                            </ul>
+
+                            <h4>Databases</h4>
+                            <ul class="square">
+                                <li>GAE Datastore</li>
+                                <li>MSSQL (with SSIS)</li>
+                                <li>MySQL</li>
+                            </ul>
+                        </div>
+                        <div class="six columns">
+                            <h4>Others</h4>
+                            <ul class="square">
+                            <li>C/C++, Java</li>
+                            <li><strong>Documentation writing:</strong> Doxygen, Javadoc, LaTeX, reStructuredText</li>
+                            <li><strong>Scripting languages:</strong> PERL, PHP, Python</li>
+                            <li><strong>Microsoft Office applications:</strong> VBA</li>
+                            <li><strong>Version control:</strong> Git, Mercurial (hg), Perforce</li>
+                            <li><strong>Windows applications:</strong> VB.NET</li>
+                            <li><strong>Drawing:</strong> GIMP, Inkscape</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <hr />
+                    
+                    <h3>Working Experience</h3>
+                    
+                    <hr />
+                    
+                    <h3>Other Experience</h3>
+                </li>
+                <li id="educationTab">
+                    <div class="row">
+                        <div class="twelve columns">
+                        <h3>Education</h3>
+                        
+                            <h4>National Chiao Tung University (NCTU)</h4>
+                            <p>
+                                <span class="degree">Master of Science, Network Engineering</span>
+                                <br/>
+                                <span class="duration">September 2010 – June 2012</span>
+                            </p>
+                            
+                            <div class="row">
+                                <div class="three columns">
+                                    <strong>GPA:</strong>
+                                    4/4 (92.5/100)
+                                </div>
+                                <div class="nine columns">
+                                    <strong>Favorite Course:</strong>
+                                    Data Mining - worked with 2 teammates to implement paralleled versions of FP-Growth and DBSCAN using a MapReduce framework
+                                </div>
+                            </div>
+                            
+                            &nbsp;
+                            
+                            <div class="row">
+                                <div class="five columns">
+                                    <p>
+                                        <strong>Laboratory:</strong>
+                                        <a href="http://pcs.csie.nctu.edu.tw/" target="_blank">Laboratory 117</a>
+                                    </p>
+                                    <p>
+                                        <strong>Advisors:</strong>
+                                        <ul>
+                                            <li>Dr. <a href="http://liny.csie.nctu.edu.tw/" target="_blank">Yi-Bing Lin</a>, CSIE, NCTU</li>
+                                            <li>Dr. <a href="http://imslab.org/~tsaimh/" target="_blank">Meng-Hsun Tsai</a>, CSIE, NCKU</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                                <div class="seven columns">
+                                    <strong>Research Topic:</strong><br/>
+                                    Memory leak detection of Java programs
+                                    <blockquote>
+                                    Led 2 undergraduate students in NCKU to implement an agent (written in C/C++) that communicates with a JVM through the standard JVM Tool Interface and monitors the JVM's heap usage status
+                                    </blockquote>
+                                </div>
+                            </div>
+                            
+                            <div class="panel">
+                                <h5>Publications</h5>
+                                <ul class="square publications">
+                                    <li>
+                                        <strong>J.-S. Liang</strong>, H.-W. Kao, H.-C. Tsao, S.-C. Chang, M.-H. Tsai, K.-H. Li and Y. C. Sung "Two-Phase Online Memory Leak Detection" <em>Proceeding of the 14th Asia-Pacific Network Operations and Management Symposium (APNOMS 2012), Seoul, September 2012</em>. (NSC 100-2218-E-006-015-MY2, NSC 101-2221-E-006-235-) (EI)
+                                    </li>
+                                    <li>
+                                        M.-H. Tsai, R. Chen, J.-F. Sung, E. Wu, E. Wei, Z.-H. Wu and <strong>J.-S. Liang</strong> "Efficient and Flexible Emergency Communications in Next Generation Mobile Network" <em>Proceeding of the 8th IEEE International Conference on e-Business Engineering (ICEBE 2011), Beijing, October 2011</em>. (NSC 100-2218-E-006-015-MY2) (EI; accept rate: 25%)
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <h4>National Chiao Tung University (NCTU)</h4>
+                            <p>
+                                <span class="degree">Master of Science, Network Engineering</span>
+                                <br/>
+                                <span class="duration">September 2006 – June 2010</span>
+                            </p>
+                            <strong>GPA:</strong>
+                            3.96/4 (90.64/100)<br/>
+                            <strong>Rank:</strong>
+                            1/58
+                        </div>
+                    </div>
+                </li>
+                <li id="simple2Tab">
+                    <h3>Awards</h3>
+                    
+                    <hr />
+                    
+                    <h3>Activities</h3>
+                </li>
             </ul>
-
-            <h3>Buttons</h3>
-
-            <div class="row">
-            <div class="six columns">
-              <p><a href="#" class="small button">Small Button</a></p>
-              <p><a href="#" class="button">Medium Button</a></p>
-              <p><a href="#" class="large button">Large Button</a></p>
-            </div>
-            <div class="six columns">
-              <p><a href="#" class="small alert button">Small Alert Button</a></p>
-              <p><a href="#" class="success button">Medium Success Button</a></p>
-              <p><a href="#" class="large secondary button">Large Secondary Button</a></p>
-            </div>
-            </div>
         </div>
     </div>
 

@@ -51,6 +51,7 @@
 
 h1, h2, h3, h4 {
     font-family: 'PT Sans Narrow', sans-serif;
+    clear: both;
 }
 
 h2 {
@@ -59,12 +60,17 @@ h2 {
     }
 }
 
-.align-center {
-    text-align: center;
+h3 {
+    color: #113D8B;
+    font-size: 28px;
 }
 
-.align-right {
-    text-align: right;
+h4 {
+    font-size: 20px;
+}
+
+strong {
+    color: $strongColor;
 }
 
 .aboutme {
@@ -73,6 +79,10 @@ h2 {
         
         .zh {
             font-family: 'Microsoft ZhengHei', sans-serif;
+        }
+        
+        .img {
+            text-align: center;
         }
         
         h3, h4 {
@@ -86,8 +96,32 @@ h2 {
     }
 }
 
+.tabs-content {
+    .degree {
+    }
+    .duration {
+        font-family: 'News Cycle', sans-serif;
+    }
+}
+
+.publications {
+    strong {
+        color: $txtColor;
+    }
+}
+
 .footer {
     text-align: right;
     font-size: 0.9em;
     font-family: 'News Cycle', sans-serif;
 }
+
+/*
+.row {
+    border: 1px solid red;
+}
+
+.columns {
+    border: 1px solid blue;
+}
+*/
