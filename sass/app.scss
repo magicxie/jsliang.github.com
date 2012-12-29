@@ -1,4 +1,4 @@
-// You custom settings file to override Foundation defaults
+﻿// You custom settings file to override Foundation defaults
 @import "settings";
 
 // Comment out this import if you are customizing you imports below
@@ -49,10 +49,45 @@
 // Media Queries Overrides
 // @import "foundation/components/modules/mqueries";
 
+h1, h2, h3, h4 {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+h2 {
+    .zh {
+        font-family: 'Microsoft YaHei', sans-serif;
+    }
+}
+
 .align-center {
     text-align: center;
 }
 
 .align-right {
     text-align: right;
+}
+
+.aboutme {
+    .panel {
+        font-family: Arial, sans-serif;
+        
+        .zh {
+            font-family: 'Microsoft ZhengHei', sans-serif;
+        }
+        
+        h3, h4 {
+        font-family: 'News Cycle', sans-serif;
+            text-align: center;
+        }
+        
+        .contact {
+            font-family: 'News Cycle', sans-serif;
+        }
+    }
+}
+
+.footer {
+    text-align: right;
+    font-size: 0.9em;
+    font-family: 'News Cycle', sans-serif;
 }
