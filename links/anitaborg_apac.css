@@ -1,0 +1,105 @@
+@import url(go.css);
+@import url(default.css);
+
+@media screen, projection {
+
+        .compact {
+                position: relative;
+        }
+
+        #aux {
+                position: relative;
+        }
+
+        #x-lang {
+                position: absolute;
+                right: 0;
+                top: 31px;
+                margin: 0;
+    text-align: left;
+        }
+
+        blockquote {
+                font-style: italic;
+                margin-left: 0;
+        }
+
+        .intro blockquote  {
+                border: none;
+                color: #090;
+                font-size: 1.5em;
+                line-height: 1.7;
+                margin: 0;
+                padding: 0 0 0.4em;
+                font-style: normal;
+        }
+
+        .intro {
+                overflow: auto;
+                margin-bottom: 1em;
+        }
+
+        h2.alt {
+                margin: 0 0 .3em 0;
+                clear: both;
+        }
+
+        h2:first-of-type {
+                margin-bottom: .3em;
+        }
+
+        .portrait {
+                float: left;
+                margin: 0 1.5em 0 0;
+                border: 1px solid #ccc;
+                padding: 3px;
+        }
+
+        h4 {
+                margin: 0;
+        }
+
+        .apply {
+                padding: 2em 0 0 0;
+        }
+
+        .apply a {
+                padding: .5em 0 0 0;
+                display: block;
+                margin-right: 2em;
+        }
+
+        .twisty {
+                font-weight: normal;
+                margin: 0 0 2em 0;
+        }
+
+        .twisty a {
+                padding-left: 13px;
+        }
+
+        .twistyExpand {
+                background: url('bullet_plus.gif') left center no-repeat;
+        }
+
+        html:lang(en) .twistyExpand span:before {
+                content: 'More about ';
+        }
+
+        .twistyCollapse {
+                background: url('bullet_minus.gif') left center no-repeat;
+        }
+
+        html:lang(en) .twistyCollapse span:before {
+                content: 'Less about ';
+        }
+
+        embed, object {
+                margin: 1em 0;
+        }
+
+ h1 {
+      margin-top:1.5em;
+    }
+
+}
