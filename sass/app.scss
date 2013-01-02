@@ -73,14 +73,20 @@ h5 {
     font-size: 18px;
 }
 
+body, div {
+    font-family: 'Lucida Sans', sans-serif;
+}
+
 .zh {
     white-space: nowrap;
 }
 
 .aboutme {
     .panel {
-        font-family: 'News Cycle', sans-serif;
-        font-size: 1.1em;
+        p {
+            font-family: 'News Cycle', sans-serif;
+            font-size: 1.1em;
+        }
         
         .zh {
             font-family: 'Microsoft JhengHei', sans-serif;
@@ -93,9 +99,6 @@ h5 {
         h3, h4 {
         font-family: 'News Cycle', sans-serif;
             text-align: center;
-        }
-        
-        .contact {
         }
     }
 }
