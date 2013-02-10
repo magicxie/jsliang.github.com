@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>J. S. Liang (Jenny) - Blog</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">J. S. Liang (Jenny) </a></h1>
+                <nav><ul>
+                                    <li><a href="archives.html">Archives</a></li>
+                                                                    <li><a href="../about.html">About Me (jsliang)</a></li>
+                                                                    <li class="active"><a href="../category/blog.html">Blog</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                 
+                            <section id="content" class="body">
+                    <ol id="posts-list" class="hfeed" start="9">
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/03/hg-git.html" rel="bookmark"
+                           title="Permalink to [Ubuntu] 使用Mercurial套件Hg-Git將Git repository轉成Hg repository">[Ubuntu] 使用Mercurial套件Hg-Git將Git repository轉成Hg repository</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-03-23T15:53:37">
+                2012-03-23 15:53:37
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>我最開始是用Git管理程式碼，一直到後來修課以及做碩論研究時才開始用Hg，現在Hg用得也算習慣了。</p>
+<p>在Windows環境下，我會指令和GUI搭配使用。</p>
+<p>現有的GUI套件我覺得TortoiseGit和TortoiseHg都很好操作。</p>
+<p>一直到最近比較常在Ubuntu上工作，發現TortoiseGit對Ubuntu支援不好，但我也不太想另外學習一套Git GUI工具，索性來把一些常在用的Git repository轉成Hg repository。</p>
+<p>於是找到了<a href="http://hg-git.github.com/">Hg-Git</a>這個Mercurial套件來進行轉換工作，以下筆記安裝步驟和使用方法。 </p>
+<p>為了方便我選用easy_install安裝。</p>
+<p>首先要安裝easy_install。</p>
+<p>安裝前需確認一下現在機器上的Python版本。執行以下指令： </p>
+<div class="codehilite"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+
+
+<p>便可得知我的機器上的Python版本是2.7。</p>
+<p>接著到Python的<a href="http://pypi.python.org/pypi/setuptools">setuptools</a>套件網頁找到對應的egg檔，下載並執行： </p>
+<div class="codehilite"><pre><span class="n">wget</span> <span class="n">http</span><span class="o">:</span><span class="c1">//pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea</span>
+<span class="n">sudo</span> <span class="n">sh</span> <span class="n">setuptools</span><span class="o">-</span><span class="mf">0.6 ...</span></pre></div>
+                <a class="readmore" href="../blog/2012/03/hg-git.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/03/ubuntu-11-04-systray-gcin-ico.html" rel="bookmark"
+                           title="Permalink to Ubuntu 11.04在系統列顯示gcin圖示">Ubuntu 11.04在系統列顯示gcin圖示</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-03-23T13:23:54">
+                2012-03-23 13:23:54
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>昨晚很lag地將我的Ubuntu從10.10升級到11.04了。果然就像xatier說的，介面配置改好多，一時不太習慣。</p>
+<p>尤其gcin的圖示以往會出現在右上角的系統列，現在沒有了，變得難以判斷目前是在哪個輸入法。在有中文輸入需求的情況下很困擾。</p>
+<p>筆記一下找到的解法。</p>
+<p>首先執行： </p>
+<div class="codehilite"><pre><span class="n">gsettings</span> <span class="n">get</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span>
+</pre></div>
+
+
+<p>可看到目前的systray-whitelist，預設大概會是長這樣： </p>
+<div class="codehilite"><pre><span class="p">[</span><span class="err">&#39;</span><span class="n">JavaEmbeddedFrame</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Wine</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Skype</span><span class="err">&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>重設這個whitelist，加上gcin： </p>
+<div class="codehilite"><pre><span class="n">gsettings</span> <span class="n">set</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span> <span class="s">&quot;[&#39;JavaEmbeddedFrame&#39;, &#39;Wine&#39;, &#39;Skype&#39;, &#39;gcin&#39;]&quot;</span>
+</pre></div>
+
+
+<p>以上執行完成後，重新登入即可看到gcin的圖示出現在右上角的系統列了。</p>
+<h2>Comments</h2>
+<p><strong><a href="#139" title="2012-04-05 02:03:00">絮飄 柳</a>:</strong></p>
+<p>我現在都用 hime XD 然後桌面環境用 gnome-shell  期待 ...</p>
+                <a class="readmore" href="../blog/2012/03/ubuntu-11-04-systray-gcin-ico.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/03/lifestyle-to-be-cherished.html" rel="bookmark"
+                           title="Permalink to 以後會懷念的生活">以後會懷念的生活</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-03-23T00:27:10">
+                2012-03-23 00:27:10
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>午後坐在咖啡廳的窗邊，斜射的陽光透過輕薄的窗簾灑在手中的書頁上，另一隻手拿起香醇的咖啡啜飲……的這種浪漫畫面幾乎沒出現在我的學校生活裡。</p>
+<p>要舉出最貼近上面所描述的場景，那就是在這裡了：</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/-uUX6MmCUNYQ/T2tPgi6PQqI/AAAAAAAB5n0/oMrn_a97ry0/s500/P3228668.JPG" /></p>
+<p>雖然大一就知道清大有水木漫畫屋，不過真正想到可以來這裡放鬆是認識阿達之後的事。:P</p>
+<p>這個學期，每經過一回殺死一堆腦細胞的論文寫作奮戰後，我總會到清大的水木漫畫屋充電。</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/-sKBtNCDrUk8/T0RnncZ9iJI/AAAAAAAB3oM/b4x0D51skU8/s500/P2178564.JPG" /></p>
+<p>最近尤其愛挑靠近櫃台的面牆單人座，點一杯飲料和一片披薩，抽一集《侍酒師》窩在沙發裡看。</p>
+<p>雖然《侍酒師》嚴格說來是由各種老梗的熱血、友情、親情、愛情單元劇所組成，有不少朋友嫌劇情略顯平淡，但裡面各個短篇非常適合現在的我。</p>
+<p>葡萄酒從葡萄的種植、採收到釀造的過程中充滿各種變數，相較之下我寫的論文難度真的低很多，實在沒資格每天在那邊焦慮。</p>
+<p>（說是這麼說，看完漫畫回到實驗室，我還是無法不瞪著Texmaker的畫面發牢騷……Orz）</p>
+<p>看完漫畫後，偶爾會再往下走到清夜的有茶氏買飲料。</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/-isLrs4bYic0/T2tPjb_YzHI/AAAAAAAB5m4/xuYddpr80bA/s500/P3228676.JPG" /></p>
+<p>然後再穿過清大走回交大繼續奮鬥……:P</p>
+<p>正值論文難產期，總是哀聲嘆氣，希望能拿到電影The Click裡的遙控器，直接快轉到論文寫完的那一天。</p>
+<p>但是近來走在校園，我漸漸感覺到，以後我一定會懷念這樣的日子的。</p>
+<p>不是單純的漫畫屋、飲料店的問題，而是學生時代的生活方式。</p>
+<p><img alt="" src="https://lh6.googleusercontent.com/-byPqy0mU3jg/T2tPiYkRt1I/AAAAAAAB5ng/hEH2nog2qv0/s500/P3228675.JPG" /></p>
+<p>嚷著想要快點寫完論文、快點畢業 ...</p>
+                <a class="readmore" href="../blog/2012/03/lifestyle-to-be-cherished.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/03/blog-post.html" rel="bookmark"
+                           title="Permalink to 沒有同理心的安慰不如不說">沒有同理心的安慰不如不說</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-03-20T00:22:31">
+                2012-03-20 00:22:31
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>很多時候，雖然心裡知道對方是好意，卻仍覺得某些建議或是安慰的話語，最好對方一開始就不要說出口。</p>
+<p>若無法說到心坎，聽起來反而像是在激怒人的風涼話。</p>
+<p>很想大喊「不想聽」、「不好笑」，但因為知道對方沒有惡意，只能硬忍在心裡不講出來。</p>
+<p>轉念一想，真的要趁我現在年輕時多嘗試、多犯錯、多摔倒、多接受挫折，並且多記下這些不如意時的心痛。</p>
+<p>這樣未來遇到親朋好友低潮時，比較知道如何去同理對方的心情，也比較知道該怎樣講話不會讓對方覺得是在傷口上灑鹽。</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/-81em18qZ088/T2dNvDOdNEI/AAAAAAAB5QQ/eOi6PkjvKCk/s500/P3198666.JPG" /></p>
+<p>色溫轉冷的傍晚，在交大女二舍的中庭看到盞燈。</p>
+<p>看著黃色的燈光把木板地都照暖了，覺得好溫馨。</p>
+<p>期許我在經歷挫折後不要輕易洩氣，而是鍛練成能像這盞燈一樣帶給其他人溫暖的人。</p>
+<h2>Comments</h2>
+<p><strong><a href="#134" title="2012-03-20 10:07:00">Jui-Chi Ricky Liang</a>:</strong></p>
+<p>對不起...QQ</p>
+<p><strong><a href="#135" title="2012-03-20 11:18:00">Jenny Liang</a>:</strong></p>
+<p>科科 文章不是指你啦~</p>
+<p><strong><a href="#136" title="2012-06-11 08:55:00">耕源 粘</a>:</strong></p>
+<p>其實你只要說聲“謝謝你的建議，我會好好考慮”就能結束那段“硬忍”</p>
+<p><strong><a href="#137" title="2012-06-11 16:59:00">Jenny Liang</a>:</strong></p>
+<p>這個回應方式好像不錯耶！</p>
+                <a class="readmore" href="../blog/2012/03/blog-post.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/03/fell-in-love-with-folkdance.html" rel="bookmark"
+                           title="Permalink to 愛上土風舞">愛上土風舞</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-03-13T01:02:23">
+                2012-03-13 01:02:23
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>或許是因為最後一年當學生了吧，最近突然能夠理解「去社團放鬆」是怎樣的樂趣了。</p>
+<p><a href="https://picasaweb.google.com/103268673393726667616/20101005#5524610352682435714"><img alt="" src="https://lh5.googleusercontent.com/-vzyH1-HX3zA/TKtb2FoVBII/AAAAAAABNP4/1aI-OMDd1vw/s500/IMG_1125.JPG" /></a></p>
+<p>交大虹韻世界民族舞蹈社常態社課（攝於2010年10月5日）</p>
+<p>不知道對於有天份的人而言，跳舞是怎麼回事？</p>
+<p>對我而言是個非常需要腦力與記憶力的活動。</p>
+<p>要記住全身上下每個部位在每一拍甚至是半拍時，該呈現什麼樣的姿勢，同時確實控制全身的肌肉去做到，真的好難好難啊。</p>
+<p>雖然從大二開始參加舞蹈社團，但我一直覺得很難真正從舞蹈中獲得樂趣，只是靠一種美好的嚮往支撐著。</p>
+<p>我參加的舞蹈課程多半是花好幾週的時間學一支舞，學完一支舞課程也差不多結束了。</p>
+<p>在這種狀況下，幾乎每次上課都在學新舞序，重點總是放在「如何把下個動作做好」、「有沒有做到位」。</p>
+<p>但我很少能夠真的把情緒融入，久而久變得是為了能上場表演而練習，並不是真的打從心底有共鳴。</p>
+<p>這樣以教一支舞為主軸的課程還有另個壞處：結束後之後除了上台表演外，基本上想不太到什麼場合可以拿出來跳了。這點數度令我感到挫折。</p>
+<p>因為沒什麼舞蹈細胞，我不太可能像舞蹈電影裡的主角們，能夠音樂一下便即興舞蹈起來。沒有事先編好舞碼，我就完全沒概念下一步該怎麼辦。</p>
+<p>第一個讓我覺得跳舞很開心的環境就是在土風舞圈了。</p>
+<p>成千上萬支舞，各種難度都有，新人也有其生存空間。</p>
+<p>學會了一支舞，以後有無數次的機會可以在全台各地的世舞社社課以及聯歡跳到。</p>
+<p>完全解決了我「不會編舞」以及「學會以後很難找到機會跳」的疑慮。</p>
+<p>一直到最近，我更發現自己在土風舞社團社課時，終於可以擺脫「我跳得不好 ...</p>
+                <a class="readmore" href="../blog/2012/03/fell-in-love-with-folkdance.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/03/git-log-commit-date-local-time-zone.html" rel="bookmark"
+                           title="Permalink to [Git] 檢視log時，commit日期以當地時區表示">[Git] 檢視log時，commit日期以當地時區表示</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-03-10T10:40:27">
+                2012-03-10 10:40:27
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>在Linux執行<code>git log</code>指令時，看到的commit日期可能會是ISO 8601格式：</p>
+<p><code>Date: 2012-02-22 04:46:00 +0000</code></p>
+<p>以台灣時區而言，必須再加上8小時才是台灣時間。</p>
+<p>我心算很弱，實在不想算……Orz</p>
+<p>想使用台灣時區檢視Git的commit log，首先要<a href="/2012/03/linux-time-zone/">設定系統的當地時間</a>。</p>
+<p>之後下<code>git log</code>指令時，加上<code>--date=local</code>參數即可： </p>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">log</span> <span class="o">--</span><span class="n">date</span><span class="o">=</span><span class="n">local</span>
+</pre></div>
+
+
+<p>可看到日期格式變成：</p>
+<p><code>Date:   Wed Feb 22 12:46:00 2012</code></p>
+<p>不想每次都下參數的話，可以設定Git直接使用當地時區顯示commit log： </p>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">log</span><span class="p">.</span><span class="n">date ...</span></pre></div>
+                <a class="readmore" href="../blog/2012/03/git-log-commit-date-local-time-zone.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/03/linux-time-zone.html" rel="bookmark"
+                           title="Permalink to [Linux] 設定時區 (Time Zone)">[Linux] 設定時區 (Time Zone)</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-03-10T10:29:04">
+                2012-03-10 10:29:04
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>我的AWS是買美國的EC2 Instance，預設時區不是台灣的時區，管理上稍有不便。</p>
+<p>我心算很弱，如果每次檢視檔案的最後修改日期時還得換算，簡直會要了我的命。 以下為切換系統時區的指令，留個筆記。 執行 </p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">tzdata</span>
+</pre></div>
+
+
+<p>Geographic area選Asia，Time zone選Taipei，接著訊息列便會出現如下訊息供確認時區已更改成功： </p>
+<div class="codehilite"><pre><span class="n">Current</span> <span class="k">default</span> <span class="n">time</span> <span class="n">zone</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Asia</span><span class="o">/</span><span class="n">Taipei</span><span class="err">&#39;</span>
+<span class="n">Local</span> <span class="n">time</span> <span class="n">is</span> <span class="n">now</span><span class="o">:</span> <span class="n">Sat</span> <span class="n">Mar</span> <span class="mi">10</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">26</span> <span class="n">CST</span> <span class="mf">2012.</span>
+<span class="n">Universal</span> <span class="n">Time</span> <span class="n">is</span> <span class="n">now</span><span class="o">:</span> <span class="n">Sat</span> <span class="n">Mar</span> <span class="mi">10</span> <span class="mo">02</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">26</span> <span class="n">UTC</span> <span class="mf">2012.</span>
+</pre></div>
+
+
+<p>CST ...</p>
+                <a class="readmore" href="../blog/2012/03/linux-time-zone.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/02/xz-1-lc-63a.html" rel="bookmark"
+                           title="Permalink to XZ-1原廠鏡頭蓋LC-63A">XZ-1原廠鏡頭蓋LC-63A</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-02-24T00:37:00">
+                2012-02-24 00:37:00
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>如果情人間有七年之癢的話，那我和我最近的幾台相機大概是一年之癢吧。 Canon 500D差不多在入手一年後售出，一年前買的Olympus XZ-1最近也很少拿出來使用。 就在幾乎要陷入與XZ-1的倦怠期之際，阿達送了我這個好物：<a href="http://www.olympus.co.uk/consumer/198_accessory_lc-63a_25167.htm">XZ-1原廠鏡頭蓋LC-63A</a>，令我重拾了對XZ-1的熱情！ BEFORE <img alt="" src="http://lh5.ggpht.com/_ME8C7LMeIC8/TUUdC2nUu7I/AAAAAAABSjg/6Qx13cyjUHM/s250/IMGP0982.JPG" /><img alt="" src="http://lh6.ggpht.com/_ME8C7LMeIC8/TUUdEo7SJaI/AAAAAAABSjg/R7pNVNZdUDA/s250/IMGP0983.JPG" /> AFTER <img alt="" src="https://lh3.googleusercontent.com/-9H7SlMr7YlI/TzuBIHaXfZI/AAAAAAAB3es/mNYZMPRifFU/s250/IMAG0167.jpg" /><img alt="" src="https://lh5.googleusercontent.com/-rtwDZhCrZjA/TzuBFu2XDWI/AAAAAAAB3ek/cViGxL2PE3I/s250/IMAG0166.jpg" /> 換上這個自動鏡頭蓋之後，在光線充足的情況下幾乎可以單手操作相機。 只是積習一時難改，我還是會忍不住頻頻用另一隻手確認鏡頭蓋是否有蓋上。 最近又開始喜歡拿XZ-1出來拍照了。 沒想到僅僅是省去了鏡頭安危的顧慮，在操作體驗上能夠帶來這麼大的差異啊～</p>
+<h2>Comments</h2>
+<p><strong><a href="#129" title="2012-08-11 13:26:00">闯</a>:</strong> 请问镜头盖出么，联系邮箱chuang1169681@live.com</p>
+<p><strong><a href="#130" title="2012-08-24 09:56:00">Jenny Liang</a>:</strong> 目前沒有出售的打算耶，不好意思喔 ^^</p>
+                <a class="readmore" href="../blog/2012/02/xz-1-lc-63a.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/02/wanna-cry.html" rel="bookmark"
+                           title="Permalink to 想大哭一場．交大隨拍">想大哭一場．交大隨拍</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-02-22T12:42:36">
+                2012-02-22 12:42:36
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>最近或許因為死線效應，研究做起來很有幹勁，新知識也學得很開心。</p>
+<p>同時卻又很矛盾地感覺到有股鬱悶卡在胸口，不知道如何發洩。</p>
+<p>想試著哭一哭把情緒釋放掉，但沒有哭點。</p>
+<p>連自己都不知道怎麼回事的情緒，也就不知道找誰聊。畢竟……</p>
+<p>「我的情緒好低落。」</p>
+<p>「怎麼了？發生什麼事了？」</p>
+<p>「不知道，就覺得好悶。」</p>
+<p>這樣對方是要怎麼接下去？徒然浪費別人的時間罷了。</p>
+<p>昨晚帶著相機在校園裡亂晃，拍了些照片，一時間覺得心情有比較好點。</p>
+<p>（XZ-1夜拍的雜訊好明顯啊，不過我知道它盡力了……:P）</p>
+<ol>
+<li>八舍附近</li>
+</ol>
+<p><img alt="" src="https://lh6.googleusercontent.com/-w1WjWWndU-k/T0RooOMBpII/AAAAAAAB3sc/ZkU-NVec4_o/s683/P2218566.JPG" /></p>
+<ol>
+<li>七八舍後面的腳踏車棚</li>
+</ol>
+<p><img alt="" src="https://lh4.googleusercontent.com/-nm6PSffolFc/T0RnpyaoniI/AAAAAAAB3qU/8KCUCdNspHc/s500/P2218570.JPG" /></p>
+<ol>
+<li>管理一館附近的人行道</li>
+</ol>
+<p><img alt="" src="https://lh6.googleusercontent.com/-A7mEhakpk0U/T0RnrIaRUsI/AAAAAAAB3oc/LzQkQ_KBqZ4/s500/P2218571.JPG" /></p>
+<ol>
+<li>管理一館靠竹湖的大門外</li>
+</ol>
+<p><img alt="" src="https://lh3.googleusercontent.com/-AqwVUdQe47U/T0RnsoQAbOI/AAAAAAAB3qY/TDfeicbe3_s/s500/P2218576.JPG" /></p>
+<p>不喜歡這種不乾不脆、不上不下的感覺。</p>
+<p>莫名其妙的低落，無法解釋的低潮。</p>
+<p>真希望能大哭一場。</p>
+<h2>Comments</h2>
+<p><strong><a href="#125" title="2012-02-22 18:37:00">荳芽</a>:</strong></p>
+<p>別太難過啊，出來走走是好的，感覺上你是很容易給自己壓力的人呢。</p>
+<p>偶爾別把自己逼太緊啦，程式要寫，研究要做，心情也要顧。</p>
+<p>走走有幫助，吃點好吃的美食(不是暴食)也有幫助的唷！^^</p>
+<p><strong><a href="#126" title="2012-02-22 19:25:00">Jenny Liang</a>:</strong></p>
+<p>哇，謝謝荳芽姊的鼓勵 &gt;///"&lt;</p>
+<p><strong><a href="#127" title="2012-03-04 13:18:00">耕源 ...</a></strong></p>
+                <a class="readmore" href="../blog/2012/02/wanna-cry.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2012/02/mercurial-hg-named-branch-bookmark.html" rel="bookmark"
+                           title="Permalink to Mercurial (Hg)的named branch與bookmark">Mercurial (Hg)的named branch與bookmark</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-02-17T19:40:14">
+                2012-02-17 19:40:14
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>同時用Mercurial和Git，在branch的使用上感到很錯亂，昨天研究了一下，今天在此做個小小的筆記。</p>
+<p>如果有理解錯誤之處，也麻煩朋友們協助指正，感激不盡。 </p>
+<p>Mercurial的named branch的指令操作和Git差不多，但差別在於： </p>
+<ul>
+<li>Mercurial的branch資訊是存在每個commit資料裡，並且預設無法修改</li>
+<li>Git的branch資訊與commit資料是分開的，branch比較像是一種特殊的tag</li>
+</ul>
+<p>以下面的範例為例： </p>
+<div class="codehilite"><pre><span class="cp"># 產生一個新的hg repository，命名為hg_namedbranches</span>
+<span class="n">mkdir</span> <span class="n">hg_namedbranches</span>
+<span class="n">cd</span> <span class="n">hg_namedbranches</span>
+<span class="n">hg</span> <span class="n">init</span>
+
+<span class="cp"># Rev 0: 隨便新增一個檔案並commit</span>
+<span class="n">touch</span> <span class="n">a</span>
+<span class="n">hg</span> <span class="n">add</span> <span class="n">a</span>
+<span class="n">hg</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;Commit 1&quot;</span>
+
+<span class="cp"># Rev 1: 把a更名為b並commit</span>
+<span class="n">hg</span> <span class="n">mv</span> <span class="n">a</span> <span class="n">b</span>
+<span class="n">hg</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;Commit 2&quot;</span>
+
+<span class="cp"># 產生一個新的named ...</span></pre></div>
+                <a class="readmore" href="../blog/2012/02/mercurial-hg-named-branch-bookmark.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            </ol><!-- /#posts-list -->
+                            <p class="paginator">
+                        <a href="../category/blog.html">&laquo;</a>
+                Page 2 / 12
+            <a href="../category/blog3.html">&raquo;</a>
+    </p>
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>Blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                                                    <li><a href="http://python.org">Python.org</a></li>
+                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>Social</h2>
+                        <ul>
+                            <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
+                                                    <li><a href="https://github.com/jsliang">GitHub</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is designed by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and modified by jsliang.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37740364-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>WordPress: 用SQL語法對特定category/tag的所有文章一次新增其他category/tag</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../theme/css/main.css" type="text/css" />
+                <link href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie.css"/>
+                <script src="../../../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie6.css"/><![endif]-->
+
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../">J. S. Liang (Jenny) </a></h1>
+                <nav><ul>
+                                    <li><a href="archives.html">Archives</a></li>
+                                                                    <li><a href="../../../about.html">About Me (jsliang)</a></li>
+                                                                    <li class="active"><a href="../../../category/blog.html">Blog</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../blog/2011/02/wordpress-sql-category-tag.html" rel="bookmark"
+           title="Permalink to WordPress: 用SQL語法對特定category/tag的所有文章一次新增其他category/tag">WordPress: 用SQL語法對特定category/tag的所有文章一次新增其他category/tag</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2011-02-02T17:04:51">
+                2011-02-02 17:04:51
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../../../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../../../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->      <p>我知道文章標題看起來很讓人困惑，但我國文不好，這功能我實在不知道要怎麼用文字描述得更清楚了……</p>
+<p>以我的需求為例。我的文章常常放照片，而我習慣在文章標記拍攝用相機的型號。</p>
+<p>之前考慮到同個廠牌有不同型號的相機，有可能未來會想要一次瀏覽某廠牌的相機所拍的照片，因此我會把廠牌和型號分成兩個tags。 例下所示：</p>
+<p><strong>Canon EOS 500D</strong> = <a href="/tag/canon/"><em>Canon</em></a> + <a href="http://jsliang.twgogo.org/tag/eos-500d/"><em>EOS 500D</em></a></p>
+<p><strong>Pentax Optio A36</strong> = <a href="http://jsliang.twgogo.org/tag/pentax/"><em>Pentax</em></a> + <a href="http://jsliang.twgogo.org/tag/optio-a36/"><em>Optio A36</em></a></p>
+<p><strong>Olympus XZ-1</strong> = <a href="http://jsliang.twgogo.org/tag/olympus/"><em>Olympus</em></a> + <a href="http://jsliang.twgogo.org/tag/xz-1/"><em>XZ-1</em></a></p>
+<p>但我今天不知道哪根荕不對，想要分別再加上「<a href="http://jsliang.twgogo.org/tag/canon-eos-500d/">Canon EOS 500D</a>」、「<a href="http://jsliang.twgogo.org/tag/pentax-optio-a36/">Pentax Optio A36</a>」、「<a href="http://jsliang.twgogo.org/tag/olympus-xz-1/">Olympus XZ-1</a>」的tags……</p>
+<p>用這篇文章記錄一下我的做法。</p>
+<p>當然使用WP的管理介面也可以做到這樣的事，但我操作起來卻不太順。</p>
+<p>不知道為什麼，我每次用WP管理介面的批次文章管理功能，處理速度總是很慢，還常常傳回錯誤訊息，非常考驗我的耐性……我尚未弄清楚到底是我的機器的問題，還是WP管理介面的程式的問題。</p>
+<p>以下的做法，必須是自己架設WordPress程式，並且可以連到WP的MySQL資料庫下SQL語法才有用。</p>
+<p>我想做的事情：把每篇有「<a href="../tag/xz-1/">XZ-1</a>」tag的文章都再新增一個「<a href="../tag/olympus-xz-1/">Olympus XZ-1</a>」的tag。 </p>
+<ol>
+<li>確定category/tag的名稱。 如果是之前沒用過的，到 WP管理介面 &gt; Posts &gt; Categories / Post Tags 新增你想加的category或tag，並記住你所使用的名稱。 以我的例子，就是在Post Tags新增一個名稱為「Olympus XZ-1」的tag，我要記住的名稱就是「Olympus XZ-1」。</li>
+<li>
+<p>登入WP的MySQL資料庫，執行以下SQL語法： </p>
+<p>INSERT INTO <code>wp_term_relationships</code>
+SELECT A.object_id, NEW.term_id AS term_taxonomy_id, A.term_order
+FROM <code>wp_term_relationships</code> AS A, <code>wp_terms</code> AS REF, <code>wp_terms</code> AS NEW
+WHERE A.term_taxonomy_id = REF.term_id
+AND REF.name = 'XZ-1' --參考的category/tag的名稱
+AND NEW.name = 'Olympus XZ-1' --要新增的category/tag的名稱</p>
+</li>
+</ol>
+<p>請自行修改上面程式碼的「XZ-1」與「Olympus XZ-1」。</p>
+<ol>
+<li>新增完成！</li>
+</ol>
+<p>實驗心得：自己下SQL語法真的是快多了……只是有點可惜了WP的精美管理介面。Orz</p>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>Blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                                                    <li><a href="http://python.org">Python.org</a></li>
+                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>Social</h2>
+                        <ul>
+                            <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
+                                                    <li><a href="https://github.com/jsliang">GitHub</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is designed by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and modified by jsliang.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37740364-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>

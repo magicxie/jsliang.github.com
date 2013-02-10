@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>[Ubuntu] 使用Mercurial套件Hg-Git將Git repository轉成Hg repository</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../theme/css/main.css" type="text/css" />
+                <link href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie.css"/>
+                <script src="../../../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie6.css"/><![endif]-->
+
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../">J. S. Liang (Jenny) </a></h1>
+                <nav><ul>
+                                    <li><a href="archives.html">Archives</a></li>
+                                                                    <li><a href="../../../about.html">About Me (jsliang)</a></li>
+                                                                    <li class="active"><a href="../../../category/blog.html">Blog</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../blog/2012/03/hg-git.html" rel="bookmark"
+           title="Permalink to [Ubuntu] 使用Mercurial套件Hg-Git將Git repository轉成Hg repository">[Ubuntu] 使用Mercurial套件Hg-Git將Git repository轉成Hg repository</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2012-03-23T15:53:37">
+                2012-03-23 15:53:37
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../../../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../../../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->      <p>我最開始是用Git管理程式碼，一直到後來修課以及做碩論研究時才開始用Hg，現在Hg用得也算習慣了。</p>
+<p>在Windows環境下，我會指令和GUI搭配使用。</p>
+<p>現有的GUI套件我覺得TortoiseGit和TortoiseHg都很好操作。</p>
+<p>一直到最近比較常在Ubuntu上工作，發現TortoiseGit對Ubuntu支援不好，但我也不太想另外學習一套Git GUI工具，索性來把一些常在用的Git repository轉成Hg repository。</p>
+<p>於是找到了<a href="http://hg-git.github.com/">Hg-Git</a>這個Mercurial套件來進行轉換工作，以下筆記安裝步驟和使用方法。 </p>
+<p>為了方便我選用easy_install安裝。</p>
+<p>首先要安裝easy_install。</p>
+<p>安裝前需確認一下現在機器上的Python版本。執行以下指令： </p>
+<div class="codehilite"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+
+
+<p>便可得知我的機器上的Python版本是2.7。</p>
+<p>接著到Python的<a href="http://pypi.python.org/pypi/setuptools">setuptools</a>套件網頁找到對應的egg檔，下載並執行： </p>
+<div class="codehilite"><pre><span class="n">wget</span> <span class="n">http</span><span class="o">:</span><span class="c1">//pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea</span>
+<span class="n">sudo</span> <span class="n">sh</span> <span class="n">setuptools</span><span class="o">-</span><span class="mf">0.6</span><span class="n">c11</span><span class="o">-</span><span class="n">py2</span><span class="mf">.7</span><span class="p">.</span><span class="n">egg</span>
+<span class="n">rm</span> <span class="n">setuptools</span><span class="o">-</span><span class="mf">0.6</span><span class="n">c11</span><span class="o">-</span><span class="n">py2</span><span class="mf">.7</span><span class="p">.</span><span class="n">egg</span>
+</pre></div>
+
+
+<p>如此便安裝完easy_install了。</p>
+<p>此外，安裝Hg-Git需要C編譯器以及Python.h： </p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+
+
+<p>前面步驟都完成後，便可用easy_install安裝Hg-Git： </p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">hg</span><span class="o">-</span><span class="n">git</span>
+</pre></div>
+
+
+<p>安裝後，在~/.hgrc的extension區塊加上以下兩行： </p>
+<div class="codehilite"><pre><span class="k">[extensions]</span>
+<span class="na">hgext.bookmarks</span> <span class="o">=</span>
+<span class="na">hggit</span> <span class="o">=</span>
+</pre></div>
+
+
+<p>到此Hg-Git即安裝設定完成。 </p>
+<p>我個人目前都把repository放在<a href="https://bitbucket.org/">bitbucket</a>上。</p>
+<p>因為bitbucket同時支援Git和Hg，並且可以有private</p>
+<p>repository，非常方便。</p>
+<p>之前我是用Git管理我的碩論，現在我想改成用Hg操作。</p>
+<p>根據Hg-Git的教學，想要用Hg複製Git repository，只要執行 </p>
+<div class="codehilite"><pre><span class="n">hg</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">source</span><span class="o">:</span> <span class="n">git</span> <span class="n">repository</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>即可。於是我照做了： </p>
+<div class="codehilite"><pre><span class="n">hg</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//jsliang@bitbucket.org/jsliang/jenny_paper.git</span>
+</pre></div>
+
+
+<p>結果得到這個訊息： </p>
+<div class="codehilite"><pre><span class="n">abort</span><span class="o">:</span> <span class="n">HTTP</span> <span class="n">Error</span> <span class="mi">404</span><span class="o">:</span> <span class="n">NOT</span> <span class="n">FOUND</span>
+</pre></div>
+
+
+<p>推測是因為指令中Git repository的來源不是透過git通訊協定，所以造成這個錯誤。</p>
+<p>所以目前我想到的比較蠢的做法，是先用Git複製到本地端，再用Hg複製：</p>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//jsliang@bitbucket.org/jsliang/jenny_paper.git jenny_paper_git</span>
+<span class="n">hg</span> <span class="n">clone</span> <span class="n">jenny_paper_git</span> <span class="n">jenny_paper_hg</span>
+</pre></div>
+
+
+<p>如果有更漂亮的做法也煩請指教，感謝～:D</p>
+<p>使用Hg-Git還可以從Hg repository對Git repository進行push/pull，其他妙用請參考<a href="http://hg-git.github.com/">Hg-Git官方網頁</a>。 </p>
+<p><a href="http://hg-git.github.com/">the Hg-Git mercurial plugin</a></p>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>Blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                                                    <li><a href="http://python.org">Python.org</a></li>
+                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>Social</h2>
+                        <ul>
+                            <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
+                                                    <li><a href="https://github.com/jsliang">GitHub</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is designed by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and modified by jsliang.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37740364-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>

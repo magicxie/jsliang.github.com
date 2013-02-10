@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Sheetaholics 筆記內頁產生器 V1.1</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../theme/css/main.css" type="text/css" />
+                <link href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie.css"/>
+                <script src="../../../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie6.css"/><![endif]-->
+
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../">J. S. Liang (Jenny) </a></h1>
+                <nav><ul>
+                                    <li><a href="archives.html">Archives</a></li>
+                                                                    <li><a href="../../../about.html">About Me (jsliang)</a></li>
+                                                                    <li class="active"><a href="../../../category/blog.html">Blog</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../blog/2011/04/sheetaholics-v1-1.html" rel="bookmark"
+           title="Permalink to Sheetaholics 筆記內頁產生器 V1.1">Sheetaholics 筆記內頁產生器 V1.1</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2011-04-18T05:19:08">
+                2011-04-18 05:19:08
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../../../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../../../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->      <p>Sheetaholics是可用來產生筆記本內頁的程式。</p>
+<p>名字拆開來看為sheet-aholics，「內頁狂」的意思。此為自創詞，請小心實際上並沒有這個單字……XD</p>
+<p>Sheetaholics的前身是我之前寫的另一支網頁程式：<a href="/2010/12/dotted-lined-sheets-generator/">東大筆記本(點線筆記)內頁產生器</a>。原本的程式讓網友們可以透過網頁的介面產生如下圖的點線筆記本內頁：</p>
+<p><a href="http://picasaweb.google.com/jsliang.tw/20101217#5551349354712967698"><img alt="" src="https://lh3.googleusercontent.com/_ME8C7LMeIC8/Tbbc2uZaDcI/AAAAAAABcmI/8Q3sL0bV3Qg/s500/IMGP0928.JPG" /></a></p>
+<p>▲ 自製點線筆記本內頁：A4尺寸，左邊的方眼是8mm間距，右邊則是6mm間距</p>
+<p>內頁產生器推出後比我預想的還要受歡迎，結果這支程式的流量負載每個月花費將近3美金。雖然不算貴，累積個把月的金額也夠買些奢侈品了（例如20美金可以買80GB/年的Google Storage呢），身為想存錢的窮學生，只得將服務暫停……</p>
+<p>服務暫停後，還是有不少朋友前來索取PDF檔。</p>
+<p>所以為了能讓大家使用更方便<del>（一部份也是因為最近做研究遇到瓶頸，想找個出口喘息一下啊～Orz）</del>，我著手把原本的程式改成離線單機版，也就是現在的Sheetaholics。</p>
+<p>Sheetaholics的程式介面如下圖所示，設定完成後按右下的「產生PDF檔」鈕即可。</p>
+<p>能夠做的設定和之前的內頁產生器是完全一樣的。:)</p>
+<p><img alt="" src="https://lh4.googleusercontent.com/_ME8C7LMeIC8/TataJqdyeyI/AAAAAAABYqA/67A-2qwPrb4/sheetaholics-v1-1.png" /></p>
+<p>按下「產生PDF檔」鈕後，PDF檔就會輸出到指定的目錄。之後將PDF檔列印出來即可。 </p>
+<p>目前我手邊有的環境是Windows 7 x86和Ubuntu 10.04，測試結果程式皆可正常執行。</p>
+<p>其他環境還沒試過，如果有使用的網友們能幫忙回報一下各種環境的支援狀況將非常感激。:) </p>
+<h2>Windows</h2>
+<ol>
+<li>下載主程式：<a href="https://github.com/downloads/jsliang/sheetaholics/sheetaholics-dottedlined-win32-1.1.exe">sheetaholics-dottedlined-win32-1.1.exe</a></li>
+<li>下載後，直接點兩下程式即可執行，不需要安裝。</li>
+</ol>
+<p>目前確定Windows 7 x86可以正常執行。</p>
+<p>補充：Windows 7 x64亦可正常執行。（感謝PTT文具板Anal板友提供資訊） </p>
+<p>在XP執行時如果出現「無法找到程序輸入點」訊息，可能是因為程式所在的路徑有中文，例如：「C:...桌面sheetaholicssheetaholics-dottedlined-win32-1.1.exe」（感謝<a href="http://blog.xuite.net/reastlin">史羅爾</a>以及PTT文具板的Wengboyu板友提供資訊）</p>
+<p>解決方法是將程式移到路徑全部是英文的資料夾內執行。最簡單就是直接放在「C:」下了。</p>
+<p>如果執行過程中還有其他錯誤，請再告訴我。:) </p>
+<h2>UNIX-like環境（以Ubuntu為例）</h2>
+<p>Sheetaholics完全是用Python寫的，理論上直接抓程式碼下來執行即可。 以下安裝步驟以Ubuntu為例。 </p>
+<ol>
+<li>
+<p>安裝所需的Python套件： </p>
+<p>sudo apt-get update
+sudo apt-get install python-reportlab
+sudo apt-get install python-wxgtk2.8 python-wxtools wx2.8-i18n</p>
+</li>
+<li>
+<p>安裝完畢後，再取得Sheetaholics程式碼並解壓縮： </p>
+<p>wget https://github.com/jsliang/sheetaholics/tarball/Sheetaholics-1.1.0 --no-check-certificate
+tar xvf Sheetaholics-1.1.0</p>
+</li>
+<li>
+<p>解壓縮完即可執行： </p>
+<p>python jsliang-sheetaholics-2a6d746/dottedlined/dottedlined.py</p>
+</li>
+</ol>
+<h2>Mac</h2>
+<p>根據PTT文具板hsiyen網友回報，Windows的執行檔在Mac上可以用<a href="http://www.winehq.org/">Wine</a>可以開啟，但是顏色只能選擇黑色，選擇其他顏色頁面會變全白……Orz 我個人沒有Mac，是否有人可以幫忙試著參考前述UNIX-like環境安裝套件，直接用Python執行看看？或是有人能幫忙建Mac的執行檔嗎？XD </p>
+<h2>開放原始碼</h2>
+<p>Sheetaholics原始碼和執行檔都放在GitHub上： <a href="http://github.com/jsliang/sheetaholics">http://github.com/jsliang/sheetaholics</a> 程式本身仍有許多不足之處，歡迎有興趣的朋友們一起來改進它。 </p>
+<h2>使用工具</h2>
+<ul>
+<li>Python 2.5 <a href="http://www.python.org/">http://www.python.org/</a></li>
+<li>Python Win32 Extensions (Build 216) <a href="http://www.python.org/">http://sourceforge.net/projects/pywin32/</a></li>
+<li>PyInstaller 1.4 <a href="http://www.pyinstaller.org/">http://www.pyinstaller.org/</a></li>
+<li>reportlab 2.5 <a href="http://pypi.python.org/pypi/reportlab/2.5">http://pypi.python.org/pypi/reportlab/2.5</a></li>
+<li>wxFormBuilder 3.2.1-beta <a href="http://wxformbuilder.org">http://wxformbuilder.org</a></li>
+<li>wxPython 2.8 <a href="http://wxpython.org/">http://wxpython.org/</a></li>
+</ul>
+<h2>Comments</h2>
+<p><strong><a href="#89" title="2011-09-29 16:16:31">MISS LI</a>:</strong></p>
+<p>真的十分感謝您無私的分享，相信好心會有好報的</p>
+<p><strong><a href="#90" title="2011-09-30 21:04:23">jsliang</a>:</strong></p>
+<p>謝謝你的鼓勵 :) 接下來要忙著畢業，一直沒機會來維護。希望以後能將它改進得更好用。</p>
+<p><strong><a href="#91" title="2012-06-17 10:01:00">plasma</a>:</strong></p>
+<p>我試了一下, 只要顏色有非 255 和 0 的值, 那個顏色就不會出現. 測試的平台是 win7 x86.</p>
+<p><strong><a href="#92" title="2012-06-25 21:43:38">jsliang</a>:</strong></p>
+<p>原來是這樣！我再研究一下，感謝 plasma ～</p>
+<p><strong><a href="#184" title="2012-11-21 11:11:00">Beryl</a>:</strong></p>
+<p>請問可以產生方格紙那樣的方格嗎嗎? :( 一直設定不出來 XD 剛剛留錯地方了 sor</p>
+<p><strong><a href="#185" title="2012-11-22 10:05:00">Jenny Liang</a>:</strong></p>
+<p>感謝回報 &gt;"&lt; 這似乎是我使用的繪圖library的問題……最近有空的話，我會看看是否有library更新，說不定這個問題就解決了。</p>
+<p><strong><a href="#186" title="2012-11-22 10:10:00">Jenny Liang</a>:</strong></p>
+<p>很遺憾……我沒有方格紙的設計說 XD 這個程式是專門拿來畫線+點這種樣式的筆記本的～</p>
+<p>不過這篇文章有方格紙產生器的使用教學喔，可以參考一下：</p>
+<p>http://jaacnaett.pixnet.net/blog/post/29341682-%E8%87%AA%E5%B7%B1%E8%A8%AD%E8%A8%88%E5%88%97%E5%8D%B0%E5%A5%BD%E7%94%A8%E6%96%B9%E6%A0%BC%E7%B4%99%E5%92%8C%E7%AD%86%E8%A8%98%E7%B4%99</p>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>Blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                                                    <li><a href="http://python.org">Python.org</a></li>
+                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>Social</h2>
+                        <ul>
+                            <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
+                                                    <li><a href="https://github.com/jsliang">GitHub</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is designed by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and modified by jsliang.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37740364-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>

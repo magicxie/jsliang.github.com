@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>東大筆記本(點線筆記)內頁產生器</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../theme/css/main.css" type="text/css" />
+                <link href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie.css"/>
+                <script src="../../../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie6.css"/><![endif]-->
+
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../">J. S. Liang (Jenny) </a></h1>
+                <nav><ul>
+                                    <li><a href="archives.html">Archives</a></li>
+                                                                    <li><a href="../../../about.html">About Me (jsliang)</a></li>
+                                                                    <li class="active"><a href="../../../category/blog.html">Blog</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../blog/2010/12/dotted-lined-sheets-generator.html" rel="bookmark"
+           title="Permalink to 東大筆記本(點線筆記)內頁產生器">東大筆記本(點線筆記)內頁產生器</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2010-12-17T02:55:56">
+                2010-12-17 02:55:56
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../../../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../../../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->      <blockquote>
+<p><strong>2011-04-18更新</strong> 已推出離線單機版供大家下載使用！詳情請參考： <a href="/2011/04/sheetaholics-v1-1/">Sheetaholics V1.1</a></p>
+<p><strong>2011-03-21更新</strong> 已將程式開放原始碼，邀請大家一起編輯。詳情請參考： <a href="/2011/03/dotted-lined-sheets-generator-github-gitorious/">東大筆記本(點線筆記)內頁產生器 開放原始碼(GitHub &amp; Gitorious)</a></p>
+<p><strong>2011-02-12更新</strong> 很高興大家喜歡東大筆記本(點線筆記)</p>
+</blockquote>
+<p>內頁產生器，但也很遺憾地，目前必須先暫時停止提供內頁產生器的服務。 我目前使用的主機是以使用量計費，而目前內頁產生器的使用量，每個月約需將近三塊美金……&gt;&lt; 雖然這金額說大不大，但畢竟這個部落格本身並沒有在營利（雖然有使用Google AdSense，但廣告點擊率極低 XD），長期下來對我而言也是項很大的負擔。 因此在找到其他比較好的做法前，只好先將它暫停了，很抱歉。 也謝謝大家這段時間給予我的鼓勵。:)</p>
+<p><a href="http://picasaweb.google.com/jsliang.tw/20101217#5551349354712967698"><img alt="" src="http://lh4.ggpht.com/_ME8C7LMeIC8/TQpa02fCqhI/AAAAAAABPac/1_mysxkXSPM/s500/IMGP0928.JPG" /></a></p>
+<p>▲ 自製點線筆記本內頁：A4尺寸，左邊的方眼是8mm間距，右邊則是6mm間距</p>
+<p>我很喜歡<a href="http://www.kokuyo-st.co.jp/stationery/dotkei/">KOKUYO的東大點線活頁紙</a>兼具橫線與方眼功能的設計，之前也因為找到有同樣特色的國產<a href="/2010/11/kokuyo-dotkei-alternative/">好好記B5虛線活頁紙</a>而雀躍不已。</p>
+<p>然而我用電腦的時間遠比寫字多，一本筆記本或一包活頁紙的份量對我而言太大，頗浪費。</p>
+<p>我想要有需要時再印幾張出來帶在身上就好，於是興起了自己畫的念頭。</p>
+<p>可是真正開始著手以後，發現一條線一條線、一個點一個點地畫，實在很曠日廢時。</p>
+<p>好不容易畫完一張後，想要微調點線的間距、線的粗細、點的大小、顏色、頁面邊界……等，更是極大的工程。</p>
+<p>我一邊重複著機械式的動作，腦中一邊抱怨：「這種浪費腦力的東西，不是應該交給電腦嗎？」</p>
+<p>心動不如行動，於是我馬上著手寫了這個點線筆記本頁面產生器！</p>
+<p>線的間距、線的粗細、點的大小、顏色、頁面邊界都不再是問題，要什麼有什麼，還可以自己挑喜歡的紙！</p>
+<p>建議輸出偶數頁，用印表機雙面列印唷～:P</p>
+<p><a href="http://picasaweb.google.com/jsliang.tw/20101217#5551349375697170002"><img alt="" src="http://lh3.ggpht.com/_ME8C7LMeIC8/TQpa2EqELlI/AAAAAAABPac/3n8gzArXic4/s500/IMGP0930.JPG" /></a></p>
+<p>▲ 雙面列印 最後就是本篇的重點：內頁產生器。</p>
+<p>預設的紙張尺寸是A4 (210mm x 297mm)，這也是可以改的。</p>
+<p>調整以下的設定後，直接按最下方的「下載PDF檔」鈕即可下載。</p>
+<p>暫停提供服務。(2011-02-12)</p>
+<ul>
+<li>作者 <ul>
+<li><a href="/">jsliang</a></li>
+</ul>
+</li>
+<li>程式語言 <ul>
+<li><a href="http://www.python.org/">Python</a></li>
+</ul>
+</li>
+<li>使用套件 <ul>
+<li><a href="http://www.djangoproject.com/">Django 1.2.3</a></li>
+<li><a href="http://pypi.python.org/pypi/pyPdf/1.13">pyPdf 1.13</a></li>
+<li><a href="http://pypi.python.org/pypi/reportlab/2.5">reportlab 2.5</a></li>
+<li><a href="http://pypi.python.org/pypi/svglib/0.6.3">svglib 0.6.3</a></li>
+</ul>
+</li>
+</ul>
+<h2>Comments</h2>
+<p><strong><a href="#60" title="2011-02-24 23:29:14">big fu</a>:</strong></p>
+<p>你好,請問可以寄給我a4,b5的筆記內頁嗎,之前沒保存,謝謝你.</p>
+<p><strong><a href="#61" title="2011-03-03 18:47:08">　</a>:</strong></p>
+<p>不可以提供ｊｐｅｇ檔嗎？</p>
+<p><strong><a href="#62" title="2011-03-04 23:54:25">jsliang</a>:</strong></p>
+<p>已經寄囉 :D</p>
+<p><strong><a href="#63" title="2011-03-04 23:55:55">jsliang</a>:</strong></p>
+<p>主要問題就是因為流量的收費超出我的負擔，所以先不便提供下載，不好意思哩 ^^"</p>
+<p><strong><a href="#64" title="2011-03-07 06:46:44">Timothy Chou</a>:</strong></p>
+<p>最近買了東大筆記本來,才搜尋到這裡 方便寄一份嗎</p>
+<p><strong><a href="#65" title="2011-03-07 22:59:14">大頭</a>:</strong></p>
+<p>站主，不知道方便寄一份給我嗎? 到現在才發現這麼好的分享，謝謝站主。</p>
+<p><strong><a href="#66" title="2011-03-10 09:32:24">jsliang</a>:</strong></p>
+<p>您好，已經寄囉 :D</p>
+<p><strong><a href="#67" title="2011-03-10 09:32:35">jsliang</a>:</strong></p>
+<p>已經寄出 ^^</p>
+<p><strong><a href="#68" title="2011-03-17 15:54:14">Timothy Chou</a>:</strong></p>
+<p>您好,最近我在學習網頁程式,不知能否把產生器寄過來參考? 我考慮在我的內網伺服器(外部可以連入)試著架設它,如果可行大家可以使用我的ADSL流量</p>
+<p><strong><a href="#69" title="2011-03-17 16:04:41">Timothy Chou</a>:</strong></p>
+<p>忘了說,其實我也想自己做KOKUYO的一個特殊尺寸252mm*146mm(好像沒出過東大版,我在誠品沒找到)</p>
+<p><strong><a href="#70" title="2011-03-20 12:50:14">jsliang</a>:</strong></p>
+<p>您好，感謝您的幫忙 :) 已經先直接寄信跟您討論囉 :D</p>
+<p><strong><a href="#71" title="2011-03-27 14:40:45">Julian Su</a>:</strong></p>
+<p>你好,請問如果方便的話，可以寄給我a4及b5的筆記內頁嗎? 我覺得它很好用耶。謝謝囉。</p>
+<p><strong><a href="#72" title="2011-03-27 23:50:39">jsliang</a>:</strong></p>
+<p>已寄出 ^^</p>
+<p><strong><a href="#73" title="2011-03-28 10:07:26">SLOWER</a>:</strong></p>
+<p>好酷的東西，害我也想用BCB來刻一套XD</p>
+<p><strong><a href="#74" title="2011-03-28 11:50:34">jsliang</a>:</strong></p>
+<p>XD 後來覺得用Python好難打包成standalone的版本，害我現在很想用.NET或是Java重寫看看……不過先乖乖把自己該做的研究做完比較實在。T^T</p>
+<p><strong><a href="#75" title="2011-04-05 21:56:49">小小</a>:</strong></p>
+<p>不知能跟您索取 A4及B5 直式 筆記頁 檔案 另外能否幫忙用 A4及B5 橫式 筆記頁 檔案 感謝您</p>
+<p><strong><a href="#76" title="2011-04-13 00:57:13">wolf</a>:</strong></p>
+<p>請問一下提供的source該怎麼用呢? 有兩個.py是要用python去執行嗎? 0.9.1-wxPython和0.9.0-Django兩個版本都有一個templates資料夾，內含form.html應該就是可執行的介面吧!我直接用預設的產生都會出錯不知道該怎麼解決呢</p>
+<p><strong><a href="#77" title="2011-04-14 03:13:51">椒鹽粉</a>:</strong></p>
+<p>站主大大，你好 是否方便可以寄給我 A4及B5 橫式 (點線式)筆記頁 檔案 (PDF或WORD檔皆可)，因為小弟正需要像這種好用的筆 計本 在這裡先謝了 我的信箱:d33119@yahoo.com.tw</p>
+<p><strong><a href="#78" title="2011-04-18 05:29:53">jsliang</a>:</strong></p>
+<p>Dear 椒鹽粉, 我寫了程式讓大家可以下載使用囉，請參考這篇文章： http://jsliang.twgogo.org/2011/04/sheetaholics-v1-1/</p>
+<p><strong><a href="#79" title="2011-04-18 05:30:15">jsliang</a>:</strong></p>
+<p>Dear 小小, 已寄出囉 ^^</p>
+<p><strong><a href="#80" title="2011-04-18 05:31:06">jsliang</a>:</strong></p>
+<p>Dear wolf, 我後來也覺得原本的架構不容易讓人摸清頭緒，所以改寫了程式讓大家可以直接下載使用囉。:) 請參考這篇文章： http://jsliang.twgogo.org/2011/04/sheetaholics-v1-1/</p>
+<p><strong><a href="#81" title="2011-04-18 23:49:07">椒鹽粉</a>:</strong></p>
+<p>謝謝站主大大的分享 小弟由衷地感謝 謝謝</p>
+<p><strong><a href="#82" title="2011-04-19 19:01:15">jsliang</a>:</strong></p>
+<p>別客氣，希望有幫上忙。:)</p>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>Blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                                                    <li><a href="http://python.org">Python.org</a></li>
+                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>Social</h2>
+                        <ul>
+                            <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
+                                                    <li><a href="https://github.com/jsliang">GitHub</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is designed by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and modified by jsliang.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37740364-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>
