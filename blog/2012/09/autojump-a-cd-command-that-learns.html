@@ -123,24 +123,19 @@
 
 
 <p>安裝方式很單純，可參考 autojump 在 Github 頁面上的 wiki： <a href="https://github.com/joelthelion/autojump/wiki">Autojump: a cd command that learns</a>（作者 joelthelion） 這篇官方 wiki 同時也有簡單明瞭的 autojump 功能介紹。:)</p>
-<h2>Comments</h2>
-<p><strong><a href="#161" title="2012-09-24 00:24:00">絮飄 柳</a>:</strong></p>
-<p>感覺好像 whereis + locate + history (?)</p>
-<p><strong><a href="#163" title="2012-09-24 10:12:00">Jenny Liang</a>:</strong></p>
-<p>我用 whereis 和 locate 一直很不順手，直到遇到 autojump 才覺得解脫，有請 Xatier 大大教學 Q_Q</p>
-<p><strong><a href="#165" title="2012-09-24 12:55:00">絮飄 柳</a>:</strong></p>
-<p>例如我要找 squid 得路徑，可以用以下方法 $ whereis squid squid: /etc/squid 根據 man， whereis - locate the binary, source, and manual page files for a command 也可以用 locate，不過會把所有包含 squid 的東西都噴出來 :| $ locate squid 回到原題，剛剛無聊做了一個窮人版的 bash autojump XD j () { history | cut -d -f4- | grep ^cd | sort | uniq | grep -i $@ } $ j freecd freenode/cd irclogs/2012/freenode/ 不過我不太想要直接跳進去那個目錄，所以只有把 grep 的結果印出來而已 lol</p>
-<p><strong><a href="#166" title="2012-09-24 12:55:00">絮飄 柳</a>:</strong></p>
-<p>阿...換行被拔掉了QQ</p>
-<p><strong><a href="#167" title="2012-09-24 16:47:00">Jenny Liang</a>:</strong></p>
-<p>只能說Xatier大神真是太強了啊 XDDDDD</p>
-<p><strong><a href="#168" title="2012-09-25 01:00:00">絮飄 柳</a>:</strong></p>
-<p>沒有吧...這個只是 SA 作業等級的簡單小 shell scripting 而已阿XDrz</p>
-<p><strong><a href="#169" title="2012-09-25 09:41:00">Jenny Liang</a>:</strong></p>
-<p>我 shell script 最熟的時期好像就是修 SA 的時候 (遠目)</p>
-<p><strong><a href="#170" title="2012-09-26 03:37:00">絮飄 柳</a>:</strong></p>
-<p>我也是阿XD 因為現在有需要就會直接用 Perl 或是 python 完成 ：P</p>
     </div><!-- /.entry-content -->
+        <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_identifier = "blog/2012/09/autojump-a-cd-command-that-learns.html";
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://jsliangcom.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    </div>
     
   </article>
 </section>
@@ -184,5 +179,14 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
     </script>
+<script type="text/javascript">
+    var disqus_shortname = 'jsliangcom';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>
