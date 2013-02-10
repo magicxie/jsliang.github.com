@@ -1,5 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>J. S. Liang (Jenny)</title><link href="http://jsliang.com/" rel="alternate"></link><link href="http://jsliang.com/feeds/all-zh.atom.xml" rel="self"></link><id>http://jsliang.com/</id><updated>2012-12-25T00:56:21+08:00</updated><entry><title>[電影] 後勁很強的少年 Pi</title><link href="http://jsliang.com/blog/2012/12/movie-life-of-pi.html" rel="alternate"></link><updated>2012-12-25T00:56:21+08:00</updated><author><name>jsliang</name></author><id>tag:jsliang.com,2012-12-25:blog/2012/12/movie-life-of-pi.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.flickr.com/photos/lifeofpimovie/8020528490/"&gt;&lt;img alt="Life of Pi" src="http://farm9.staticflickr.com/8453/8020528490_e879321a2a.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>J. S. Liang (Jenny)</title><link href="http://jsliang.com/" rel="alternate"></link><link href="http://jsliang.com/feeds/all-zh.atom.xml" rel="self"></link><id>http://jsliang.com/</id><updated>2013-02-10T00:00:00+08:00</updated><entry><title>轉移網域後，在 nginx 設定 301 Moved Permanently</title><link href="http://jsliang.com/blog/2013/02/set-301-moved-permanently-in-nginx.html" rel="alternate"></link><updated>2013-02-10T00:00:00+08:00</updated><author><name>jsliang</name></author><id>tag:jsliang.com,2013-02-10:blog/2013/02/set-301-moved-permanently-in-nginx.html</id><summary type="html">&lt;p&gt;這兩天把網誌所在的網域由 &lt;code&gt;jsliang.twgogo.org&lt;/code&gt; 改成 &lt;code&gt;jsliang.com&lt;/code&gt; 了，因此必須設定轉址，在此筆記一下。&lt;/p&gt;
+&lt;p&gt;設定讓 HTTP Server 回傳 301 Moved Permanently 的好處很多：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;搜尋引擎的連結不會失效&lt;/li&gt;
+&lt;li&gt;RSS/ATOM feeds 的連結不會失效&lt;/li&gt;
+&lt;li&gt;如果網誌留言系統是使用 &lt;a href="http://disqus.com/"&gt;DISQUS&lt;/a&gt; 的話，等 301 設定完成後，可以在 DISQUS 的後台請 DISQUS 自動根據 301 回傳的 Location Header 來更新文章 URL。當需要轉址的 URL 結構差異大時，這招很方便。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我本來的網誌是架在自己的 AWS 的機器上，使用 &lt;a href="http://wordpress.org/"&gt;WordPress&lt;/a&gt; + &lt;a href="http://nginx.org/"&gt;nginx&lt;/a&gt;，故筆記的是我的 nginx 的轉址設定檔寫法。（Apache HTTP Server 也有設定 301 回應的功能。）&lt;/p&gt;
+&lt;p&gt;我有點偷懶，只處理這三種情況：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Feed&lt;/li&gt;
+&lt;li&gt;單篇文章&lt;/li&gt;
+&lt;li&gt;網址首頁&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;至於 archives/tags/categories...等彙整性的頁面，我個人覺得不太重要，就沒做轉址處理。&lt;/p&gt;
+&lt;p&gt;我 WordPress 的 nginx 設定檔是放在 &lt;code&gt;/etc/nginx/sites-available/wordpress&lt;/code&gt;。把原本的設定檔備份後，內容整個改成如下：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;# /etc/nginx/sites-available/wordpress&lt;/span&gt;
+server &lt;span class="o"&gt;{&lt;/span&gt;
+    listen   80;
+    server_name jsliang.twgogo.org;
+
+    error_log   /var/log/nginx/jsliang-twgogo-org.error.log warn;
+    access_log  /var/log/nginx/jsliang-twgogo-org.access.log;
+
+    &lt;span class="c"&gt;# 1. Feed&lt;/span&gt;
+    &lt;span class="c"&gt;# http://jsliang.twgogo.org/feed/&lt;/span&gt;
+    &lt;span class="c"&gt;# =&amp;gt;&lt;/span&gt;
+    &lt;span class="c"&gt;# http://jsliang.com/feeds/all.atom.xml&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$request_filename&lt;/span&gt; ~ feed/ &lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        rewrite ^ http://jsliang.com/feeds/all.atom.xml? permanent;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="c"&gt;# 2. 單篇文章&lt;/span&gt;
+    &lt;span class="c"&gt;# http://jsliang.twgogo.org/2013/02/slug/&lt;/span&gt;
+    &lt;span class="c"&gt;# =&amp;gt;&lt;/span&gt;
+    &lt;span class="c"&gt;# http://jsliang.com/blog/2013/02/slug.html&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$request_filename&lt;/span&gt; ~ .+/.+/.+ &lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        rewrite ^/&lt;span class="o"&gt;(&lt;/span&gt;.+&lt;span class="o"&gt;)&lt;/span&gt;/&lt;span class="o"&gt;(&lt;/span&gt;.+&lt;span class="o"&gt;)&lt;/span&gt;/&lt;span class="o"&gt;(&lt;/span&gt;.+&lt;span class="o"&gt;)&lt;/span&gt;/ http://jsliang.com/blog/&lt;span class="nv"&gt;$1&lt;/span&gt;/&lt;span class="nv"&gt;$2&lt;/span&gt;/&lt;span class="nv"&gt;$3&lt;/span&gt;.html permanent;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="c"&gt;# 3. 網址首頁&lt;/span&gt;
+    &lt;span class="c"&gt;# http://jsliang.twgogo.org&lt;/span&gt;
+    &lt;span class="c"&gt;# =&amp;gt;&lt;/span&gt;
+    &lt;span class="c"&gt;# http://jsliang.com&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$request_filename&lt;/span&gt; ~ / &lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        rewrite ^/ http://jsliang.com/ permanent;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;最後再重啟 nginx 即可：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo /etc/init.d/nginx restart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;之後連 &lt;a href="http://jsliang.twgogo.org"&gt;http://jsliang.twgogo.org&lt;/a&gt;，瀏覽器都會自動導到 &lt;a href="http://jsliang.com"&gt;http://jsliang.com&lt;/a&gt; 了。^o^&lt;/p&gt;</summary></entry><entry><title>[電影] 後勁很強的少年 Pi</title><link href="http://jsliang.com/blog/2012/12/movie-life-of-pi.html" rel="alternate"></link><updated>2012-12-25T00:56:21+08:00</updated><author><name>jsliang</name></author><id>tag:jsliang.com,2012-12-25:blog/2012/12/movie-life-of-pi.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.flickr.com/photos/lifeofpimovie/8020528490/"&gt;&lt;img alt="Life of Pi" src="http://farm9.staticflickr.com/8453/8020528490_e879321a2a.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;終於在平安夜跟阿達一起去看了這部由李安執導、佳評如潮的《少年 Pi 的奇幻漂流》。&lt;/p&gt;
 &lt;p&gt;看完才驚覺之前自己在朋友們要談論劇情時，馬上出聲拜託對方不要劇透，是多麼自私又不近人情。&lt;/p&gt;
 &lt;p&gt;這劇情看完後實在很想抓其他有看過的人來討論啊！&lt;/p&gt;

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>轉移網域後，在 nginx 設定 301 Moved Permanently | J. S. Liang (Jenny)</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../theme/css/main.css" type="text/css" />
+                <link href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie.css"/>
+                <script src="../../../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../css/ie6.css"/><![endif]-->
+
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../">J. S. Liang (Jenny) </a></h1>
+                <nav><ul>
+                                    <li><a href="/archives.html">Archives</a></li>
+                                                                    <li><a href="../../../about.html">About Me (jsliang)</a></li>
+                                                                    <li class="active"><a href="../../../category/blog.html">Blog</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../blog/2013/02/set-301-moved-permanently-in-nginx.html" rel="bookmark"
+           title="Permalink to 轉移網域後，在 nginx 設定 301 Moved Permanently">轉移網域後，在 nginx 設定 301 Moved Permanently</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2013-02-10T00:00:00">
+                2013-02-10 00:00:00
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../../../author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="../../../category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->      <p>這兩天把網誌所在的網域由 <code>jsliang.twgogo.org</code> 改成 <code>jsliang.com</code> 了，因此必須設定轉址，在此筆記一下。</p>
+<p>設定讓 HTTP Server 回傳 301 Moved Permanently 的好處很多：</p>
+<ol>
+<li>搜尋引擎的連結不會失效</li>
+<li>RSS/ATOM feeds 的連結不會失效</li>
+<li>如果網誌留言系統是使用 <a href="http://disqus.com/">DISQUS</a> 的話，等 301 設定完成後，可以在 DISQUS 的後台請 DISQUS 自動根據 301 回傳的 Location Header 來更新文章 URL。當需要轉址的 URL 結構差異大時，這招很方便。</li>
+</ol>
+<p>我本來的網誌是架在自己的 AWS 的機器上，使用 <a href="http://wordpress.org/">WordPress</a> + <a href="http://nginx.org/">nginx</a>，故筆記的是我的 nginx 的轉址設定檔寫法。（Apache HTTP Server 也有設定 301 回應的功能。）</p>
+<p>我有點偷懶，只處理這三種情況：</p>
+<ol>
+<li>Feed</li>
+<li>單篇文章</li>
+<li>網址首頁</li>
+</ol>
+<p>至於 archives/tags/categories...等彙整性的頁面，我個人覺得不太重要，就沒做轉址處理。</p>
+<p>我 WordPress 的 nginx 設定檔是放在 <code>/etc/nginx/sites-available/wordpress</code>。把原本的設定檔備份後，內容整個改成如下：</p>
+<div class="codehilite"><pre><span class="c"># /etc/nginx/sites-available/wordpress</span>
+server <span class="o">{</span>
+    listen   80;
+    server_name jsliang.twgogo.org;
+
+    error_log   /var/log/nginx/jsliang-twgogo-org.error.log warn;
+    access_log  /var/log/nginx/jsliang-twgogo-org.access.log;
+
+    <span class="c"># 1. Feed</span>
+    <span class="c"># http://jsliang.twgogo.org/feed/</span>
+    <span class="c"># =&gt;</span>
+    <span class="c"># http://jsliang.com/feeds/all.atom.xml</span>
+    <span class="k">if</span> <span class="o">(</span> <span class="nv">$request_filename</span> ~ feed/ <span class="o">)</span> <span class="o">{</span>
+        rewrite ^ http://jsliang.com/feeds/all.atom.xml? permanent;
+    <span class="o">}</span>
+
+    <span class="c"># 2. 單篇文章</span>
+    <span class="c"># http://jsliang.twgogo.org/2013/02/slug/</span>
+    <span class="c"># =&gt;</span>
+    <span class="c"># http://jsliang.com/blog/2013/02/slug.html</span>
+    <span class="k">if</span> <span class="o">(</span> <span class="nv">$request_filename</span> ~ .+/.+/.+ <span class="o">)</span> <span class="o">{</span>
+        rewrite ^/<span class="o">(</span>.+<span class="o">)</span>/<span class="o">(</span>.+<span class="o">)</span>/<span class="o">(</span>.+<span class="o">)</span>/ http://jsliang.com/blog/<span class="nv">$1</span>/<span class="nv">$2</span>/<span class="nv">$3</span>.html permanent;
+    <span class="o">}</span>
+
+    <span class="c"># 3. 網址首頁</span>
+    <span class="c"># http://jsliang.twgogo.org</span>
+    <span class="c"># =&gt;</span>
+    <span class="c"># http://jsliang.com</span>
+    <span class="k">if</span> <span class="o">(</span> <span class="nv">$request_filename</span> ~ / <span class="o">)</span> <span class="o">{</span>
+        rewrite ^/ http://jsliang.com/ permanent;
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<p>最後再重啟 nginx 即可：</p>
+<div class="codehilite"><pre><span class="nv">$ </span>sudo /etc/init.d/nginx restart
+</pre></div>
+
+
+<p>之後連 <a href="http://jsliang.twgogo.org">http://jsliang.twgogo.org</a>，瀏覽器都會自動導到 <a href="http://jsliang.com">http://jsliang.com</a> 了。^o^</p>
+    </div><!-- /.entry-content -->
+        <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_identifier = "blog/2013/02/set-301-moved-permanently-in-nginx.html";
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://jsliang.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    </div>
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>Blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                                                    <li><a href="http://python.org">Python.org</a></li>
+                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>Social</h2>
+                        <ul>
+                            <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
+                                                    <li><a href="https://github.com/jsliang">GitHub</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>Hosted on <a href="http://pages.github.com/">GitHub Pages</a>.</p>
+
+                <p>The theme is designed by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and modified by jsliang.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37740364-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'jsliang';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

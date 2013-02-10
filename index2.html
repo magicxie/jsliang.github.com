@@ -37,6 +37,45 @@
                     <ol id="posts-list" class="hfeed" start="9">
                         <li><article class="hentry">    
                 <header>
+                    <h1><a href="./blog/2012/06/latex-xecjk-error.html" rel="bookmark"
+                           title="Permalink to [LaTeX] xeCJK 出現「Missing begin{document}」錯誤">[LaTeX] xeCJK 出現「Missing begin{document}」錯誤</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-25T21:54:53">
+                2012-06-25 21:54:53
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
+        </address>
+        <p>In <a href="./category/blog.html">Blog</a>. </p>
+
+</footer><!-- /.post-info -->                <p>我的論文是用 LaTeX 寫的，由於內容要包含中文摘要，所以必須支援中文輸出。</p>
+<p>以往以下的寫法使用 XeLaTeX 都可以正常編譯過： </p>
+<div class="codehilite"><pre><span class="n">usepackage</span><span class="p">{</span><span class="n">xeCJK</span><span class="p">}</span>
+<span class="n">setCJKmainfont</span><span class="p">{</span><span class="err">標楷體</span><span class="p">}</span>
+<span class="n">begin</span><span class="p">{</span><span class="n">document</span><span class="p">}</span>
+<span class="err">中文</span>
+<span class="n">end</span><span class="p">{</span><span class="n">document</span><span class="p">}</span>
+</pre></div>
+
+
+<p>但更新 2012-05-29 版本的 xecjk 後就不行了，會出現「Missing begin{document}」的錯誤訊息。</p>
+<p>搜尋網路上一番後，發現最快的解法就是裝回舊版 xeCJK。</p>
+<p>以下筆記我最後的解法：（Windows 7 + MiKTeX 2.9） </p>
+<ol>
+<li>上 <a href="https://code.google.com/p/ctex-kit/">CTeXKit 官網</a> 下載舊版的 <a href="https://code.google.com/p/ctex-kit/downloads/detail?name=xeCJK-2.4.6-r306.zip&amp;can=2&amp;q=">xeCJK 2.4.6-r306</a></li>
+<li>下載來的檔案解壓縮後，把其中的 xeCJK.sty 複製到以下位置，覆蓋掉現有的 ...</li></ol>
+                <a class="readmore" href="./blog/2012/06/latex-xecjk-error.html">read more</a>
+                <p>There are <a href="./blog/2012/06/latex-xecjk-error.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
                     <h1><a href="./blog/2012/03/hg-git.html" rel="bookmark"
                            title="Permalink to [Ubuntu] 使用Mercurial套件Hg-Git將Git repository轉成Hg repository">[Ubuntu] 使用Mercurial套件Hg-Git將Git repository轉成Hg repository</a></h1>
                 </header>
@@ -375,52 +414,6 @@
 <p>真希望能大哭一場。</p>
                 <a class="readmore" href="./blog/2012/02/wanna-cry.html">read more</a>
                 <p>There are <a href="./blog/2012/02/wanna-cry.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html" rel="bookmark"
-                           title="Permalink to Mercurial (Hg)的named branch與bookmark">Mercurial (Hg)的named branch與bookmark</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2012-02-17T19:40:14">
-                2012-02-17 19:40:14
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
-
-</footer><!-- /.post-info -->                <p>同時用Mercurial和Git，在branch的使用上感到很錯亂，昨天研究了一下，今天在此做個小小的筆記。</p>
-<p>如果有理解錯誤之處，也麻煩朋友們協助指正，感激不盡。 </p>
-<p>Mercurial的named branch的指令操作和Git差不多，但差別在於： </p>
-<ul>
-<li>Mercurial的branch資訊是存在每個commit資料裡，並且預設無法修改</li>
-<li>Git的branch資訊與commit資料是分開的，branch比較像是一種特殊的tag</li>
-</ul>
-<p>以下面的範例為例： </p>
-<div class="codehilite"><pre><span class="cp"># 產生一個新的hg repository，命名為hg_namedbranches</span>
-<span class="n">mkdir</span> <span class="n">hg_namedbranches</span>
-<span class="n">cd</span> <span class="n">hg_namedbranches</span>
-<span class="n">hg</span> <span class="n">init</span>
-
-<span class="cp"># Rev 0: 隨便新增一個檔案並commit</span>
-<span class="n">touch</span> <span class="n">a</span>
-<span class="n">hg</span> <span class="n">add</span> <span class="n">a</span>
-<span class="n">hg</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;Commit 1&quot;</span>
-
-<span class="cp"># Rev 1: 把a更名為b並commit</span>
-<span class="n">hg</span> <span class="n">mv</span> <span class="n">a</span> <span class="n">b</span>
-<span class="n">hg</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;Commit 2&quot;</span>
-
-<span class="cp"># 產生一個新的named ...</span></pre></div>
-                <a class="readmore" href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html">read more</a>
-                <p>There are <a href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
                             </ol><!-- /#posts-list -->
                             <p class="paginator">
