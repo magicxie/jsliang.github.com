@@ -1,55 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
         <title>J. S. Liang (Jenny)</title>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="./theme/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="./theme/css/bootstrap-responsive.min.css" type="text/css" />
+
         <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
                 <link href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
-                
-        <!--[if IE]>
-                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+                </head>
 
-        <!--[if lte IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="./css/ie.css"/>
-                <script src="./js/IE8.js" type="text/javascript"></script><![endif]-->
+<body id="index">
+<a class="hidden-phone" href="http://github.com/jsliang/jsliang.github.com">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" />
+</a>
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="./">J. S. Liang (Jenny) </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                                                    <li><a href="/archives.html">Archives</a></li>
+                                                                                                    <li><a href="./about.html">About Me (jsliang)</a></li>
+                                                                                                </ul>
 
-        <!--[if lt IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="./css/ie6.css"/><![endif]-->
-</head>
+                        <script>
+  (function() {
+    var cx = '000728178517198415282:4k49jvwgnvy';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="./">J. S. Liang (Jenny) </a></h1>
-                <nav><ul>
-                                    <li><a href="/archives.html">Archives</a></li>
-                                                                    <li><a href="./about.html">About Me (jsliang)</a></li>
-                                                                    <li ><a href="./category/blog.html">Blog</a></li>
-                                </ul></nav>
-        </header><!-- /#banner -->
-                
-            
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+                <div class="span10">
+                            
+       
+             
+                        <section>
+                <ol id="posts-list" class="hfeed" start="9">
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html" rel="bookmark" title="Permalink to Mercurial (Hg)的named branch與bookmark">
+                                   Mercurial (Hg)的named branch與bookmark
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                 
-                            <section id="content" class="body">
-                    <ol id="posts-list" class="hfeed" start="9">
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html" rel="bookmark"
-                           title="Permalink to Mercurial (Hg)的named branch與bookmark">Mercurial (Hg)的named branch與bookmark</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2012-02-17T19:40:14">
-                2012-02-17 19:40:14
-        </abbr>
+    on 2012-02-17
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
-
-</footer><!-- /.post-info -->                <p>同時用Mercurial和Git，在branch的使用上感到很錯亂，昨天研究了一下，今天在此做個小小的筆記。</p>
+        &nbsp;
+    <a href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/git.html">Git</a>
+        <a href="./tag/mercurial-hg.html">Mercurial Hg</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <p>同時用Mercurial和Git，在branch的使用上感到很錯亂，昨天研究了一下，今天在此做個小小的筆記。</p>
 <p>如果有理解錯誤之處，也麻煩朋友們協助指正，感激不盡。 </p>
 <p>Mercurial的named branch的指令操作和Git差不多，但差別在於： </p>
 <ul>
@@ -72,30 +109,44 @@
 <span class="n">hg</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;Commit 2&quot;</span>
 
 <span class="cp"># 產生一個新的named ...</span></pre></div>
-                <a class="readmore" href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html">read more</a>
-                <p>There are <a href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
 
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2012/02/getting-more-four-quadrant-negotiation-model.html" rel="bookmark"
-                           title="Permalink to [閱讀] Getting More的四象限談判模式">[閱讀] Getting More的四象限談判模式</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2012-02-09T19:59:19">
-                2012-02-09 19:59:19
-        </abbr>
+                        <hr/>
+                    </article>
+                </li>
+                           
+             
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2012/02/getting-more-four-quadrant-negotiation-model.html" rel="bookmark" title="Permalink to [閱讀] Getting More的四象限談判模式">
+                                   [閱讀] Getting More的四象限談判模式
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
+    on 2012-02-09
 
-</footer><!-- /.post-info -->                <p><a href="http://www.anobii.com/books/華頓商學院最受歡迎的談判課/9789861341767/012ee623d71e7d7e11/"><img alt="More about 華頓商學院最受歡迎的談判課" src="http://image.anobii.com/anobi/image_book.php?type=5&amp;item_id=012ee623d71e7d7e11&amp;time=1316179179" /></a></p>
+        &nbsp;
+    <a href="./blog/2012/02/getting-more-four-quadrant-negotiation-model.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/yue-du.html">閱讀</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <p><a href="http://www.anobii.com/books/華頓商學院最受歡迎的談判課/9789861341767/012ee623d71e7d7e11/"><img alt="More about 華頓商學院最受歡迎的談判課" src="http://image.anobii.com/anobi/image_book.php?type=5&amp;item_id=012ee623d71e7d7e11&amp;time=1316179179" /></a></p>
 <p>最近在看「華頓商學院最受歡迎的談判課 (Getting More: How to Negotiate to Achieve Your Goals in the Real World)」這本書，覺得裡面很多觀念很棒。</p>
 <p>我尤其喜歡作者從動之以情出發的概念。這多少讓我想起之前在IBM實習時上的課「Moment of Truth」最強調的一句話：「Don't fight the perception.」</p>
 <p>一味堅持站在自己的立場、出發點，想對對方說之以理，往往是無效的。或許一時可以靠氣勢壓迫對方，但無法建立長久的信任關係。應該要多站在對方的角度看事情，取得對方情感面的信賴。</p>
@@ -104,30 +155,46 @@
 <p>Orz），在此做個筆記。</p>
 <p><strong>Getting More™ Four Quadrant Negotiation Model</strong></p>
 <p>Source ...</p>
-                <a class="readmore" href="./blog/2012/02/getting-more-four-quadrant-negotiation-model.html">read more</a>
-                <p>There are <a href="./blog/2012/02/getting-more-four-quadrant-negotiation-model.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2012/02/getting-more-four-quadrant-negotiation-model.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
 
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html" rel="bookmark"
-                           title="Permalink to 在Ubuntu 10.04上安裝Mercurial及TortoiseHg (GUI)">在Ubuntu 10.04上安裝Mercurial及TortoiseHg (GUI)</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2012-02-03T20:07:48">
-                2012-02-03 20:07:48
-        </abbr>
+                        <hr/>
+                    </article>
+                </li>
+                           
+             
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html" rel="bookmark" title="Permalink to 在Ubuntu 10.04上安裝Mercurial及TortoiseHg (GUI)">
+                                   在Ubuntu 10.04上安裝Mercurial及TortoiseHg (GUI)
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
+    on 2012-02-03
 
-</footer><!-- /.post-info -->                <p>Windows上要安裝最新版本的Mercurial和TortoiseHg很簡單，直接去官網下載安裝程式就好了。</p>
+        &nbsp;
+    <a href="./blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/mercurial-hg.html">Mercurial Hg</a>
+        <a href="./tag/tortoisehg.html">TortoiseHg</a>
+        <a href="./tag/ubuntu.html">Ubuntu</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <p>Windows上要安裝最新版本的Mercurial和TortoiseHg很簡單，直接去官網下載安裝程式就好了。</p>
 <p>Mercurial官網：<a href="http://mercurial.selenic.com/">http://mercurial.selenic.com/</a></p>
 <p>TortoiseHg官網：<a href="http://tortoisehg.bitbucket.org/">http://tortoisehg.bitbucket.org/</a> </p>
 <p>至於Ubuntu上，若直接下<code>apt-get</code>指令，往往是裝到比較舊的版本，針對安裝最新版本的步驟，在這邊留個紀錄，方便自己日後參考。 </p>
@@ -136,30 +203,46 @@
 <span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">mercurial</span><span class="o">-</span><span class="n">ppa</span><span class="o">/</span><span class="n">releases</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">mercurial ...</span></pre></div>
-                <a class="readmore" href="./blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html">read more</a>
-                <p>There are <a href="./blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
 
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2012/02/utada-hikaru-goodbye-happiness.html" rel="bookmark"
-                           title="Permalink to 宇多田ヒカル - Goodbye Happiness (歌詞中譯練習)">宇多田ヒカル - Goodbye Happiness (歌詞中譯練習)</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2012-02-02T21:45:55">
-                2012-02-02 21:45:55
-        </abbr>
+                        <hr/>
+                    </article>
+                </li>
+                           
+             
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2012/02/utada-hikaru-goodbye-happiness.html" rel="bookmark" title="Permalink to 宇多田ヒカル - Goodbye Happiness (歌詞中譯練習)">
+                                   宇多田ヒカル - Goodbye Happiness (歌詞中譯練習)
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
+    on 2012-02-02
 
-</footer><!-- /.post-info -->                <iframe width="560" height="315" src="http://www.youtube.com/embed/sFkvLN9pt-k" frameborder="0" allowfullscreen></iframe>
+        &nbsp;
+    <a href="./blog/2012/02/utada-hikaru-goodbye-happiness.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/ri-ben-yu.html">日本語</a>
+        <a href="./tag/ge-ci.html">歌詞</a>
+        <a href="./tag/yin-le.html">音樂</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <iframe width="560" height="315" src="http://www.youtube.com/embed/sFkvLN9pt-k" frameborder="0" allowfullscreen></iframe>
 
 <p>這首歌我在路上常常聽到店家播放。</p>
 <p>每次都認得出來宇多田的歌聲，卻總是忘記查是哪首歌，直到今天才碰巧在YouTube的推薦列表裡發現。</p>
@@ -192,30 +275,44 @@
 <p>什麼都不必介意的樂園</p>
 </blockquote>
 <p>夢の終わりに　待ったは無し ...</p></blockquote>
-                <a class="readmore" href="./blog/2012/02/utada-hikaru-goodbye-happiness.html">read more</a>
-                <p>There are <a href="./blog/2012/02/utada-hikaru-goodbye-happiness.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2012/02/utada-hikaru-goodbye-happiness.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
 
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2011/12/in-time-with-you-episode-5-discussion.html" rel="bookmark"
-                           title="Permalink to 「我可能不會愛你」第五集之純友誼不是這樣的吧">「我可能不會愛你」第五集之純友誼不是這樣的吧</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2011-12-19T23:44:39">
-                2011-12-19 23:44:39
-        </abbr>
+                        <hr/>
+                    </article>
+                </li>
+                           
+             
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2011/12/in-time-with-you-episode-5-discussion.html" rel="bookmark" title="Permalink to 「我可能不會愛你」第五集之純友誼不是這樣的吧">
+                                   「我可能不會愛你」第五集之純友誼不是這樣的吧
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
+    on 2011-12-19
 
-</footer><!-- /.post-info -->                <p>為了跟上潮流，開始看最近被熱烈討論的偶像劇「<a href="http://www.gtv.com.tw/Program/S051420110924U/">我可能不會愛你</a>」。</p>
+        &nbsp;
+    <a href="./blog/2011/12/in-time-with-you-episode-5-discussion.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/xi-ju.html">戲劇</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <p>為了跟上潮流，開始看最近被熱烈討論的偶像劇「<a href="http://www.gtv.com.tw/Program/S051420110924U/">我可能不會愛你</a>」。</p>
 <p>目前看到第五集，接下來的文章會提及劇情，並且有負面評論，往下閱讀前請留意。</p>
 <p>我很喜歡林依晨，但坦白說實在不太認同她在劇中飾演的程又青這個角色；當然也不太認同李大仁。</p>
 <p>或許是因為我不曾擁有要好到這種程度的異性普通朋友吧。</p>
@@ -228,30 +325,47 @@
 <p>程又青的行為更是莫名其妙，像是對待情敵一樣地看Maggie不順眼。總是把她的行為解釋得心機重重，覺得Maggie是想跟她鬥。不放過任何一個可以展現自己和李大仁的絕佳默契的機會，處處讓Maggie碰壁、讓Maggie知道她更了解李大仁。</p>
 <p><img alt="" src="https://lh4.googleusercontent.com/-rTVbSSF0hN0/Tu9avz9FcWI/AAAAAAAB2C8/spftDZl0BNs/s400/Screenshot-2.png" /></p>
 <p>雖然旅程最後和李大仁的單獨談話中，把她的行為以「為朋友好」解釋過去。說她覺得Maggie還不夠了解李大仁，覺得李大仁和Maggie並不適合走下去 ...</p>
-                <a class="readmore" href="./blog/2011/12/in-time-with-you-episode-5-discussion.html">read more</a>
-                <p>There are <a href="./blog/2011/12/in-time-with-you-episode-5-discussion.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2011/12/in-time-with-you-episode-5-discussion.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
 
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2011/12/rico-shubra.html" rel="bookmark"
-                           title="Permalink to [肚皮舞曲] 修伯拉 / Rico - Shubra / ريكو - شبرا">[肚皮舞曲] 修伯拉 / Rico - Shubra / ريكو - شبرا</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2011-12-14T17:23:17">
-                2011-12-14 17:23:17
-        </abbr>
+                        <hr/>
+                    </article>
+                </li>
+                           
+             
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2011/12/rico-shubra.html" rel="bookmark" title="Permalink to [肚皮舞曲] 修伯拉 / Rico - Shubra / ريكو - شبرا">
+                                   [肚皮舞曲] 修伯拉 / Rico - Shubra / ريكو - شبرا
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
+    on 2011-12-14
 
-</footer><!-- /.post-info -->                <iframe width="560" height="315" src="http://www.youtube.com/embed/1jpnDzsDLdI" frameborder="0" allowfullscreen></iframe>
+        &nbsp;
+    <a href="./blog/2011/12/rico-shubra.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/ge-ci.html">歌詞</a>
+        <a href="./tag/du-pi-wu.html">肚皮舞</a>
+        <a href="./tag/a-la-bo-wen.html">阿拉伯文</a>
+        <a href="./tag/yin-le.html">音樂</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <iframe width="560" height="315" src="http://www.youtube.com/embed/1jpnDzsDLdI" frameborder="0" allowfullscreen></iframe>
 
 <p>這學期開始在學校的教職員社團學肚皮舞，「修伯拉」是我們學的舞的曲目名稱。</p>
 <p>好不容易問到歌名，但僅用「修伯拉」搜尋，還是找不太到這首歌的背景資料。</p>
@@ -266,30 +380,47 @@
 <blockquote>
 <p><strong>Shobra and the girls from there, Sabteia, what a gift we have</strong>
 Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
-                <a class="readmore" href="./blog/2011/12/rico-shubra.html">read more</a>
-                <p>There are <a href="./blog/2011/12/rico-shubra.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2011/12/rico-shubra.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
 
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html" rel="bookmark"
-                           title="Permalink to 涼宮ハルヒの憂鬱 - 最強パレパレード">涼宮ハルヒの憂鬱 - 最強パレパレード</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2011-11-06T17:15:49">
-                2011-11-06 17:15:49
-        </abbr>
+                        <hr/>
+                    </article>
+                </li>
+                           
+             
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html" rel="bookmark" title="Permalink to 涼宮ハルヒの憂鬱 - 最強パレパレード">
+                                   涼宮ハルヒの憂鬱 - 最強パレパレード
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
+    on 2011-11-06
 
-</footer><!-- /.post-info -->                <p>對跳舞的熱情冷卻了一段不短的時間，最近有點回溫的趨勢……:P</p>
+        &nbsp;
+    <a href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/tu-feng-wu.html">土風舞</a>
+        <a href="./tag/ri-ben-yu.html">日本語</a>
+        <a href="./tag/ge-ci.html">歌詞</a>
+        <a href="./tag/yin-le.html">音樂</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <p>對跳舞的熱情冷卻了一段不短的時間，最近有點回溫的趨勢……:P</p>
 <p>這學期首次參加肚皮舞課，跳得很開心。</p>
 <p>週二晚上虹韻社課小乖教的下面這支出自涼宮春日的「最強PARA」我也學得好歡樂啊～^o^</p>
 <iframe width="560" height="315" src="http://www.youtube.com/embed/cApMH6K8uB8" frameborder="0" allowfullscreen></iframe>
@@ -319,30 +450,44 @@ Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
 <blockquote>
 <p>如果一切都這麼普通</p>
 <p>那麼我們聚集在一起的必要　就沒了吧 ...</p></blockquote></blockquote>
-                <a class="readmore" href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html">read more</a>
-                <p>There are <a href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
 
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2011/10/mgo-v-s-coding.html" rel="bookmark"
-                           title="Permalink to MgO v.s. Coding">MgO v.s. Coding</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2011-10-19T15:54:12">
-                2011-10-19 15:54:12
-        </abbr>
+                        <hr/>
+                    </article>
+                </li>
+                           
+             
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2011/10/mgo-v-s-coding.html" rel="bookmark" title="Permalink to MgO v.s. Coding">
+                                   MgO v.s. Coding
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
+    on 2011-10-19
 
-</footer><!-- /.post-info -->                <p><img alt="" src="https://lh5.googleusercontent.com/-3_Qtrb_wTZA/Tp526Mpuc0I/AAAAAAAB1WM/c0pfaSbeDlc/s400/PA197661.JPG" /></p>
+        &nbsp;
+    <a href="./blog/2011/10/mgo-v-s-coding.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/xin-qing.html">心情</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <p><img alt="" src="https://lh5.googleusercontent.com/-3_Qtrb_wTZA/Tp526Mpuc0I/AAAAAAAB1WM/c0pfaSbeDlc/s400/PA197661.JPG" /></p>
 <p>這次醫生開給我的藥，藥名難得地簡短：MgO，氧化鎂。</p>
 <p>我努力回想，才想起中學化學的確有教過氧化鎂是很常見的瀉藥。</p>
 <p>然後接著想起一個遺忘更久的事實：我高中讀理組時，最強的科目其實是化學啊！</p>
@@ -355,30 +500,45 @@ Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
 <p>學跳舞，我常覺得自己怎樣練都無法跳得跟別人一樣好，往往因此挫折到連練習都不想。</p>
 <p>學攝影，我也常覺得自己不論美感和技巧都不如人，因此退縮到「有記錄下想記錄的畫面就夠了」的標準，設備也很乾脆地賣了。</p>
 <p>只有寫程式是真的可以讓我一旦開始思索就廢寢忘食，而且這麼多年來一直如此的。<del>雖然我花了這麼多時間卻沒有寫得特別好實在是頗慚愧 ...</del></p>
-                <a class="readmore" href="./blog/2011/10/mgo-v-s-coding.html">read more</a>
-                <p>There are <a href="./blog/2011/10/mgo-v-s-coding.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2011/10/mgo-v-s-coding.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
 
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2011/10/diary.html" rel="bookmark"
-                           title="Permalink to 珠友50K一日一頁自填式手帳">珠友50K一日一頁自填式手帳</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2011-10-17T20:47:13">
-                2011-10-17 20:47:13
-        </abbr>
+                        <hr/>
+                    </article>
+                </li>
+                           
+             
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2011/10/diary.html" rel="bookmark" title="Permalink to 珠友50K一日一頁自填式手帳">
+                                   珠友50K一日一頁自填式手帳
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
+    on 2011-10-17
 
-</footer><!-- /.post-info -->                <p>三年多前就曾經被日本的<a href="http://www.1101.com/store/techo/">ほぼ日手帳</a>（又稱1101）燒到，但一本要價一千多元台幣，再加上那時不敢確定自己是不是真的能堅持每天書寫，所以遲遲不敢入坑。</p>
+        &nbsp;
+    <a href="./blog/2011/10/diary.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/wen-ju.html">文具</a>
+        <a href="./tag/gou-wu.html">購物</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <p>三年多前就曾經被日本的<a href="http://www.1101.com/store/techo/">ほぼ日手帳</a>（又稱1101）燒到，但一本要價一千多元台幣，再加上那時不敢確定自己是不是真的能堅持每天書寫，所以遲遲不敢入坑。</p>
 <p>一直到這兩年台灣設計精美的國產手帳如雨後春筍冒出，而價錢比版面設計類似的日本產品低廉不少（尤其最近日幣一直漲……&gt;"&lt;）。去年年底購入了2011年度<a href="http://flowerthief.selfip.com/Work.action">歲時紀</a>的一日一頁版，到目前為止十個半月下來的確有持續每天撰寫（連我自己都感到不可思議，生平第一次這麼有恆心啊）。因此明年度我有了再買一次一日一頁手帳的勇氣，並且仍然選擇歲時紀。（為了能夠容納我更多的碎碎念，還買了較大的B6尺寸XD）</p>
 <p>廢話看到此讀者可能會有個疑惑：既然我明年度的手帳都選定是歲時紀了，那麼為什麼還會有這篇珠友手帳的心得文？</p>
 <p><a href="https://picasaweb.google.com/103268673393726667616/20111016#5664435945950811954"><img alt="" src="https://lh6.googleusercontent.com/-6yeADCcUQiQ/TpweeztaFzI/AAAAAAAB1UE/8bflilLTiqw/s400/PA167643.JPG" /></a></p>
@@ -386,30 +546,45 @@ Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
 <p>一般的筆記本雖然能寫，但普通筆記本多半是膠裝不容易攤平，某種程度上我也被歲時紀這類能夠輕易攤平書寫的線裝筆記本養大胃口了。一般活頁式的萬用手冊在書寫左邊頁面時右手會被鋼圈擋到，我更不喜歡。所以最後我選擇了接下來要介紹的這款珠友的自填式筆記本。</p>
 <p>由於<a href="http://chu-yu.myweb.hinet.net/retail_store.htm">珠友的供貨門市實在很少</a>，所以最後我是從PChome的商店街（<a href="http://www.pcstore.com.tw/chuyuculture/M09362026.htm">商品連結</a>）購入這本手帳的。顏色除了我選的桃紅，其他都是比較具專業氣息的灰、咖啡、土黃。請注意售價NT$179超便宜的！</p>
 <p>兩條書籤繩。尾端像1101手帳一樣有做收尾，不用怕散掉 ...</p>
-                <a class="readmore" href="./blog/2011/10/diary.html">read more</a>
-                <p>There are <a href="./blog/2011/10/diary.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2011/10/diary.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
 
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2011/09/bad-experiences.html" rel="bookmark"
-                           title="Permalink to 淺談被推銷的不悅經驗：傳教、直銷">淺談被推銷的不悅經驗：傳教、直銷</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2011-09-30T22:43:23">
-                2011-09-30 22:43:23
-        </abbr>
+                        <hr/>
+                    </article>
+                </li>
+                           
+             
+                            <li>
+                    <article>
+                        <header>
+                            <h1>
+                                <a href="./blog/2011/09/bad-experiences.html" rel="bookmark" title="Permalink to 淺談被推銷的不悅經驗：傳教、直銷">
+                                   淺談被推銷的不悅經驗：傳教、直銷
+                                </a>
+                            </h1>
+                        </header>
+                        
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
 
-                <address class="vcard author">
-                By <a class="url fn" href="./author/jsliang.html">jsliang</a>
-        </address>
-        <p>In <a href="./category/blog.html">Blog</a>. </p>
+    on 2011-09-30
 
-</footer><!-- /.post-info -->                <p><img alt="" src="https://lh5.googleusercontent.com/-IB1No8gPd20/TWdtyb-U3SI/AAAAAAABUfo/eKb11QKz0wM/s400/P2250786.JPG" /></p>
+        &nbsp;
+    <a href="./blog/2011/09/bad-experiences.html#disqus_thread">comments</a>
+    
+    <p>
+    tags:     <a href="./tag/gong-zuo.html">工作</a>
+        <a href="./tag/xin-qing.html">心情</a>
+    </p>
+        
+</footer><!-- /.post-info -->                            <p><img alt="" src="https://lh5.googleusercontent.com/-IB1No8gPd20/TWdtyb-U3SI/AAAAAAABUfo/eKb11QKz0wM/s400/P2250786.JPG" /></p>
 <p>寫這些被推銷的不悅經驗，並不是單純要抱怨，更不是為了表達對傳教或直銷的敵意。</p>
 <p>相反的，正因為我不排除自己以後有去傳教或是做直銷的可能，所以認為應該好好把這些心情記錄下來。</p>
 <p>寫這篇文章是為了避免我哪天換了位子就換顆腦袋，變成自己曾經討厭的那種人。 </p>
@@ -423,45 +598,66 @@ Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
 <p>我很想縮在角落，靜靜欣賞這美好的聚會就好，但總是會被熱情地拉入、參與。</p>
 <p>雖然這樣說有點辜負人家的好意，但我當下真的覺得自己是「被迫做不太想做的事」。</p>
 <p>在被傳福音時，我有清楚地表達過自己從沒有參加過聚會，對方也表示沒關係可以來看看 ...</p>
-                <a class="readmore" href="./blog/2011/09/bad-experiences.html">read more</a>
-                <p>There are <a href="./blog/2011/09/bad-experiences.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2011/09/bad-experiences.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
+
+                        <hr/>
+                    </article>
+                </li>
                             </ol><!-- /#posts-list -->
-                            <p class="paginator">
+                                    <p class="paginator">
                         <a href="./index2.html">&laquo;</a>
                 Page 3 / 12
             <a href="./index4.html">&raquo;</a>
     </p>
-                        </section><!-- /#content -->
-                    <section id="extras" class="body">
-                        <div class="blogroll">
-                        <h2>Blogroll</h2>
-                        <ul>
-                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
-                                                    <li><a href="http://python.org">Python.org</a></li>
-                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
-                                                </ul>
-                </div><!-- /.blogroll -->
-                                <div class="social">
-                        <h2>Social</h2>
-                        <ul>
-                            <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-                            
-                                                    <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
-                                                    <li><a href="https://github.com/jsliang">GitHub</a></li>
-                                                </ul>
-                </div><!-- /.social -->
-                </section><!-- /#extras -->
+                            </section><!-- /#content -->
+                                        </div>
+                <div class="span2">
+                    <section id="sidebar">
+                                                <div>
+                                <h2>Blogroll</h2>
+                                <ul>
+                                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                                                                    <li><a href="http://python.org">Python.org</a></li>
+                                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                                                                </ul>
+                            </div><!-- /.blogroll -->
+                                                                    <div>
+                                <h2>Social</h2>
+                                <ul>
+                                    <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                                    
+                                                                    <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
+                                                                    <li><a href="https://github.com/jsliang">GitHub</a></li>
+                                                                </ul>
+                            </div><!-- /.social -->
+                                        </section><!-- /#sidebar -->
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>Hosted on <a href="http://pages.github.com/">GitHub Pages</a>.</p>
-
-                <p>The theme is designed by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and modified by jsliang.</p>
-        </footer><!-- /#contentinfo -->
+    <footer id="site-footer">
+        <div class="row">
+            <div class="span10 offset1">
+                <p>
+                    <address>
+                    This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </address>
+                    <address>
+                    Hosted on <a href="http://pages.github.com/">GitHub Pages</a>.
+                    </address>
+                </p>
+                <p>
+                    <address>
+                    Theme designed by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and modified by <a href=".">jsliang</a>.
+                    </address>
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <script type="text/javascript">
     var _gaq = _gaq || [];
