@@ -69,20 +69,21 @@
 
     on 2012-03-10
 
-        &nbsp;
-    <a href="../../../blog/2012/03/linux-time-zone.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="../../../tag/linux.html">Linux</a>
+            
     
-    <p>
-    tags:     <a href="../../../tag/linux.html">Linux</a>
-    </p>
+            |
+        <a href="../../../blog/2012/03/linux-time-zone.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->      <p>我的AWS是買美國的EC2 Instance，預設時區不是台灣的時區，管理上稍有不便。</p>
-<p>我心算很弱，如果每次檢視檔案的最後修改日期時還得換算，簡直會要了我的命。 以下為切換系統時區的指令，留個筆記。 執行 </p>
+<p>我心算很弱，如果每次檢視檔案的最後修改日期時還得換算，簡直會要了我的命。 以下為切換系統時區的指令，留個筆記。 執行</p>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">tzdata</span>
 </pre></div>
 
 
-<p>Geographic area選Asia，Time zone選Taipei，接著訊息列便會出現如下訊息供確認時區已更改成功： </p>
+<p>Geographic area選Asia，Time zone選Taipei，接著訊息列便會出現如下訊息供確認時區已更改成功：</p>
 <div class="codehilite"><pre><span class="n">Current</span> <span class="k">default</span> <span class="n">time</span> <span class="n">zone</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Asia</span><span class="o">/</span><span class="n">Taipei</span><span class="err">&#39;</span>
 <span class="n">Local</span> <span class="n">time</span> <span class="n">is</span> <span class="n">now</span><span class="o">:</span> <span class="n">Sat</span> <span class="n">Mar</span> <span class="mi">10</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">26</span> <span class="n">CST</span> <span class="mf">2012.</span>
 <span class="n">Universal</span> <span class="n">Time</span> <span class="n">is</span> <span class="n">now</span><span class="o">:</span> <span class="n">Sat</span> <span class="n">Mar</span> <span class="mi">10</span> <span class="mo">02</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">26</span> <span class="n">UTC</span> <span class="mf">2012.</span>

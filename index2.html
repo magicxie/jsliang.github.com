@@ -76,15 +76,16 @@
 
     on 2012-06-25
 
-        &nbsp;
-    <a href="./blog/2012/06/latex-xecjk-error.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/latex.html">LaTeX</a>
+            
     
-    <p>
-    tags:     <a href="./tag/latex.html">LaTeX</a>
-    </p>
+            |
+        <a href="./blog/2012/06/latex-xecjk-error.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>我的論文是用 LaTeX 寫的，由於內容要包含中文摘要，所以必須支援中文輸出。</p>
-<p>以往以下的寫法使用 XeLaTeX 都可以正常編譯過： </p>
+<p>以往以下的寫法使用 XeLaTeX 都可以正常編譯過：</p>
 <div class="codehilite"><pre><span class="n">usepackage</span><span class="p">{</span><span class="n">xeCJK</span><span class="p">}</span>
 <span class="n">setCJKmainfont</span><span class="p">{</span><span class="err">標楷體</span><span class="p">}</span>
 <span class="n">begin</span><span class="p">{</span><span class="n">document</span><span class="p">}</span>
@@ -95,7 +96,7 @@
 
 <p>但更新 2012-05-29 版本的 xecjk 後就不行了，會出現「Missing begin{document}」的錯誤訊息。</p>
 <p>搜尋網路上一番後，發現最快的解法就是裝回舊版 xeCJK。</p>
-<p>以下筆記我最後的解法：（Windows 7 + MiKTeX 2.9） </p>
+<p>以下筆記我最後的解法：（Windows 7 + MiKTeX 2.9）</p>
 <ol>
 <li>上 <a href="https://code.google.com/p/ctex-kit/">CTeXKit 官網</a> 下載舊版的 <a href="https://code.google.com/p/ctex-kit/downloads/detail?name=xeCJK-2.4.6-r306.zip&amp;can=2&amp;q=">xeCJK 2.4.6-r306</a></li>
 <li>下載來的檔案解壓縮後，把其中的 xeCJK.sty 複製到以下位置，覆蓋掉現有的 ...</li></ol>
@@ -129,28 +130,29 @@
 
     on 2012-03-23
 
-        &nbsp;
-    <a href="./blog/2012/03/hg-git.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/git.html">Git</a>
+                <a href="./tag/mercurial-hg.html">Mercurial Hg</a>
+            
     
-    <p>
-    tags:     <a href="./tag/git.html">Git</a>
-        <a href="./tag/mercurial-hg.html">Mercurial Hg</a>
-    </p>
+            |
+        <a href="./blog/2012/03/hg-git.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>我最開始是用Git管理程式碼，一直到後來修課以及做碩論研究時才開始用Hg，現在Hg用得也算習慣了。</p>
 <p>在Windows環境下，我會指令和GUI搭配使用。</p>
 <p>現有的GUI套件我覺得TortoiseGit和TortoiseHg都很好操作。</p>
 <p>一直到最近比較常在Ubuntu上工作，發現TortoiseGit對Ubuntu支援不好，但我也不太想另外學習一套Git GUI工具，索性來把一些常在用的Git repository轉成Hg repository。</p>
-<p>於是找到了<a href="http://hg-git.github.com/">Hg-Git</a>這個Mercurial套件來進行轉換工作，以下筆記安裝步驟和使用方法。 </p>
+<p>於是找到了<a href="http://hg-git.github.com/">Hg-Git</a>這個Mercurial套件來進行轉換工作，以下筆記安裝步驟和使用方法。</p>
 <p>為了方便我選用easy_install安裝。</p>
 <p>首先要安裝easy_install。</p>
-<p>安裝前需確認一下現在機器上的Python版本。執行以下指令： </p>
+<p>安裝前需確認一下現在機器上的Python版本。執行以下指令：</p>
 <div class="codehilite"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 
 
 <p>便可得知我的機器上的Python版本是2.7。</p>
-<p>接著到Python的<a href="http://pypi.python.org/pypi/setuptools">setuptools</a>套件網頁找到對應的egg檔，下載並執行： </p>
+<p>接著到Python的<a href="http://pypi.python.org/pypi/setuptools">setuptools</a>套件網頁找到對應的egg檔，下載並執行：</p>
 <div class="codehilite"><pre><span class="n">wget</span> <span class="n">http</span><span class="o">:</span><span class="c1">//pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea</span>
 <span class="n">sudo</span> <span class="n">sh</span> <span class="n">setuptools</span><span class="o">-</span><span class="mf">0.6 ...</span></pre></div>
                             <p class="readmore">
@@ -183,27 +185,28 @@
 
     on 2012-03-23
 
-        &nbsp;
-    <a href="./blog/2012/03/ubuntu-11-04-systray-gcin-ico.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/ubuntu.html">Ubuntu</a>
+            
     
-    <p>
-    tags:     <a href="./tag/ubuntu.html">Ubuntu</a>
-    </p>
+            |
+        <a href="./blog/2012/03/ubuntu-11-04-systray-gcin-ico.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>昨晚很lag地將我的Ubuntu從10.10升級到11.04了。果然就像xatier說的，介面配置改好多，一時不太習慣。</p>
 <p>尤其gcin的圖示以往會出現在右上角的系統列，現在沒有了，變得難以判斷目前是在哪個輸入法。在有中文輸入需求的情況下很困擾。</p>
 <p>筆記一下找到的解法。</p>
-<p>首先執行： </p>
+<p>首先執行：</p>
 <div class="codehilite"><pre><span class="n">gsettings</span> <span class="n">get</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span>
 </pre></div>
 
 
-<p>可看到目前的systray-whitelist，預設大概會是長這樣： </p>
+<p>可看到目前的systray-whitelist，預設大概會是長這樣：</p>
 <div class="codehilite"><pre><span class="p">[</span><span class="err">&#39;</span><span class="n">JavaEmbeddedFrame</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Wine</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Skype</span><span class="err">&#39;</span><span class="p">]</span>
 </pre></div>
 
 
-<p>重設這個whitelist，加上gcin： </p>
+<p>重設這個whitelist，加上gcin：</p>
 <div class="codehilite"><pre><span class="n">gsettings</span> <span class="n">set</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span> <span class="s">&quot;[&#39;JavaEmbeddedFrame&#39;, &#39;Wine&#39;, &#39;Skype&#39;, &#39;gcin&#39;]&quot;</span>
 </pre></div>
 
@@ -239,20 +242,21 @@
 
     on 2012-03-23
 
-        &nbsp;
-    <a href="./blog/2012/03/lifestyle-to-be-cherished.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/nctu.html">NCTU</a>
+                <a href="./tag/nthu.html">NTHU</a>
+                <a href="./tag/olympus.html">Olympus</a>
+                <a href="./tag/olympus-xz-1.html">Olympus XZ-1</a>
+                <a href="./tag/xz-1.html">XZ-1</a>
+                <a href="./tag/xin-qing.html">心情</a>
+                <a href="./tag/xin-zhu.html">新竹</a>
+                <a href="./tag/zhao-pian.html">照片</a>
+                <a href="./tag/yan-jiu-suo.html">研究所</a>
+            
     
-    <p>
-    tags:     <a href="./tag/nctu.html">NCTU</a>
-        <a href="./tag/nthu.html">NTHU</a>
-        <a href="./tag/olympus.html">Olympus</a>
-        <a href="./tag/olympus-xz-1.html">Olympus XZ-1</a>
-        <a href="./tag/xz-1.html">XZ-1</a>
-        <a href="./tag/xin-qing.html">心情</a>
-        <a href="./tag/xin-zhu.html">新竹</a>
-        <a href="./tag/zhao-pian.html">照片</a>
-        <a href="./tag/yan-jiu-suo.html">研究所</a>
-    </p>
+            |
+        <a href="./blog/2012/03/lifestyle-to-be-cherished.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>午後坐在咖啡廳的窗邊，斜射的陽光透過輕薄的窗簾灑在手中的書頁上，另一隻手拿起香醇的咖啡啜飲……的這種浪漫畫面幾乎沒出現在我的學校生活裡。</p>
 <p>要舉出最貼近上面所描述的場景，那就是在這裡了：</p>
@@ -302,18 +306,19 @@
 
     on 2012-03-20
 
-        &nbsp;
-    <a href="./blog/2012/03/blog-post.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/nctu.html">NCTU</a>
+                <a href="./tag/olympus.html">Olympus</a>
+                <a href="./tag/olympus-xz-1.html">Olympus XZ-1</a>
+                <a href="./tag/xz-1.html">XZ-1</a>
+                <a href="./tag/xin-qing.html">心情</a>
+                <a href="./tag/xin-zhu.html">新竹</a>
+                <a href="./tag/zhao-pian.html">照片</a>
+            
     
-    <p>
-    tags:     <a href="./tag/nctu.html">NCTU</a>
-        <a href="./tag/olympus.html">Olympus</a>
-        <a href="./tag/olympus-xz-1.html">Olympus XZ-1</a>
-        <a href="./tag/xz-1.html">XZ-1</a>
-        <a href="./tag/xin-qing.html">心情</a>
-        <a href="./tag/xin-zhu.html">新竹</a>
-        <a href="./tag/zhao-pian.html">照片</a>
-    </p>
+            |
+        <a href="./blog/2012/03/blog-post.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>很多時候，雖然心裡知道對方是好意，卻仍覺得某些建議或是安慰的話語，最好對方一開始就不要說出口。</p>
 <p>若無法說到心坎，聽起來反而像是在激怒人的風涼話。</p>
@@ -354,18 +359,19 @@
 
     on 2012-03-13
 
-        &nbsp;
-    <a href="./blog/2012/03/fell-in-love-with-folkdance.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/canon.html">Canon</a>
+                <a href="./tag/canon-eos-500d.html">Canon EOS 500D</a>
+                <a href="./tag/eos-500d.html">EOS 500D</a>
+                <a href="./tag/nctu.html">NCTU</a>
+                <a href="./tag/tu-feng-wu.html">土風舞</a>
+                <a href="./tag/xin-qing.html">心情</a>
+                <a href="./tag/zhao-pian.html">照片</a>
+            
     
-    <p>
-    tags:     <a href="./tag/canon.html">Canon</a>
-        <a href="./tag/canon-eos-500d.html">Canon EOS 500D</a>
-        <a href="./tag/eos-500d.html">EOS 500D</a>
-        <a href="./tag/nctu.html">NCTU</a>
-        <a href="./tag/tu-feng-wu.html">土風舞</a>
-        <a href="./tag/xin-qing.html">心情</a>
-        <a href="./tag/zhao-pian.html">照片</a>
-    </p>
+            |
+        <a href="./blog/2012/03/fell-in-love-with-folkdance.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>或許是因為最後一年當學生了吧，最近突然能夠理解「去社團放鬆」是怎樣的樂趣了。</p>
 <p><a href="https://picasaweb.google.com/103268673393726667616/20101005#5524610352682435714"><img alt="" src="https://lh5.googleusercontent.com/-vzyH1-HX3zA/TKtb2FoVBII/AAAAAAABNP4/1aI-OMDd1vw/s500/IMG_1125.JPG" /></a></p>
@@ -414,27 +420,28 @@
 
     on 2012-03-10
 
-        &nbsp;
-    <a href="./blog/2012/03/git-log-commit-date-local-time-zone.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/git.html">Git</a>
+                <a href="./tag/linux.html">Linux</a>
+            
     
-    <p>
-    tags:     <a href="./tag/git.html">Git</a>
-        <a href="./tag/linux.html">Linux</a>
-    </p>
+            |
+        <a href="./blog/2012/03/git-log-commit-date-local-time-zone.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>在Linux執行<code>git log</code>指令時，看到的commit日期可能會是ISO 8601格式：</p>
 <p><code>Date: 2012-02-22 04:46:00 +0000</code></p>
 <p>以台灣時區而言，必須再加上8小時才是台灣時間。</p>
 <p>我心算很弱，實在不想算……Orz</p>
 <p>想使用台灣時區檢視Git的commit log，首先要<a href="http://jsliang.com/blog/2012/03/linux-time-zone.html">設定系統的當地時間</a>。</p>
-<p>之後下<code>git log</code>指令時，加上<code>--date=local</code>參數即可： </p>
+<p>之後下<code>git log</code>指令時，加上<code>--date=local</code>參數即可：</p>
 <div class="codehilite"><pre><span class="n">git</span> <span class="n">log</span> <span class="o">--</span><span class="n">date</span><span class="o">=</span><span class="n">local</span>
 </pre></div>
 
 
 <p>可看到日期格式變成：</p>
 <p><code>Date:   Wed Feb 22 12:46:00 2012</code></p>
-<p>不想每次都下參數的話，可以設定Git直接使用當地時區顯示commit log： </p>
+<p>不想每次都下參數的話，可以設定Git直接使用當地時區顯示commit log：</p>
 <div class="codehilite"><pre><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">log</span><span class="p">.</span><span class="n">date ...</span></pre></div>
                             <p class="readmore">
                                 <a class="btn btn-primary btn-small" href="./blog/2012/03/git-log-commit-date-local-time-zone.html">Read more...</a>
@@ -466,20 +473,21 @@
 
     on 2012-03-10
 
-        &nbsp;
-    <a href="./blog/2012/03/linux-time-zone.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/linux.html">Linux</a>
+            
     
-    <p>
-    tags:     <a href="./tag/linux.html">Linux</a>
-    </p>
+            |
+        <a href="./blog/2012/03/linux-time-zone.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>我的AWS是買美國的EC2 Instance，預設時區不是台灣的時區，管理上稍有不便。</p>
-<p>我心算很弱，如果每次檢視檔案的最後修改日期時還得換算，簡直會要了我的命。 以下為切換系統時區的指令，留個筆記。 執行 </p>
+<p>我心算很弱，如果每次檢視檔案的最後修改日期時還得換算，簡直會要了我的命。 以下為切換系統時區的指令，留個筆記。 執行</p>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">tzdata</span>
 </pre></div>
 
 
-<p>Geographic area選Asia，Time zone選Taipei，接著訊息列便會出現如下訊息供確認時區已更改成功： </p>
+<p>Geographic area選Asia，Time zone選Taipei，接著訊息列便會出現如下訊息供確認時區已更改成功：</p>
 <div class="codehilite"><pre><span class="n">Current</span> <span class="k">default</span> <span class="n">time</span> <span class="n">zone</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Asia</span><span class="o">/</span><span class="n">Taipei</span><span class="err">&#39;</span>
 <span class="n">Local</span> <span class="n">time</span> <span class="n">is</span> <span class="n">now</span><span class="o">:</span> <span class="n">Sat</span> <span class="n">Mar</span> <span class="mi">10</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">26</span> <span class="n">CST</span> <span class="mf">2012.</span>
 <span class="n">Universal</span> <span class="n">Time</span> <span class="n">is</span> <span class="n">now</span><span class="o">:</span> <span class="n">Sat</span> <span class="n">Mar</span> <span class="mi">10</span> <span class="mo">02</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">26</span> <span class="n">UTC</span> <span class="mf">2012.</span>
@@ -517,15 +525,16 @@
 
     on 2012-02-24
 
-        &nbsp;
-    <a href="./blog/2012/02/xz-1-lc-63a.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/olympus.html">Olympus</a>
+                <a href="./tag/olympus-xz-1.html">Olympus XZ-1</a>
+                <a href="./tag/xz-1.html">XZ-1</a>
+                <a href="./tag/she-ying.html">攝影</a>
+            
     
-    <p>
-    tags:     <a href="./tag/olympus.html">Olympus</a>
-        <a href="./tag/olympus-xz-1.html">Olympus XZ-1</a>
-        <a href="./tag/xz-1.html">XZ-1</a>
-        <a href="./tag/she-ying.html">攝影</a>
-    </p>
+            |
+        <a href="./blog/2012/02/xz-1-lc-63a.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>如果情人間有七年之癢的話，那我和我最近的幾台相機大概是一年之癢吧。 Canon 500D差不多在入手一年後售出，一年前買的Olympus XZ-1最近也很少拿出來使用。 就在幾乎要陷入與XZ-1的倦怠期之際，阿達送了我這個好物：<a href="http://www.olympus.co.uk/consumer/198_accessory_lc-63a_25167.htm">XZ-1原廠鏡頭蓋LC-63A</a>，令我重拾了對XZ-1的熱情！ BEFORE <img alt="" src="http://lh5.ggpht.com/_ME8C7LMeIC8/TUUdC2nUu7I/AAAAAAABSjg/6Qx13cyjUHM/s250/IMGP0982.JPG" /><img alt="" src="http://lh6.ggpht.com/_ME8C7LMeIC8/TUUdEo7SJaI/AAAAAAABSjg/R7pNVNZdUDA/s250/IMGP0983.JPG" /> AFTER <img alt="" src="https://lh3.googleusercontent.com/-9H7SlMr7YlI/TzuBIHaXfZI/AAAAAAAB3es/mNYZMPRifFU/s250/IMAG0167.jpg" /><img alt="" src="https://lh5.googleusercontent.com/-rtwDZhCrZjA/TzuBFu2XDWI/AAAAAAAB3ek/cViGxL2PE3I/s250/IMAG0166.jpg" /> 換上這個自動鏡頭蓋之後，在光線充足的情況下幾乎可以單手操作相機。 只是積習一時難改，我還是會忍不住頻頻用另一隻手確認鏡頭蓋是否有蓋上。 最近又開始喜歡拿XZ-1出來拍照了。 沒想到僅僅是省去了鏡頭安危的顧慮，在操作體驗上能夠帶來這麼大的差異啊～</p>
                             <p class="readmore">
@@ -558,16 +567,17 @@
 
     on 2012-02-22
 
-        &nbsp;
-    <a href="./blog/2012/02/wanna-cry.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/olympus.html">Olympus</a>
+                <a href="./tag/olympus-xz-1.html">Olympus XZ-1</a>
+                <a href="./tag/xz-1.html">XZ-1</a>
+                <a href="./tag/xin-qing.html">心情</a>
+                <a href="./tag/she-ying.html">攝影</a>
+            
     
-    <p>
-    tags:     <a href="./tag/olympus.html">Olympus</a>
-        <a href="./tag/olympus-xz-1.html">Olympus XZ-1</a>
-        <a href="./tag/xz-1.html">XZ-1</a>
-        <a href="./tag/xin-qing.html">心情</a>
-        <a href="./tag/she-ying.html">攝影</a>
-    </p>
+            |
+        <a href="./blog/2012/02/wanna-cry.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>最近或許因為死線效應，研究做起來很有幹勁，新知識也學得很開心。</p>
 <p>同時卻又很矛盾地感覺到有股鬱悶卡在胸口，不知道如何發洩。</p>

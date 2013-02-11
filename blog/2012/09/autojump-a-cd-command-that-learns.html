@@ -69,41 +69,42 @@
 
     on 2012-09-21
 
-        &nbsp;
-    <a href="../../../blog/2012/09/autojump-a-cd-command-that-learns.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="../../../tag/linux.html">Linux</a>
+                <a href="../../../tag/ubuntu.html">Ubuntu</a>
+                <a href="../../../tag/autojump.html">autojump</a>
+            
     
-    <p>
-    tags:     <a href="../../../tag/linux.html">Linux</a>
-        <a href="../../../tag/ubuntu.html">Ubuntu</a>
-        <a href="../../../tag/autojump.html">autojump</a>
-    </p>
+            |
+        <a href="../../../blog/2012/09/autojump-a-cd-command-that-learns.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->      <p>最早知道 autojump 是看到阿達公司在用。</p>
 <p>還記得某天看到小迪克和小白一邊盯著螢幕一邊情不自禁地讚嘆「X～這真是太強了！」，然後隔段時間看到小迪克在他的 blog 寫了<a href="http://nctusdk.blogspot.tw/2010/09/autojump-super-fast-directory-jump-in.html">介紹文</a>。</p>
 <p>好奇安裝後，沒想到我從此也從此一試成主顧，每次新灌一個 Linux 環境就一定要裝 autojump。</p>
-<p>兩年下來這工具幫我節省了很多回想目錄路徑的時間，加上最近工作接觸到的目錄大小比過去學生時代大太多，更加深刻地感受到有 autojump 真是太好了，決定自己再筆記一下。 </p>
+<p>兩年下來這工具幫我節省了很多回想目錄路徑的時間，加上最近工作接觸到的目錄大小比過去學生時代大太多，更加深刻地感受到有 autojump 真是太好了，決定自己再筆記一下。</p>
 <p>一般在 Unix-like 的環境中，切換目錄都是使用 <code>cd</code> 指令 (change directory)。</p>
 <p>使用 Unix-like 環境工作的人應該都知道每次執行 <code>cd</code> 都得背出一長串目錄有多困擾……</p>
 <p>若記得第一層的目錄的話，或許還可以一路按 Tab 鍵試下去。但萬一不幸只記得最底端那一層（更不幸的是大多數人都是遇到這情況），根本無從回想起，使用 <code>find</code> 指令又很花時間……</p>
 <p>有這種困擾的人，就需要 autojump！</p>
-<p>作者 joelthelion 對 autojump 下的註解正是「a cd command that learns」。有了 autojump，以後可以只打整個路徑的<strong>部份</strong>字串就好！ </p>
+<p>作者 joelthelion 對 autojump 下的註解正是「a cd command that learns」。有了 autojump，以後可以只打整個路徑的<strong>部份</strong>字串就好！</p>
 <p>以 wordpress 為例。與 wordpress 有關的目錄，可能分散在 <code>/usr/share/wordpress</code>、<code>/etc/wordpress</code>、<code>/var/www/wordpress</code>…等。安裝好後如果沒記下來，未來恐怕就只能在根目錄用 <code>find</code> 或是直接上網查找 wordpress 的文件，才知道檔案放哪兒去了。</p>
-<p>如果是自己寫的程式，又沒好好維護程式文件，事後連自己都忘記當初目錄結構怎麼規劃的時候，那就真是欲哭無淚啦～ 但如果你有安裝過 autojump，之後就不必再很辛苦地輸入 </p>
+<p>如果是自己寫的程式，又沒好好維護程式文件，事後連自己都忘記當初目錄結構怎麼規劃的時候，那就真是欲哭無淚啦～ 但如果你有安裝過 autojump，之後就不必再很辛苦地輸入</p>
 <div class="codehilite"><pre><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordpress</span>
 </pre></div>
 
 
-<p>這種完整的路徑，只要打： </p>
+<p>這種完整的路徑，只要打：</p>
 <div class="codehilite"><pre><span class="n">j</span> <span class="n">wordpress</span>
 </pre></div>
 
 
-<p>autojump 就會幫你 cd 到 /usr/share/wordpress 了！ 甚至 wordpress 沒拼完也可以： </p>
+<p>autojump 就會幫你 cd 到 /usr/share/wordpress 了！ 甚至 wordpress 沒拼完也可以：</p>
 <div class="codehilite"><pre><span class="n">j</span> <span class="n">word</span>
 </pre></div>
 
 
-<p>當然前提是你安裝 autojump 後有去過 <code>/usr/share/wordpress</code> 至少一次，不然它是不會有這筆紀錄的。 </p>
+<p>當然前提是你安裝 autojump 後有去過 <code>/usr/share/wordpress</code> 至少一次，不然它是不會有這筆紀錄的。</p>
 <h2>如果有重複的名稱怎麼辦？</h2>
 <p>就像前面說的，在設定 wordpress 的過程中，我可能 <code>/usr/share/wordpress</code>、<code>/etc/wordpress</code> 都去過，那麼執行 <code>j word</code> 時 autojump 會怎麼選擇呢？</p>
 <p>答案是「都會，但是以最常去的優先」。</p>
@@ -111,7 +112,7 @@
 <p>如果我此時緊接著再執行一次 <code>j word</code>，則 autojump 會再幫我跳到 <code>/etc/wordpress</code>。</p>
 <p>若再 <code>j word</code> 一次，又會跳回 <code>/usr/share/wordpress</code> 了。</p>
 <p>如果有三個以上比對符合 <code>word</code> 的路徑，就必須使用 Tab 查找，這後面會提到。</p>
-<p>上面描述聽起來很亂，但概念很簡單，執行起來的畫面大概是長這樣： </p>
+<p>上面描述聽起來很亂，但概念很簡單，執行起來的畫面大概是長這樣：</p>
 <div class="codehilite"><pre><span class="n">jenny</span><span class="err">@</span><span class="n">myhost</span><span class="o">:~</span><span class="err">$</span> <span class="n">j</span> <span class="n">word</span>
 <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordpress</span>
 <span class="n">jenny</span><span class="err">@</span><span class="n">myhost</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordpress</span><span class="err">$</span> <span class="n">j</span> <span class="n">word</span>
@@ -122,19 +123,19 @@
 </pre></div>
 
 
-<p>此外 autojump 也支援 Tab 查找。例如輸入 </p>
+<p>此外 autojump 也支援 Tab 查找。例如輸入</p>
 <div class="codehilite"><pre><span class="nx">j</span> <span class="nx">word</span><span class="o">&lt;</span><span class="nx">Tab</span><span class="o">&gt;</span>
 </pre></div>
 
 
-<p>則 autojump 會幫你列出目前符合的路徑清單： </p>
+<p>則 autojump 會幫你列出目前符合的路徑清單：</p>
 <div class="codehilite"><pre><span class="n">jenny</span><span class="err">@</span><span class="n">myhost</span><span class="o">:~</span><span class="err">$</span> <span class="n">j</span> <span class="n">word__</span>
 <span class="n">word__1__</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordpress</span><span class="err"> </span> <span class="n">word__2__</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">wordpress</span>
 </pre></div>
 
 
 <p>此份列表意思是「第 1 個符合的項目是 <code>/usr/share/wordpress</code>，第 2 個符合的項目是 <code>/etc/wordpress</code>」。</p>
-<p>如果想要直接跳到 <code>/etc/wordpress</code>，輸入 2 再按 Enter 即可： </p>
+<p>如果想要直接跳到 <code>/etc/wordpress</code>，輸入 2 再按 Enter 即可：</p>
 <div class="codehilite"><pre><span class="n">jenny</span><span class="err">@</span><span class="n">myhost</span><span class="o">:~</span><span class="err">$</span> <span class="n">j</span> <span class="n">word__</span>
 <span class="n">word__1__</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordpress</span><span class="err"> </span> <span class="n">word__2__</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">wordpress</span>
 <span class="n">jenny</span><span class="err">@</span><span class="n">myhost</span><span class="o">:~</span><span class="err">$</span> <span class="n">j</span> <span class="n">word__2</span>
@@ -143,7 +144,7 @@
 </pre></div>
 
 
-<p>最後，執行 <code>jumpstat</code> 可以看到 autojump 做的統計表，數字愈大的路徑表示去得愈多次。藉此回顧自己最常去哪個資料夾也頗有趣的。 </p>
+<p>最後，執行 <code>jumpstat</code> 可以看到 autojump 做的統計表，數字愈大的路徑表示去得愈多次。藉此回顧自己最常去哪個資料夾也頗有趣的。</p>
 <div class="codehilite"><pre><span class="n">jenny</span><span class="err">@</span><span class="n">myhost</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordpress</span><span class="err">$</span> <span class="n">jumpstat</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">wordpress</span>
 <span class="mf">0.1</span><span class="o">:</span>    <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="n">wp</span><span class="o">-</span><span class="n">includes</span>
 <span class="mf">4.9</span><span class="o">:</span>    <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">wordpress</span>

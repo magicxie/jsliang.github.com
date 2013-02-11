@@ -69,19 +69,20 @@
 
     on 2012-02-03
 
-        &nbsp;
-    <a href="../../../blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="../../../tag/mercurial-hg.html">Mercurial Hg</a>
+                <a href="../../../tag/tortoisehg.html">TortoiseHg</a>
+                <a href="../../../tag/ubuntu.html">Ubuntu</a>
+            
     
-    <p>
-    tags:     <a href="../../../tag/mercurial-hg.html">Mercurial Hg</a>
-        <a href="../../../tag/tortoisehg.html">TortoiseHg</a>
-        <a href="../../../tag/ubuntu.html">Ubuntu</a>
-    </p>
+            |
+        <a href="../../../blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->      <p>Windows上要安裝最新版本的Mercurial和TortoiseHg很簡單，直接去官網下載安裝程式就好了。</p>
 <p>Mercurial官網：<a href="http://mercurial.selenic.com/">http://mercurial.selenic.com/</a></p>
 <p>TortoiseHg官網：<a href="http://tortoisehg.bitbucket.org/">http://tortoisehg.bitbucket.org/</a> </p>
-<p>至於Ubuntu上，若直接下<code>apt-get</code>指令，往往是裝到比較舊的版本，針對安裝最新版本的步驟，在這邊留個紀錄，方便自己日後參考。 </p>
+<p>至於Ubuntu上，若直接下<code>apt-get</code>指令，往往是裝到比較舊的版本，針對安裝最新版本的步驟，在這邊留個紀錄，方便自己日後參考。</p>
 <h1>Mercurial</h1>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">keyserver</span><span class="p">.</span><span class="n">ubuntu</span><span class="p">.</span><span class="n">com</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">key</span> <span class="mi">323293</span><span class="n">EE</span>
 <span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">mercurial</span><span class="o">-</span><span class="n">ppa</span><span class="o">/</span><span class="n">releases</span>
@@ -90,7 +91,7 @@
 </pre></div>
 
 
-<p>安裝完畢後即可使用hg指令。 </p>
+<p>安裝完畢後即可使用hg指令。</p>
 <h1>TortoiseHg</h1>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">keyserver</span><span class="p">.</span><span class="n">ubuntu</span><span class="p">.</span><span class="n">com</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">key</span> <span class="n">D5056DDE</span>
 <span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">tortoisehg</span><span class="o">-</span><span class="n">ppa</span><span class="o">/</span><span class="n">releases</span>

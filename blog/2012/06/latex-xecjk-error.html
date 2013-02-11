@@ -69,15 +69,16 @@
 
     on 2012-06-25
 
-        &nbsp;
-    <a href="../../../blog/2012/06/latex-xecjk-error.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="../../../tag/latex.html">LaTeX</a>
+            
     
-    <p>
-    tags:     <a href="../../../tag/latex.html">LaTeX</a>
-    </p>
+            |
+        <a href="../../../blog/2012/06/latex-xecjk-error.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->      <p>我的論文是用 LaTeX 寫的，由於內容要包含中文摘要，所以必須支援中文輸出。</p>
-<p>以往以下的寫法使用 XeLaTeX 都可以正常編譯過： </p>
+<p>以往以下的寫法使用 XeLaTeX 都可以正常編譯過：</p>
 <div class="codehilite"><pre><span class="n">usepackage</span><span class="p">{</span><span class="n">xeCJK</span><span class="p">}</span>
 <span class="n">setCJKmainfont</span><span class="p">{</span><span class="err">標楷體</span><span class="p">}</span>
 <span class="n">begin</span><span class="p">{</span><span class="n">document</span><span class="p">}</span>
@@ -88,7 +89,7 @@
 
 <p>但更新 2012-05-29 版本的 xecjk 後就不行了，會出現「Missing begin{document}」的錯誤訊息。</p>
 <p>搜尋網路上一番後，發現最快的解法就是裝回舊版 xeCJK。</p>
-<p>以下筆記我最後的解法：（Windows 7 + MiKTeX 2.9） </p>
+<p>以下筆記我最後的解法：（Windows 7 + MiKTeX 2.9）</p>
 <ol>
 <li>上 <a href="https://code.google.com/p/ctex-kit/">CTeXKit 官網</a> 下載舊版的 <a href="https://code.google.com/p/ctex-kit/downloads/detail?name=xeCJK-2.4.6-r306.zip&amp;can=2&amp;q=">xeCJK 2.4.6-r306</a></li>
 <li>下載來的檔案解壓縮後，把其中的 xeCJK.sty 複製到以下位置，覆蓋掉現有的 xeCJK.sty：<ul>

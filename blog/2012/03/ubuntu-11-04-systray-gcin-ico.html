@@ -69,27 +69,28 @@
 
     on 2012-03-23
 
-        &nbsp;
-    <a href="../../../blog/2012/03/ubuntu-11-04-systray-gcin-ico.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="../../../tag/ubuntu.html">Ubuntu</a>
+            
     
-    <p>
-    tags:     <a href="../../../tag/ubuntu.html">Ubuntu</a>
-    </p>
+            |
+        <a href="../../../blog/2012/03/ubuntu-11-04-systray-gcin-ico.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->      <p>昨晚很lag地將我的Ubuntu從10.10升級到11.04了。果然就像xatier說的，介面配置改好多，一時不太習慣。</p>
 <p>尤其gcin的圖示以往會出現在右上角的系統列，現在沒有了，變得難以判斷目前是在哪個輸入法。在有中文輸入需求的情況下很困擾。</p>
 <p>筆記一下找到的解法。</p>
-<p>首先執行： </p>
+<p>首先執行：</p>
 <div class="codehilite"><pre><span class="n">gsettings</span> <span class="n">get</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span>
 </pre></div>
 
 
-<p>可看到目前的systray-whitelist，預設大概會是長這樣： </p>
+<p>可看到目前的systray-whitelist，預設大概會是長這樣：</p>
 <div class="codehilite"><pre><span class="p">[</span><span class="err">&#39;</span><span class="n">JavaEmbeddedFrame</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Wine</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Skype</span><span class="err">&#39;</span><span class="p">]</span>
 </pre></div>
 
 
-<p>重設這個whitelist，加上gcin： </p>
+<p>重設這個whitelist，加上gcin：</p>
 <div class="codehilite"><pre><span class="n">gsettings</span> <span class="n">set</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span> <span class="s">&quot;[&#39;JavaEmbeddedFrame&#39;, &#39;Wine&#39;, &#39;Skype&#39;, &#39;gcin&#39;]&quot;</span>
 </pre></div>
 

@@ -69,37 +69,38 @@
 
     on 2010-12-03
 
-        &nbsp;
-    <a href="../../../blog/2010/12/ubuntu-adding-an-administrator-sudoer-user.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="../../../tag/aws.html">AWS</a>
+                <a href="../../../tag/ec2.html">EC2</a>
+                <a href="../../../tag/english.html">English</a>
+                <a href="../../../tag/ubuntu.html">Ubuntu</a>
+            
     
-    <p>
-    tags:     <a href="../../../tag/aws.html">AWS</a>
-        <a href="../../../tag/ec2.html">EC2</a>
-        <a href="../../../tag/english.html">English</a>
-        <a href="../../../tag/ubuntu.html">Ubuntu</a>
-    </p>
+            |
+        <a href="../../../blog/2010/12/ubuntu-adding-an-administrator-sudoer-user.html#disqus_thread">comments</a>
+    
         
-</footer><!-- /.post-info -->      <p>I started using <a href="http://aws.amazon.com/ec2/">AWS EC2</a> this week and launched an <a href="http://www.ubuntu.com/">Ubuntu</a> 10.04 server. AWS EC2 provides user with a private key to login to the server. I prefer password login, however, so I added another user with administrator &amp; sudoer priviledges. Below is my note about how to do this in Ubuntu using commands.  Add a user <code>jenny</code> with <code>adduser</code>: </p>
+</footer><!-- /.post-info -->      <p>I started using <a href="http://aws.amazon.com/ec2/">AWS EC2</a> this week and launched an <a href="http://www.ubuntu.com/">Ubuntu</a> 10.04 server. AWS EC2 provides user with a private key to login to the server. I prefer password login, however, so I added another user with administrator &amp; sudoer priviledges. Below is my note about how to do this in Ubuntu using commands.  Add a user <code>jenny</code> with <code>adduser</code>:</p>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">adduser</span> <span class="n">jenny</span>
 </pre></div>
 
 
-<p>Change <code>jenny</code>'s password with <code>passwd</code>: </p>
+<p>Change <code>jenny</code>'s password with <code>passwd</code>:</p>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">passwd</span> <span class="n">jenny</span>
 </pre></div>
 
 
-<p>Add <code>jenny</code> to <code>admin</code> group to make <code>jenny</code> an administrator: </p>
+<p>Add <code>jenny</code> to <code>admin</code> group to make <code>jenny</code> an administrator:</p>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">adduser</span> <span class="n">jenny</span> <span class="n">admin</span>
 </pre></div>
 
 
-<p>Modify <code>/etc/sudoers</code> to make <code>jenny</code> a sudoer: </p>
+<p>Modify <code>/etc/sudoers</code> to make <code>jenny</code> a sudoer:</p>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sudoers</span>
 </pre></div>
 
 
-<p>Add this line at the end of <code>/etc/sudoers</code>: </p>
+<p>Add this line at the end of <code>/etc/sudoers</code>:</p>
 <div class="codehilite"><pre><span class="n">jenny</span>  <span class="n">ALL</span><span class="o">=</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span> <span class="n">NOPASSWD</span><span class="o">:</span><span class="n">ALL</span>
 </pre></div>
 

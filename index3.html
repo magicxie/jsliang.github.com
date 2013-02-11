@@ -76,22 +76,23 @@
 
     on 2012-02-17
 
-        &nbsp;
-    <a href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/git.html">Git</a>
+                <a href="./tag/mercurial-hg.html">Mercurial Hg</a>
+            
     
-    <p>
-    tags:     <a href="./tag/git.html">Git</a>
-        <a href="./tag/mercurial-hg.html">Mercurial Hg</a>
-    </p>
+            |
+        <a href="./blog/2012/02/mercurial-hg-named-branch-bookmark.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>同時用Mercurial和Git，在branch的使用上感到很錯亂，昨天研究了一下，今天在此做個小小的筆記。</p>
-<p>如果有理解錯誤之處，也麻煩朋友們協助指正，感激不盡。 </p>
-<p>Mercurial的named branch的指令操作和Git差不多，但差別在於： </p>
+<p>如果有理解錯誤之處，也麻煩朋友們協助指正，感激不盡。</p>
+<p>Mercurial的named branch的指令操作和Git差不多，但差別在於：</p>
 <ul>
 <li>Mercurial的branch資訊是存在每個commit資料裡，並且預設無法修改</li>
 <li>Git的branch資訊與commit資料是分開的，branch比較像是一種特殊的tag</li>
 </ul>
-<p>以下面的範例為例： </p>
+<p>以下面的範例為例：</p>
 <div class="codehilite"><pre><span class="cp"># 產生一個新的hg repository，命名為hg_namedbranches</span>
 <span class="n">mkdir</span> <span class="n">hg_namedbranches</span>
 <span class="n">cd</span> <span class="n">hg_namedbranches</span>
@@ -137,12 +138,13 @@
 
     on 2012-02-09
 
-        &nbsp;
-    <a href="./blog/2012/02/getting-more-four-quadrant-negotiation-model.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/yue-du.html">閱讀</a>
+            
     
-    <p>
-    tags:     <a href="./tag/yue-du.html">閱讀</a>
-    </p>
+            |
+        <a href="./blog/2012/02/getting-more-four-quadrant-negotiation-model.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p><a href="http://www.anobii.com/books/華頓商學院最受歡迎的談判課/9789861341767/012ee623d71e7d7e11/"><img alt="More about 華頓商學院最受歡迎的談判課" src="http://image.anobii.com/anobi/image_book.php?type=5&amp;item_id=012ee623d71e7d7e11&amp;time=1316179179" /></a></p>
 <p>最近在看「華頓商學院最受歡迎的談判課 (Getting More: How to Negotiate to Achieve Your Goals in the Real World)」這本書，覺得裡面很多觀念很棒。</p>
@@ -183,19 +185,20 @@
 
     on 2012-02-03
 
-        &nbsp;
-    <a href="./blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/mercurial-hg.html">Mercurial Hg</a>
+                <a href="./tag/tortoisehg.html">TortoiseHg</a>
+                <a href="./tag/ubuntu.html">Ubuntu</a>
+            
     
-    <p>
-    tags:     <a href="./tag/mercurial-hg.html">Mercurial Hg</a>
-        <a href="./tag/tortoisehg.html">TortoiseHg</a>
-        <a href="./tag/ubuntu.html">Ubuntu</a>
-    </p>
+            |
+        <a href="./blog/2012/02/installing-mercurial-and-tortoisehg-on-ubuntu-10-04.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>Windows上要安裝最新版本的Mercurial和TortoiseHg很簡單，直接去官網下載安裝程式就好了。</p>
 <p>Mercurial官網：<a href="http://mercurial.selenic.com/">http://mercurial.selenic.com/</a></p>
 <p>TortoiseHg官網：<a href="http://tortoisehg.bitbucket.org/">http://tortoisehg.bitbucket.org/</a> </p>
-<p>至於Ubuntu上，若直接下<code>apt-get</code>指令，往往是裝到比較舊的版本，針對安裝最新版本的步驟，在這邊留個紀錄，方便自己日後參考。 </p>
+<p>至於Ubuntu上，若直接下<code>apt-get</code>指令，往往是裝到比較舊的版本，針對安裝最新版本的步驟，在這邊留個紀錄，方便自己日後參考。</p>
 <h1>Mercurial</h1>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">keyserver</span><span class="p">.</span><span class="n">ubuntu</span><span class="p">.</span><span class="n">com</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">key</span> <span class="mi">323293</span><span class="n">EE</span>
 <span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">mercurial</span><span class="o">-</span><span class="n">ppa</span><span class="o">/</span><span class="n">releases</span>
@@ -231,14 +234,15 @@
 
     on 2012-02-02
 
-        &nbsp;
-    <a href="./blog/2012/02/utada-hikaru-goodbye-happiness.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/ri-ben-yu.html">日本語</a>
+                <a href="./tag/ge-ci.html">歌詞</a>
+                <a href="./tag/yin-le.html">音樂</a>
+            
     
-    <p>
-    tags:     <a href="./tag/ri-ben-yu.html">日本語</a>
-        <a href="./tag/ge-ci.html">歌詞</a>
-        <a href="./tag/yin-le.html">音樂</a>
-    </p>
+            |
+        <a href="./blog/2012/02/utada-hikaru-goodbye-happiness.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <iframe width="560" height="315" src="http://www.youtube.com/embed/sFkvLN9pt-k" frameborder="0" allowfullscreen></iframe>
 
@@ -253,12 +257,13 @@
 <p>以下照慣例是我個人的歌詞中譯練習，有錯煩請糾正我。Orz</p>
 <p>至於官方中譯歌詞及MV的相關介紹，建議可以參考這篇文章：</p>
 <p><a href="http://justgemini.pixnet.net/blog/post/27561460">わたし物語 : [中日歌詞] Goodbye Happiness 宇多田光</a></p>
-<h1>Goodbye Happiness</h1>
-<p>詞曲：宇多田ヒカル 歌詞中譯：jsliang </p>
+<h2>宇多田ヒカル - Goodbye Happiness</h2>
+<p>詞曲：宇多田ヒカル</p>
+<p>歌詞中譯：jsliang</p>
 <blockquote>
 <p>甘いお菓子　消えた後には</p>
 <p>さびしそうな男の子</p>
-<p>雲ひとつない　Summer day </p>
+<p>雲ひとつない　Summer day</p>
 <blockquote>
 <p>在甜食消失之後</p>
 <p>顯得很寂寞的男孩</p>
@@ -266,13 +271,13 @@
 </blockquote>
 <p>日に焼けた手足</p>
 <p>白いワンピースが　汚れようがお構いなし</p>
-<p>無意識の楽園 </p>
+<p>無意識の楽園</p>
 <blockquote>
 <p>四肢被陽光曬傷</p>
 <p>白色連身洋裝弄髒了也無所謂</p>
 <p>什麼都不必介意的樂園</p>
 </blockquote>
-<p>夢の終わりに　待ったは無し ...</p></blockquote>
+<p>夢の終わりに ...</p></blockquote>
                             <p class="readmore">
                                 <a class="btn btn-primary btn-small" href="./blog/2012/02/utada-hikaru-goodbye-happiness.html">Read more...</a>
                             </p>
@@ -303,12 +308,13 @@
 
     on 2011-12-19
 
-        &nbsp;
-    <a href="./blog/2011/12/in-time-with-you-episode-5-discussion.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/xi-ju.html">戲劇</a>
+            
     
-    <p>
-    tags:     <a href="./tag/xi-ju.html">戲劇</a>
-    </p>
+            |
+        <a href="./blog/2011/12/in-time-with-you-episode-5-discussion.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>為了跟上潮流，開始看最近被熱烈討論的偶像劇「<a href="http://www.gtv.com.tw/Program/S051420110924U/">我可能不會愛你</a>」。</p>
 <p>目前看到第五集，接下來的文章會提及劇情，並且有負面評論，往下閱讀前請留意。</p>
@@ -353,17 +359,18 @@
 
     on 2011-12-14
 
-        &nbsp;
-    <a href="./blog/2011/12/rico-shubra.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/ge-ci.html">歌詞</a>
+                <a href="./tag/du-pi-wu.html">肚皮舞</a>
+                <a href="./tag/a-la-bo-wen.html">阿拉伯文</a>
+                <a href="./tag/yin-le.html">音樂</a>
+            
     
-    <p>
-    tags:     <a href="./tag/ge-ci.html">歌詞</a>
-        <a href="./tag/du-pi-wu.html">肚皮舞</a>
-        <a href="./tag/a-la-bo-wen.html">阿拉伯文</a>
-        <a href="./tag/yin-le.html">音樂</a>
-    </p>
+            |
+        <a href="./blog/2011/12/rico-shubra.html#disqus_thread">comments</a>
+    
         
-</footer><!-- /.post-info -->                            <iframe width="560" height="315" src="http://www.youtube.com/embed/1jpnDzsDLdI" frameborder="0" allowfullscreen></iframe>
+</footer><!-- /.post-info -->                            <iframe width="560" height="315" src="http://www.youtube.com/embed/1jpnDzsDLdI" frameborder="0" allowfullscreen> </iframe>
 
 <p>這學期開始在學校的教職員社團學肚皮舞，「修伯拉」是我們學的舞的曲目名稱。</p>
 <p>好不容易問到歌名，但僅用「修伯拉」搜尋，還是找不太到這首歌的背景資料。</p>
@@ -372,12 +379,12 @@
 <p>後來在一個論壇找到這首歌歌詞的英譯。</p>
 <p>歌詞大意看來是一群男子遊歷埃及各大城市，用俏皮的語調描述整個遊記以及對各城市男女特色的觀察。</p>
 <p>……坦白說和我想像的差好多啊，我以為會是個活潑可愛的小女孩的愛情故事之類的。XDDD</p>
-<p>以下為我找到的英譯歌詞，來源<a href="http://tribes.tribe.net/bellydancetranslations/thread/77619c8b-b17d-48f7-8217-5f8048cebd04">在此</a>。 </p>
+<p>以下為我找到的英譯歌詞，來源<a href="http://tribes.tribe.net/bellydancetranslations/thread/77619c8b-b17d-48f7-8217-5f8048cebd04">在此</a>。</p>
+<h2>Rico - Shubra / ريكو - شبرا</h2>
 <blockquote>
 <p>Shobrah,/ ua banát shobra / sabtéia uel hedêia</p>
 <blockquote>
-<p><strong>Shobra and the girls from there, Sabteia, what a gift we have</strong>
-Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
+<p><strong>Shobra and the girls from there, Sabteia, what a gift we have ...</strong></p></blockquote></blockquote>
                             <p class="readmore">
                                 <a class="btn btn-primary btn-small" href="./blog/2011/12/rico-shubra.html">Read more...</a>
                             </p>
@@ -408,35 +415,37 @@ Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
 
     on 2011-11-06
 
-        &nbsp;
-    <a href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/tu-feng-wu.html">土風舞</a>
+                <a href="./tag/ri-ben-yu.html">日本語</a>
+                <a href="./tag/ge-ci.html">歌詞</a>
+                <a href="./tag/yin-le.html">音樂</a>
+            
     
-    <p>
-    tags:     <a href="./tag/tu-feng-wu.html">土風舞</a>
-        <a href="./tag/ri-ben-yu.html">日本語</a>
-        <a href="./tag/ge-ci.html">歌詞</a>
-        <a href="./tag/yin-le.html">音樂</a>
-    </p>
+            |
+        <a href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>對跳舞的熱情冷卻了一段不短的時間，最近有點回溫的趨勢……:P</p>
 <p>這學期首次參加肚皮舞課，跳得很開心。</p>
 <p>週二晚上虹韻社課小乖教的下面這支出自涼宮春日的「最強PARA」我也學得好歡樂啊～^o^</p>
 <iframe width="560" height="315" src="http://www.youtube.com/embed/cApMH6K8uB8" frameborder="0" allowfullscreen></iframe>
 
-<p>這首歌之前聽過很多次，但最近特別覺得它的旋律和歌詞很鼓舞人心，每次聽完都感到好雀躍。:D 附上原文歌詞： </p>
+<p>這首歌之前聽過很多次，但最近特別覺得它的旋律和歌詞很鼓舞人心，每次聽完都感到好雀躍。:D 附上原文歌詞：</p>
+<h2>涼宮ハルヒの憂鬱 - 最強パレパレード</h2>
+<p>(jsliang不負責任試譯歌詞)</p>
 <blockquote>
-<p><strong>最強パレパレード</strong> (jsliang不負責任試譯歌詞)</p>
 <p>いまや最強・パレパレード</p>
 <p>つまり最高・ハピハッピー</p>
 <p>みんな前進・パレパレード</p>
-<p>つまり行進・ハピハッピー </p>
+<p>つまり行進・ハピハッピー</p>
 <blockquote>
 <p>現在是最強的　PARA遊行</p>
 <p>也就是最大的　開心　開心</p>
 <p>大家前進　PARA遊行</p>
 <p>也就是邁步　開心　開心</p>
 </blockquote>
-<p>未来？宇宙？当然よっ </p>
+<p>未来？宇宙？当然よっ</p>
 <blockquote>
 <p>未來？宇宙？當然囉</p>
 </blockquote>
@@ -444,10 +453,10 @@ Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
 <p>私たちが集まる必然性　台無しね</p>
 <p>誰もかれも気付かない</p>
 <p>不思議&amp;秘密集めたら</p>
-<p>異次元さえ公園なのよ </p>
+<p>異次元さえ公園なのよ</p>
 <blockquote>
 <p>如果一切都這麼普通</p>
-<p>那麼我們聚集在一起的必要　就沒了吧 ...</p></blockquote></blockquote>
+<p>那麼我們聚集在一起的必要 ...</p></blockquote></blockquote>
                             <p class="readmore">
                                 <a class="btn btn-primary btn-small" href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html">Read more...</a>
                             </p>
@@ -478,12 +487,13 @@ Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
 
     on 2011-10-19
 
-        &nbsp;
-    <a href="./blog/2011/10/mgo-v-s-coding.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/xin-qing.html">心情</a>
+            
     
-    <p>
-    tags:     <a href="./tag/xin-qing.html">心情</a>
-    </p>
+            |
+        <a href="./blog/2011/10/mgo-v-s-coding.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p><img alt="" src="https://lh5.googleusercontent.com/-3_Qtrb_wTZA/Tp526Mpuc0I/AAAAAAAB1WM/c0pfaSbeDlc/s400/PA197661.JPG" /></p>
 <p>這次醫生開給我的藥，藥名難得地簡短：MgO，氧化鎂。</p>
@@ -528,13 +538,14 @@ Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
 
     on 2011-10-17
 
-        &nbsp;
-    <a href="./blog/2011/10/diary.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/wen-ju.html">文具</a>
+                <a href="./tag/gou-wu.html">購物</a>
+            
     
-    <p>
-    tags:     <a href="./tag/wen-ju.html">文具</a>
-        <a href="./tag/gou-wu.html">購物</a>
-    </p>
+            |
+        <a href="./blog/2011/10/diary.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p>三年多前就曾經被日本的<a href="http://www.1101.com/store/techo/">ほぼ日手帳</a>（又稱1101）燒到，但一本要價一千多元台幣，再加上那時不敢確定自己是不是真的能堅持每天書寫，所以遲遲不敢入坑。</p>
 <p>一直到這兩年台灣設計精美的國產手帳如雨後春筍冒出，而價錢比版面設計類似的日本產品低廉不少（尤其最近日幣一直漲……&gt;"&lt;）。去年年底購入了2011年度<a href="http://flowerthief.selfip.com/Work.action">歲時紀</a>的一日一頁版，到目前為止十個半月下來的確有持續每天撰寫（連我自己都感到不可思議，生平第一次這麼有恆心啊）。因此明年度我有了再買一次一日一頁手帳的勇氣，並且仍然選擇歲時紀。（為了能夠容納我更多的碎碎念，還買了較大的B6尺寸XD）</p>
@@ -574,18 +585,19 @@ Rraseb ya am/, RRaseb ...</p></blockquote></blockquote>
 
     on 2011-09-30
 
-        &nbsp;
-    <a href="./blog/2011/09/bad-experiences.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="./tag/gong-zuo.html">工作</a>
+                <a href="./tag/xin-qing.html">心情</a>
+            
     
-    <p>
-    tags:     <a href="./tag/gong-zuo.html">工作</a>
-        <a href="./tag/xin-qing.html">心情</a>
-    </p>
+            |
+        <a href="./blog/2011/09/bad-experiences.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->                            <p><img alt="" src="https://lh5.googleusercontent.com/-IB1No8gPd20/TWdtyb-U3SI/AAAAAAABUfo/eKb11QKz0wM/s400/P2250786.JPG" /></p>
 <p>寫這些被推銷的不悅經驗，並不是單純要抱怨，更不是為了表達對傳教或直銷的敵意。</p>
 <p>相反的，正因為我不排除自己以後有去傳教或是做直銷的可能，所以認為應該好好把這些心情記錄下來。</p>
-<p>寫這篇文章是為了避免我哪天換了位子就換顆腦袋，變成自己曾經討厭的那種人。 </p>
+<p>寫這篇文章是為了避免我哪天換了位子就換顆腦袋，變成自己曾經討厭的那種人。</p>
 <p>被傳教對我而言是第一個印象深刻的經驗。</p>
 <p>這並不是因為我之前從沒接觸過基督教、感覺很陌生，我也沒有被邪教拐騙到什麼奇怪的地方差點逃不走……</p>
 <p>相反地，正因為從小我唯一接觸過的信仰就是基督教、理解他們為何要傳福音，也因為我確定要去的場所很安全，所以當下以為對於參加聚會我已經心理準備好了。</p>

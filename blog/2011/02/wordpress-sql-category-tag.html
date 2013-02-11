@@ -69,13 +69,14 @@
 
     on 2011-02-02
 
-        &nbsp;
-    <a href="../../../blog/2011/02/wordpress-sql-category-tag.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="../../../tag/sql.html">SQL</a>
+                <a href="../../../tag/wordpress.html">WordPress</a>
+            
     
-    <p>
-    tags:     <a href="../../../tag/sql.html">SQL</a>
-        <a href="../../../tag/wordpress.html">WordPress</a>
-    </p>
+            |
+        <a href="../../../blog/2011/02/wordpress-sql-category-tag.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->      <p>我知道文章標題看起來很讓人困惑，但我國文不好，這功能我實在不知道要怎麼用文字描述得更清楚了……</p>
 <p>以我的需求為例。我的文章常常放照片，而我習慣在文章標記拍攝用相機的型號。</p>
@@ -88,11 +89,11 @@
 <p>當然使用WP的管理介面也可以做到這樣的事，但我操作起來卻不太順。</p>
 <p>不知道為什麼，我每次用WP管理介面的批次文章管理功能，處理速度總是很慢，還常常傳回錯誤訊息，非常考驗我的耐性……我尚未弄清楚到底是我的機器的問題，還是WP管理介面的程式的問題。</p>
 <p>以下的做法，必須是自己架設WordPress程式，並且可以連到WP的MySQL資料庫下SQL語法才有用。</p>
-<p>我想做的事情：把每篇有「<a href="../tag/xz-1/">XZ-1</a>」tag的文章都再新增一個「<a href="../tag/olympus-xz-1/">Olympus XZ-1</a>」的tag。 </p>
+<p>我想做的事情：把每篇有「<a href="../tag/xz-1/">XZ-1</a>」tag的文章都再新增一個「<a href="../tag/olympus-xz-1/">Olympus XZ-1</a>」的tag。</p>
 <ol>
 <li>確定category/tag的名稱。 如果是之前沒用過的，到 WP管理介面 &gt; Posts &gt; Categories / Post Tags 新增你想加的category或tag，並記住你所使用的名稱。 以我的例子，就是在Post Tags新增一個名稱為「Olympus XZ-1」的tag，我要記住的名稱就是「Olympus XZ-1」。</li>
 <li>
-<p>登入WP的MySQL資料庫，執行以下SQL語法： </p>
+<p>登入WP的MySQL資料庫，執行以下SQL語法：</p>
 <p>INSERT INTO <code>wp_term_relationships</code>
 SELECT A.object_id, NEW.term_id AS term_taxonomy_id, A.term_order
 FROM <code>wp_term_relationships</code> AS A, <code>wp_terms</code> AS REF, <code>wp_terms</code> AS NEW

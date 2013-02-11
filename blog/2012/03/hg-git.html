@@ -69,28 +69,29 @@
 
     on 2012-03-23
 
-        &nbsp;
-    <a href="../../../blog/2012/03/hg-git.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="../../../tag/git.html">Git</a>
+                <a href="../../../tag/mercurial-hg.html">Mercurial Hg</a>
+            
     
-    <p>
-    tags:     <a href="../../../tag/git.html">Git</a>
-        <a href="../../../tag/mercurial-hg.html">Mercurial Hg</a>
-    </p>
+            |
+        <a href="../../../blog/2012/03/hg-git.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->      <p>我最開始是用Git管理程式碼，一直到後來修課以及做碩論研究時才開始用Hg，現在Hg用得也算習慣了。</p>
 <p>在Windows環境下，我會指令和GUI搭配使用。</p>
 <p>現有的GUI套件我覺得TortoiseGit和TortoiseHg都很好操作。</p>
 <p>一直到最近比較常在Ubuntu上工作，發現TortoiseGit對Ubuntu支援不好，但我也不太想另外學習一套Git GUI工具，索性來把一些常在用的Git repository轉成Hg repository。</p>
-<p>於是找到了<a href="http://hg-git.github.com/">Hg-Git</a>這個Mercurial套件來進行轉換工作，以下筆記安裝步驟和使用方法。 </p>
+<p>於是找到了<a href="http://hg-git.github.com/">Hg-Git</a>這個Mercurial套件來進行轉換工作，以下筆記安裝步驟和使用方法。</p>
 <p>為了方便我選用easy_install安裝。</p>
 <p>首先要安裝easy_install。</p>
-<p>安裝前需確認一下現在機器上的Python版本。執行以下指令： </p>
+<p>安裝前需確認一下現在機器上的Python版本。執行以下指令：</p>
 <div class="codehilite"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 
 
 <p>便可得知我的機器上的Python版本是2.7。</p>
-<p>接著到Python的<a href="http://pypi.python.org/pypi/setuptools">setuptools</a>套件網頁找到對應的egg檔，下載並執行： </p>
+<p>接著到Python的<a href="http://pypi.python.org/pypi/setuptools">setuptools</a>套件網頁找到對應的egg檔，下載並執行：</p>
 <div class="codehilite"><pre><span class="n">wget</span> <span class="n">http</span><span class="o">:</span><span class="c1">//pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea</span>
 <span class="n">sudo</span> <span class="n">sh</span> <span class="n">setuptools</span><span class="o">-</span><span class="mf">0.6</span><span class="n">c11</span><span class="o">-</span><span class="n">py2</span><span class="mf">.7</span><span class="p">.</span><span class="n">egg</span>
 <span class="n">rm</span> <span class="n">setuptools</span><span class="o">-</span><span class="mf">0.6</span><span class="n">c11</span><span class="o">-</span><span class="n">py2</span><span class="mf">.7</span><span class="p">.</span><span class="n">egg</span>
@@ -98,39 +99,39 @@
 
 
 <p>如此便安裝完easy_install了。</p>
-<p>此外，安裝Hg-Git需要C編譯器以及Python.h： </p>
+<p>此外，安裝Hg-Git需要C編譯器以及Python.h：</p>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span>
 </pre></div>
 
 
-<p>前面步驟都完成後，便可用easy_install安裝Hg-Git： </p>
+<p>前面步驟都完成後，便可用easy_install安裝Hg-Git：</p>
 <div class="codehilite"><pre><span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">hg</span><span class="o">-</span><span class="n">git</span>
 </pre></div>
 
 
-<p>安裝後，在~/.hgrc的extension區塊加上以下兩行： </p>
+<p>安裝後，在~/.hgrc的extension區塊加上以下兩行：</p>
 <div class="codehilite"><pre><span class="k">[extensions]</span>
 <span class="na">hgext.bookmarks</span> <span class="o">=</span>
 <span class="na">hggit</span> <span class="o">=</span>
 </pre></div>
 
 
-<p>到此Hg-Git即安裝設定完成。 </p>
+<p>到此Hg-Git即安裝設定完成。</p>
 <p>我個人目前都把repository放在<a href="https://bitbucket.org/">bitbucket</a>上。</p>
 <p>因為bitbucket同時支援Git和Hg，並且可以有private</p>
 <p>repository，非常方便。</p>
 <p>之前我是用Git管理我的碩論，現在我想改成用Hg操作。</p>
-<p>根據Hg-Git的教學，想要用Hg複製Git repository，只要執行 </p>
+<p>根據Hg-Git的教學，想要用Hg複製Git repository，只要執行</p>
 <div class="codehilite"><pre><span class="n">hg</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">source</span><span class="o">:</span> <span class="n">git</span> <span class="n">repository</span><span class="o">&gt;</span>
 </pre></div>
 
 
-<p>即可。於是我照做了： </p>
+<p>即可。於是我照做了：</p>
 <div class="codehilite"><pre><span class="n">hg</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//jsliang@bitbucket.org/jsliang/jenny_paper.git</span>
 </pre></div>
 
 
-<p>結果得到這個訊息： </p>
+<p>結果得到這個訊息：</p>
 <div class="codehilite"><pre><span class="n">abort</span><span class="o">:</span> <span class="n">HTTP</span> <span class="n">Error</span> <span class="mi">404</span><span class="o">:</span> <span class="n">NOT</span> <span class="n">FOUND</span>
 </pre></div>
 
@@ -143,7 +144,7 @@
 
 
 <p>如果有更漂亮的做法也煩請指教，感謝～:D</p>
-<p>使用Hg-Git還可以從Hg repository對Git repository進行push/pull，其他妙用請參考<a href="http://hg-git.github.com/">Hg-Git官方網頁</a>。 </p>
+<p>使用Hg-Git還可以從Hg repository對Git repository進行push/pull，其他妙用請參考<a href="http://hg-git.github.com/">Hg-Git官方網頁</a>。</p>
 <p><a href="http://hg-git.github.com/">the Hg-Git mercurial plugin</a></p>
     </div><!-- /.entry-content -->
         <div class="comments">

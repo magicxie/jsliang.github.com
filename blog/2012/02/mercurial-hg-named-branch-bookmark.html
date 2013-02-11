@@ -69,22 +69,23 @@
 
     on 2012-02-17
 
-        &nbsp;
-    <a href="../../../blog/2012/02/mercurial-hg-named-branch-bookmark.html#disqus_thread">comments</a>
+            |
+        tags:         <a href="../../../tag/git.html">Git</a>
+                <a href="../../../tag/mercurial-hg.html">Mercurial Hg</a>
+            
     
-    <p>
-    tags:     <a href="../../../tag/git.html">Git</a>
-        <a href="../../../tag/mercurial-hg.html">Mercurial Hg</a>
-    </p>
+            |
+        <a href="../../../blog/2012/02/mercurial-hg-named-branch-bookmark.html#disqus_thread">comments</a>
+    
         
 </footer><!-- /.post-info -->      <p>同時用Mercurial和Git，在branch的使用上感到很錯亂，昨天研究了一下，今天在此做個小小的筆記。</p>
-<p>如果有理解錯誤之處，也麻煩朋友們協助指正，感激不盡。 </p>
-<p>Mercurial的named branch的指令操作和Git差不多，但差別在於： </p>
+<p>如果有理解錯誤之處，也麻煩朋友們協助指正，感激不盡。</p>
+<p>Mercurial的named branch的指令操作和Git差不多，但差別在於：</p>
 <ul>
 <li>Mercurial的branch資訊是存在每個commit資料裡，並且預設無法修改</li>
 <li>Git的branch資訊與commit資料是分開的，branch比較像是一種特殊的tag</li>
 </ul>
-<p>以下面的範例為例： </p>
+<p>以下面的範例為例：</p>
 <div class="codehilite"><pre><span class="cp"># 產生一個新的hg repository，命名為hg_namedbranches</span>
 <span class="n">mkdir</span> <span class="n">hg_namedbranches</span>
 <span class="n">cd</span> <span class="n">hg_namedbranches</span>
@@ -140,7 +141,7 @@
 </pre></div>
 
 
-<p>以下則是原汁原味的 <code>hg glog</code> 指令輸出，請留意在changeset 2和changeset 4多了「branch: branch_a」的資訊（分別在第41和第23列），其他沒有寫branch資訊的commits都屬於default： </p>
+<p>以下則是原汁原味的 <code>hg glog</code> 指令輸出，請留意在changeset 2和changeset 4多了「branch: branch_a」的資訊（分別在第41和第23列），其他沒有寫branch資訊的commits都屬於default：</p>
 <div class="codehilite"><pre><span class="err">$</span> <span class="n">hg</span> <span class="n">glog</span>
 <span class="err">@</span>    <span class="n">changeset</span><span class="o">:</span>   <span class="mi">6</span><span class="o">:</span><span class="mi">18</span><span class="n">c4a0a6c2a5</span>
 <span class="o">|</span>   <span class="n">tag</span><span class="o">:</span>         <span class="n">tip</span>
@@ -206,9 +207,9 @@
 
 
 <p>不過坦白說，我個人不太喜歡named branch把branch資訊放在commit資訊裡的設計。因為一旦commit了，除非另外再安裝extension來修改紀錄，否則branch名稱永遠和這個commit綁在一起，不能再改了。這對於我這種常常一開始不太動腦，暫且取個「haha」、「hehe」、「kerker」名稱的人而言，實在是很不方便啊……</p>
-<p>所以我個人比較偏好接下來要介紹的bookmarks。 </p>
+<p>所以我個人比較偏好接下來要介紹的bookmarks。</p>
 <p>Mercurial的bookmark概念就和Git很像了，可以想像成是一種永遠指到目前分支最頂端的commit的tag。也因此bookmark和commit資料是分開儲存的。</p>
-<p>以下面的範例為例（流程與前一個範例類似）： </p>
+<p>以下面的範例為例（流程與前一個範例類似）：</p>
 <div class="codehilite"><pre><span class="cp"># 產生一個新的hg repository，命名為hg_bookmarks</span>
 <span class="n">mkdir</span> <span class="n">hg_bookmarks</span>
 <span class="n">cd</span> <span class="n">hg_bookmarks</span><span class="o">/</span>
@@ -235,7 +236,7 @@
 </pre></div>
 
 
-<p>此時查看 <code>hg log</code> 的輸出，可看到bookmark_a位於changeset 2（第2列）： </p>
+<p>此時查看 <code>hg log</code> 的輸出，可看到bookmark_a位於changeset 2（第2列）：</p>
 <div class="codehilite"><pre><span class="err">@</span>  <span class="n">changeset</span><span class="o">:</span>   <span class="mi">2</span><span class="o">:</span><span class="mf">52f</span><span class="n">deae8530d</span>
 <span class="o">|</span>  <span class="n">bookmark</span><span class="o">:</span>    <span class="n">bookmark_a</span>
 <span class="o">|</span>  <span class="n">tag</span><span class="o">:</span>         <span class="n">tip</span>
@@ -263,7 +264,7 @@
 </pre></div>
 
 
-<p>接下來我們繼續增加其他commits： </p>
+<p>接下來我們繼續增加其他commits：</p>
 <div class="codehilite"><pre><span class="cp"># 切換回Rev 1</span>
 <span class="n">hg</span> <span class="n">checkout</span> <span class="mi">1</span>
 
@@ -280,7 +281,7 @@
 </pre></div>
 
 
-<p>再次查看 <code>hg glog</code> 指令輸出，請留意現在bookmark_a從changeset 2移到changeset 4了（第2列）： </p>
+<p>再次查看 <code>hg glog</code> 指令輸出，請留意現在bookmark_a從changeset 2移到changeset 4了（第2列）：</p>
 <div class="codehilite"><pre><span class="err">$</span> <span class="n">hg</span> <span class="n">glog</span>
 <span class="err">@</span>  <span class="n">changeset</span><span class="o">:</span>   <span class="mi">4</span><span class="o">:</span><span class="n">a5f1605ca48d</span>
 <span class="o">|</span>  <span class="n">bookmark</span><span class="o">:</span>    <span class="n">bookmark_a</span>
@@ -327,7 +328,7 @@
 </pre></div>
 
 
-<p>至於合併的語法也是一樣簡單，直接 <code>hg merge bookmark_a</code> 即可： </p>
+<p>至於合併的語法也是一樣簡單，直接 <code>hg merge bookmark_a</code> 即可：</p>
 <div class="codehilite"><pre><span class="cp"># 切換回Rev 3</span>
 <span class="n">hg</span> <span class="n">checkout</span> <span class="mi">3</span>
 
@@ -341,7 +342,7 @@
 </pre></div>
 
 
-<p>最後的 <code>hg glog</code> 結果： </p>
+<p>最後的 <code>hg glog</code> 結果：</p>
 <div class="codehilite"><pre><span class="err">$</span> <span class="n">hg</span> <span class="n">glog</span>
 <span class="err">@</span>    <span class="n">changeset</span><span class="o">:</span>   <span class="mi">6</span><span class="o">:</span><span class="n">d6d3eadd4561</span>
 <span class="o">|</span>   <span class="n">tag</span><span class="o">:</span>         <span class="n">tip</span>
