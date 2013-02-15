@@ -91,7 +91,7 @@
 <ol>
 <li>Feed</li>
 <li>單篇文章</li>
-<li>網址首頁</li>
+<li>網誌首頁</li>
 </ol>
 <p>至於 archives/tags/categories...等彙整性的頁面，我個人覺得不太重要，就沒做轉址處理。</p>
 <p>我 WordPress 的 nginx 設定檔是放在 <code>/etc/nginx/sites-available/wordpress</code>。把原本的設定檔備份後，內容整個改成如下：</p>
@@ -119,7 +119,7 @@ server <span class="o">{</span>
         rewrite ^/<span class="o">(</span>.+<span class="o">)</span>/<span class="o">(</span>.+<span class="o">)</span>/<span class="o">(</span>.+<span class="o">)</span>/ http://jsliang.com/blog/<span class="nv">$1</span>/<span class="nv">$2</span>/<span class="nv">$3</span>.html permanent;
     <span class="o">}</span>
 
-    <span class="c"># 3. 網址首頁</span>
+    <span class="c"># 3. 網誌首頁</span>
     <span class="c"># http://jsliang.twgogo.org</span>
     <span class="c"># =&gt;</span>
     <span class="c"># http://jsliang.com</span>
