@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>網誌搬家！改用 Pelican + GitHub Pages | J. S. Liang (Jenny)</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="../../../theme/css/bootstrap-responsive.min.css" type="text/css" />
+
+        <link rel="stylesheet" href="../../../theme/css/main.css" type="text/css" />
+                <link href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
+                </head>
+
+<body id="index">
+<a class="hidden-phone" href="http://github.com/jsliang/jsliang.github.com">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" />
+</a>
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="../../../">J. S. Liang (Jenny) </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                                                    <li><a href="http://jsliang.com/archives.html">Archives</a></li>
+                                                                                                    <li><a href="../../../about.html">About Me (jsliang)</a></li>
+                                                                                                </ul>
+
+                        <script>
+  (function() {
+    var cx = '000728178517198415282:4k49jvwgnvy';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+                <div class="span10">
+                    <section  >
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../blog/2013/02/moving-to-pelican-hosting-on-github-pages.html" rel="bookmark"
+           title="Permalink to 網誌搬家！改用 Pelican + GitHub Pages">網誌搬家！改用 Pelican + GitHub Pages</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="../../../author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="../../../category/.html"></a>
+
+    on 2013-02-15
+
+            |
+        tags:         <a href="../../../tag/python.html">Python</a>
+                <a href="../../../tag/pelican.html">Pelican</a>
+                <a href="../../../tag/github.html">GitHub</a>
+                <a href="../../../tag/github-pages.html">GitHub Pages</a>
+            
+    
+            |
+        <a href="../../../blog/2013/02/moving-to-pelican-hosting-on-github-pages.html#disqus_thread">comments</a>
+    
+        
+</footer><!-- /.post-info -->      <p>約莫 2011 年底的時候，看到 <a href="http://octopress.org/">Octopress</a> 非常地流行，一度手癢想把網誌從 <a href="http://wordpress.org/">Wordpress</a> 換成用 Octopress。不過那時一來研究所比較忙，二來我對 Ruby 不熟，所以一直沒興趣動手。</p>
+<p>最近我的 AWS EC2 變得怪怪的。雖然立即將原本 Wordpress 上的資料備份，但是總是有點怕出意外，不太敢在上面再寫新文章。為此我重新考慮使用靜態網站產生器。</p>
+<h2>為何要用靜態網站產生器？</h2>
+<h3>其他人的理由</h3>
+<p>Tzeng Yuxio 有整理了一系列 <a href="http://tzengyuxio.me/blog/2012/03/30/octopress-unboxing-collections/">Octopress 開箱文</a>，列舉大家換到 Octopress 後發的第一篇文。</p>
+<p>大部份的人都是從動態管理系統如 <a href="http://wordpress.org/">Wordpress</a>、<a href="http://www.blogger.com/">Blogger</a> 轉過來的，因此文中通常也會說明自己為何會想嘗試像 Octopress 這樣的靜態網站產生器，我這裡就先不贅述了
+。</p>
+<h3>我的理由</h3>
+<p>程式碼排版方便、可以用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a> 寫作等特色對我而言的吸引力都還好，想搬家的原因主要是 hosting 與備份很容易。</p>
+<p>從我的 AWS EC2 變得怪怪的時候開始，我意識到我需要一個可以很容易儲存、備份我的文章的方式。最直覺想到的做法是透過 Dropbox。然而 Wordpress 要備份的除了文章內容，也包括佈景主題、套件等。雖然有很多套件在處理這一塊，但我總是覺得很麻煩，生怕自己遺漏了什麼。</p>
+<p>此時我想到最單純的做法就是把文章寫在檔案裡，用程式處理後轉成靜態網頁，然後放在 <a href="http://pages.github.com/">GitHub Pages</a> 上。如此一來原始文章以及產生的靜態網頁都是純文字檔案，便可以很容易用 Dropbox 管理。上傳到 <a href="http://github.com/">GitHub</a> 更是再多了一個備份地點。</p>
+<p>而這些正是 Octopress 能做到的事。只是近來我對 Python 比較有興趣，於是上網搜尋了一下是否有 Python 程式可以達到一樣的目的。接著發現 <a href="http://getpelican.com/">Pelican</a> 文件頗齊全、<a href="https://github.com/getpelican/pelican">GitHub 上</a>也很活躍地持續有新開發，因此決定來嘗試 Pelican。年假期間花了約兩天，把文章從 Wordpress 都移到 Pelican 了。</p>
+<h2>安裝 Pelican</h2>
+<p>下載及安裝可參考 <a href="http://docs.getpelican.com/en/3.1.1/getting_started.html">Pelican 的 v3.1.1 官方文件: Getting started</a>。</p>
+<p>按照文件中的步驟做，就可以跑起來一個很簡單的網誌了。痛苦的地方從舊文匯入開始……</p>
+<h2>把 WordPress 的文章轉成 Markdown 格式</h2>
+<p><a href="http://docs.getpelican.com/en/3.1.1/importer.html">官方的 pelican-importer</a> 支援 WordPress、Dotclear、RSS/Atom feed 的匯入。</p>
+<p>然而我用 pelican-importer 匯入我的 Wordpress 文章時，遇到了兩個比較大的問題。</p>
+<ol>
+<li>在 Windows 下使用時，若原始文章有中文字元會出錯。後來改在 Ubuntu 12.04 的環境下執行就沒問題。</li>
+<li>匯出格式是 reStructuredText，而 reStructuredText 似乎沒辦法表達用圖片做超連結如 <code>&lt;a href="..."&gt;&lt;img src="..."/&gt;&lt;/a&gt;</code> 這樣的情況。</li>
+</ol>
+<p>第二點令我很頭痛，因為有陣子我的文章中很常把圖片拿來用作超連結。Markdown 可以正確處理，因此我改用 <a href="https://github.com/dreikanter/wp2md">wp2md</a> 來做轉換。不過 wp2md 轉完問題也不少……</p>
+<ol>
+<li>
+<p>wp2md 使用的 metadata 欄位名稱和 Pelican 的慣用名稱不同，例如 Pelican 用的是「date」，而 wp2md 轉出來的欄位名稱用的是「post_date」…等。</p>
+<p>所幸這問題不大，挑個好一點的編輯器如 <a href="http://notepad-plus-plus.org/">Notepad++</a> 或 <a href="http://www.sublimetext.com/">Sublime Text</a> 一次針對多個檔案做字串取代即可。</p>
+</li>
+<li>
+<p>wp2md 沒有處理 category。</p>
+<p>這蠻囧的。這部份可以看是要去改 wp2md 的 code，或是自己寫 script 和 pelican-importer 的輸出檔來比對以抓出各篇文章的 categories。我是採取後者的做法。</p>
+</li>
+<li>
+<p>wp2md 沒有把 <code>&lt;br&gt;</code> 轉成斷行。</p>
+<p>這超級囧的，反而是 pelican-importer 的輸出處理得比較對。</p>
+<p>我以前寫文章很常有 <code>&lt;p&gt;第一行&lt;br&gt;第二行&lt;br&gt;第三行&lt;/p&gt;</code> 這樣的寫法，在 wp2md 的輸出會變成 <code>&lt;p&gt;第一行 第二行 第三行&lt;/p&gt;</code>。慘的是我不能一味把所有的空白取代成斷行，因為有些真的本來就是空白……</p>
+<p>解法可以看是要去改 wp2md 的 code，或是自己重新一篇篇校稿。因為文章不多（不到兩百篇），所以我是採取後者的做法。<del>後來我才發現這決定是個錯誤。</del></p>
+</li>
+</ol>
+<p>為了處理文章轉換，我今年過年真的守歲了。本想說我文章不多，一篇篇整理應該也不致於花太多時間。不料我就這樣從除夕晚上做到大年初一早上，看到日出才去睡。<del>意外收穫是我邊處理邊把「甄嬛傳」放在背景播，一連聽了十多集的台詞，進度追得超快呢。</del></p>
+<h2>設定 nginx 轉址</h2>
+<p>此次搬家我連網域也順便換了，因此必須設定轉址。</p>
+<p>設定方式我寫在這篇文章：<a href="http://jsliang.com/blog/2013/02/set-301-moved-permanently-in-nginx.html">轉移網域後，在 nginx 設定 301 Moved Permanently</a></p>
+<h2>把版面改成 responsive layout</h2>
+<p>Pelican 預設的佈景主題使用的是 <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> 的設計。其實我很喜歡這個版面，但它不是 responsive web design，在現在行動裝置稱霸的時代有點可惜。</p>
+<p>因此我暫且很沒創意地使用 <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a> 的 framework，製作了一個佈景主題 <a href="http://jsliang.com/pelican-fresh-demo/blog/">Fresh</a>（也就是網誌現在在用的這個佈景主題）。留待未來行有餘力再來美化佈景主題了。</p>
+<h2>使用 Sublime Text 2 寫 Pelican 文章</h2>
+<p>最近迷上了 <a href="http://sublimetext.com/2">Sublime Text 2</a> 這個編輯器，很喜歡拿它來寫 code。</p>
+<p>為了方便用 Sublime Text 2 寫 Pelican 的文章，我寫了個套件 <a href="https://github.com/jsliang/sublime-pelican">SublimePelican</a>。目前有支援自動插入文章 metadata 的功能（包含自動產生文章日期和文章的 slug）。</p>
+<p>至於 Sublime Text 2 在 Linux 環境下無法輸入中文的問題，我是用 <a href="https://github.com/xgenvn/InputHelper">InputHelper</a> 解決。</p>
+<h2>其他……</h2>
+<p>這篇文章只是很隨性地記了些我在轉換過程中遇到的問題，待我多寫了幾篇文章後再來寫使用心得。:P</p>
+    </div><!-- /.entry-content -->
+        <div class="comments">
+      <h2>Comments</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_identifier = "blog/2013/02/moving-to-pelican-hosting-on-github-pages.html";
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://jsliang.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    </div>
+    
+  </article>
+</section>
+                </div>
+                <div class="span2">
+                    <section id="sidebar">
+                                                <div>
+                                <h2>Links</h2>
+                                <ul>
+                                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                                                                    <li><a href="http://python.org">Python.org</a></li>
+                                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                                                                </ul>
+                            </div><!-- /.Links -->
+                                                                    <div>
+                                <h2>Social</h2>
+                                <ul>
+                                    <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                                    
+                                                                    <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
+                                                                    <li><a href="https://github.com/jsliang">GitHub</a></li>
+                                                                </ul>
+                            </div><!-- /.social -->
+                                        </section><!-- /#sidebar -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37740364-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'jsliang';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="../../../theme/js/bootstrap.min.js"></script>
+</body>
+</html>

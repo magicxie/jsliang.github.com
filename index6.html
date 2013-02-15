@@ -57,6 +57,54 @@
                     <article>
                         <header>
                             <h1>
+                                <a href="./blog/2011/02/wordpress-sql-category-tag.html" rel="bookmark" title="Permalink to WordPress: 用SQL語法對特定category/tag的所有文章一次新增其他category/tag">
+                                   WordPress: 用SQL語法對特定category/tag的所有文章一次新增其他category/tag
+                                </a>
+                            </h1>
+                        </header>
+
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
+
+    on 2011-02-02
+
+            |
+        tags:         <a href="./tag/sql.html">SQL</a>
+                <a href="./tag/wordpress.html">WordPress</a>
+            
+    
+            |
+        <a href="./blog/2011/02/wordpress-sql-category-tag.html#disqus_thread">comments</a>
+    
+        
+</footer><!-- /.post-info -->                            <p>我知道文章標題看起來很讓人困惑，但我國文不好，這功能我實在不知道要怎麼用文字描述得更清楚了……</p>
+<p>以我的需求為例。我的文章常常放照片，而我習慣在文章標記拍攝用相機的型號。</p>
+<p>之前考慮到同個廠牌有不同型號的相機，有可能未來會想要一次瀏覽某廠牌的相機所拍的照片，因此我會把廠牌和型號分成兩個tags。 例下所示：</p>
+<p><strong>Canon EOS 500D</strong> = <a href="/tag/canon/"><em>Canon</em></a> + <a href="http://jsliang.twgogo.org/tag/eos-500d/"><em>EOS 500D</em></a></p>
+<p><strong>Pentax Optio A36</strong> = <a href="http://jsliang.twgogo.org/tag/pentax/"><em>Pentax</em></a> + <a href="http://jsliang.twgogo.org/tag/optio-a36/"><em>Optio A36</em></a></p>
+<p><strong>Olympus XZ-1</strong> = <a href="http://jsliang.twgogo.org/tag/olympus/"><em>Olympus</em></a> + <a href="http://jsliang.twgogo.org/tag/xz-1/"><em>XZ-1</em></a></p>
+<p>但我今天不知道哪根荕不對，想要分別再加上「<a href="http://jsliang.twgogo.org/tag/canon-eos-500d/">Canon EOS 500D</a>」、「<a href="http://jsliang.twgogo.org/tag/pentax-optio-a36/">Pentax Optio A36</a>」、「<a href="http://jsliang.twgogo.org/tag/olympus-xz-1/">Olympus XZ-1</a>」的tags……</p>
+<p>用這篇文章記錄一下我的做法。</p>
+<p>當然使用WP的管理介面也可以做到這樣的事，但我操作起來卻不太順。</p>
+<p>不知道為什麼，我每次用WP管理介面的批次文章管理功能，處理速度總是很慢，還常常傳回錯誤訊息，非常考驗我的耐性……我尚未弄清楚到底是我的機器的問題，還是WP管理介面的程式的問題。</p>
+<p>以下的做法，必須是自己架設WordPress程式，並且可以連到WP的MySQL資料庫下SQL語法才有用 ...</p>
+                            <p class="readmore">
+                                <a class="btn btn-primary btn-small" href="./blog/2011/02/wordpress-sql-category-tag.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
+
+                        <hr/>
+                    </article>
+                </li>
+                                                            <li>
+                    <article>
+                        <header>
+                            <h1>
                                 <a href="./blog/2011/02/guo-bin-glasses-store.html" rel="bookmark" title="Permalink to 中和國賓眼鏡行">
                                    中和國賓眼鏡行
                                 </a>
@@ -550,46 +598,6 @@
 <p>It's been hard wakin' up ...</p></blockquote>
                             <p class="readmore">
                                 <a class="btn btn-primary btn-small" href="./blog/2010/12/blue-dont-treat-me-like-a-fool.html">Read more...</a>
-                            </p>
-                        </div><!-- /.entry-content -->
-
-                        <hr/>
-                    </article>
-                </li>
-                                                            <li>
-                    <article>
-                        <header>
-                            <h1>
-                                <a href="./blog/2010/12/ubuntu-adding-an-administrator-sudoer-user.html" rel="bookmark" title="Permalink to [Ubuntu] Adding an administrator & sudoer user">
-                                   [Ubuntu] Adding an administrator & sudoer user
-                                </a>
-                            </h1>
-                        </header>
-
-                        <div class="entry-content">
-                            <footer class="post-info">
-        <address class="vcard author">
-        by <a class="url fn" href="./author/jsliang.html">jsliang</a>
-    </address>
-    
-    in <a href="./category/blog.html">Blog</a>
-
-    on 2010-12-03
-
-            |
-        tags:         <a href="./tag/aws.html">AWS</a>
-                <a href="./tag/ec2.html">EC2</a>
-                <a href="./tag/english.html">English</a>
-                <a href="./tag/ubuntu.html">Ubuntu</a>
-            
-    
-            |
-        <a href="./blog/2010/12/ubuntu-adding-an-administrator-sudoer-user.html#disqus_thread">comments</a>
-    
-        
-</footer><!-- /.post-info -->                            <p>I started using <a href="http://aws.amazon.com/ec2/">AWS EC2</a> this week and launched an <a href="http://www.ubuntu.com/">Ubuntu</a> 10.04 server. AWS EC2 provides user with a private key to login to the server. I prefer password login, however, so I added another user with administrator &amp; sudoer priviledges. Below is my note about how to do this ...</p>
-                            <p class="readmore">
-                                <a class="btn btn-primary btn-small" href="./blog/2010/12/ubuntu-adding-an-administrator-sudoer-user.html">Read more...</a>
                             </p>
                         </div><!-- /.entry-content -->
 
