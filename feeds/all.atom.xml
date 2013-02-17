@@ -47,7 +47,7 @@
 &lt;p&gt;因此我暫且很沒創意地使用 &lt;a href="http://twitter.github.com/bootstrap"&gt;Twitter Bootstrap&lt;/a&gt; 的 framework，製作了一個佈景主題 &lt;a href="http://jsliang.com/pelican-fresh-demo/blog/"&gt;Fresh&lt;/a&gt;（也就是網誌現在在用的這個佈景主題）。留待未來行有餘力再來美化佈景主題了。&lt;/p&gt;
 &lt;h2&gt;使用 Sublime Text 2 寫 Pelican 文章&lt;/h2&gt;
 &lt;p&gt;最近迷上了 &lt;a href="http://sublimetext.com/2"&gt;Sublime Text 2&lt;/a&gt; 這個編輯器，很喜歡拿它來寫 code。&lt;/p&gt;
-&lt;p&gt;為了方便用 Sublime Text 2 寫 Pelican 的文章，我寫了個套件 &lt;a href="https://github.com/jsliang/sublime-pelican"&gt;SublimePelican&lt;/a&gt;。目前有支援自動插入文章 metadata 的功能（包含自動產生文章日期和文章的 slug）。&lt;/p&gt;
+&lt;p&gt;為了方便用 Sublime Text 2 寫 Pelican 的文章，我寫了個套件 &lt;a href="http://jsliang.com/sublime-pelican/"&gt;SublimePelican&lt;/a&gt;。目前有支援自動插入文章 metadata 的功能（包含自動產生文章日期和文章的 slug）。&lt;/p&gt;
 &lt;p&gt;至於 Sublime Text 2 在 Linux 環境下無法輸入中文的問題，我是用 &lt;a href="https://github.com/xgenvn/InputHelper"&gt;InputHelper&lt;/a&gt; 解決。&lt;/p&gt;
 &lt;h2&gt;其他……&lt;/h2&gt;
 &lt;p&gt;這篇文章只是很隨性地記了些我在轉換過程中遇到的問題，待我多寫了幾篇文章後再來寫使用心得。:P&lt;/p&gt;</summary><category term="Python"></category><category term="Pelican"></category><category term="GitHub"></category><category term="GitHub Pages"></category></entry><entry><title>轉移網域後，在 nginx 設定 301 Moved Permanently</title><link href="http://jsliang.com/blog/2013/02/set-301-moved-permanently-in-nginx.html" rel="alternate"></link><updated>2013-02-10T00:00:00+08:00</updated><author><name>jsliang</name></author><id>tag:jsliang.com,2013-02-10:blog/2013/02/set-301-moved-permanently-in-nginx.html</id><summary type="html">&lt;p&gt;這兩天把網誌所在的網域由 &lt;code&gt;jsliang.twgogo.org&lt;/code&gt; 改成 &lt;code&gt;jsliang.com&lt;/code&gt; 了，因此必須設定轉址，在此筆記一下。&lt;/p&gt;
