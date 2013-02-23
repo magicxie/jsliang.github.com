@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>轉移網域後，在 nginx 設定 301 Moved Permanently | J. S. Liang (Jenny)</title>
+        <title>ASUS Padfone 2 + Station 使用三個月心得 | J. S. Liang (Jenny)</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -55,8 +55,8 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="../../../blog/2013/02/set-301-moved-permanently-in-nginx.html" rel="bookmark"
-           title="Permalink to 轉移網域後，在 nginx 設定 301 Moved Permanently">轉移網域後，在 nginx 設定 301 Moved Permanently</a></h1>
+        <a href="../../../blog/2013/02/asus-padfone-2-station.html" rel="bookmark"
+           title="Permalink to ASUS Padfone 2 + Station 使用三個月心得">ASUS Padfone 2 + Station 使用三個月心得</a></h1>
           </header>
 
     <div class="entry-content">
@@ -67,81 +67,53 @@
     
     in <a href="../../../category/blog.html">Blog</a>
 
-    on 2013-02-10
+    on 2013-02-23
 
             |
-        tags:         <a href="../../../tag/python.html">Python</a>
-                <a href="../../../tag/pelican.html">Pelican</a>
-                <a href="../../../tag/nginx.html">nginx</a>
+        tags:         <a href="../../../tag/asus.html">ASUS</a>
+                <a href="../../../tag/padfone-2.html">Padfone 2</a>
+                <a href="../../../tag/padfone-2-station.html">Padfone 2 Station</a>
+                <a href="../../../tag/phone.html">phone</a>
+                <a href="../../../tag/pad.html">pad</a>
             
     
             |
-        <a href="../../../blog/2013/02/set-301-moved-permanently-in-nginx.html#disqus_thread">comments</a>
+        <a href="../../../blog/2013/02/asus-padfone-2-station.html#disqus_thread">comments</a>
     
         
-</footer><!-- /.post-info -->      <p>這兩天把網誌所在的網域由 <code>jsliang.twgogo.org</code> 改成 <code>jsliang.com</code> 了，因此必須設定轉址，在此筆記一下。</p>
-<p>設定讓 HTTP Server 回傳 301 Moved Permanently 的好處很多：</p>
-<ol>
-<li>搜尋引擎的連結不會失效</li>
-<li>RSS/ATOM feeds 的連結不會失效</li>
-<li>如果網誌留言系統是使用 <a href="http://disqus.com/">DISQUS</a> 的話，等 301 設定完成後，可以在 DISQUS 的後台請 DISQUS 自動根據 301 回傳的 Location Header 來更新文章 URL。當需要轉址的 URL 結構差異大時，這招很方便。</li>
-</ol>
-<p>我本來的網誌是架在自己的 AWS 的機器上，使用 <a href="http://wordpress.org/">WordPress</a> + <a href="http://nginx.org/">nginx</a>，故筆記的是我的 nginx 的轉址設定檔寫法。（Apache HTTP Server 也有設定 301 回應的功能。）</p>
-<p>我有點偷懶，只處理這三種情況：</p>
-<ol>
-<li>Feed</li>
-<li>單篇文章</li>
-<li>網誌首頁</li>
-</ol>
-<p>至於 archives/tags/categories...等彙整性的頁面，我個人覺得不太重要，就沒做轉址處理。</p>
-<p>我 WordPress 的 nginx 設定檔是放在 <code>/etc/nginx/sites-available/wordpress</code>。把原本的設定檔備份後，內容整個改成如下：</p>
-<div class="codehilite"><pre><span class="c"># /etc/nginx/sites-available/wordpress</span>
-server <span class="o">{</span>
-    listen   80;
-    server_name jsliang.twgogo.org;
-
-    error_log   /var/log/nginx/jsliang-twgogo-org.error.log warn;
-    access_log  /var/log/nginx/jsliang-twgogo-org.access.log;
-
-    <span class="c"># 1. Feed</span>
-    <span class="c"># http://jsliang.twgogo.org/feed/</span>
-    <span class="c"># =&gt;</span>
-    <span class="c"># http://jsliang.com/feeds/all.atom.xml</span>
-    <span class="k">if</span> <span class="o">(</span> <span class="nv">$request_filename</span> ~ feed/ <span class="o">)</span> <span class="o">{</span>
-        rewrite ^ http://jsliang.com/feeds/all.atom.xml? permanent;
-    <span class="o">}</span>
-
-    <span class="c"># 2. 單篇文章</span>
-    <span class="c"># http://jsliang.twgogo.org/2013/02/slug/</span>
-    <span class="c"># =&gt;</span>
-    <span class="c"># http://jsliang.com/blog/2013/02/slug.html</span>
-    <span class="k">if</span> <span class="o">(</span> <span class="nv">$request_filename</span> ~ .+/.+/.+ <span class="o">)</span> <span class="o">{</span>
-        rewrite ^/<span class="o">(</span>.+<span class="o">)</span>/<span class="o">(</span>.+<span class="o">)</span>/<span class="o">(</span>.+<span class="o">)</span>/ http://jsliang.com/blog/<span class="nv">$1</span>/<span class="nv">$2</span>/<span class="nv">$3</span>.html permanent;
-    <span class="o">}</span>
-
-    <span class="c"># 3. 網誌首頁</span>
-    <span class="c"># http://jsliang.twgogo.org</span>
-    <span class="c"># =&gt;</span>
-    <span class="c"># http://jsliang.com</span>
-    <span class="k">if</span> <span class="o">(</span> <span class="nv">$request_filename</span> ~ / <span class="o">)</span> <span class="o">{</span>
-        rewrite ^/ http://jsliang.com/ permanent;
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></div>
-
-
-<p>最後再重啟 nginx 即可：</p>
-<div class="codehilite"><pre><span class="nv">$ </span>sudo /etc/init.d/nginx restart
-</pre></div>
-
-
-<p>之後連 <a href="http://jsliang.twgogo.org">http://jsliang.twgogo.org</a>，瀏覽器都會自動導到 <a href="http://jsliang.com">http://jsliang.com</a> 了。</p>
+</footer><!-- /.post-info -->      <p>去年 2012 年底 11 月，透過在華碩工作的朋友的協助購入 <a href="http://www.asus.com/Tablet_Mobile/PadFone2/">ASUS Padfone 2</a> (64G)，直接買了手機 Padfone 2 + 平板 Padfone 2 Station 整組。</p>
+<p>以下沒有很嚴謹的規格評測，只有我個人使用上的主觀心得，僅供參考。</p>
+<h2>優點</h2>
+<h3>小螢幕與大螢幕的優點兼具</h3>
+<p>在這之前我使用的過 7 吋小平板 HTC flyer。起初覺得這尺寸很不錯，但用一段時間後，開始嫌 7 吋平板用來拍照太大很不順手，拿來讀 A4 版面的電子書或文件又太小、得要把螢幕捲來捲去……漸漸感到這尺寸不上不下。</p>
+<p>過去總認為手機平板無法兼得，直到我看到了 Padfone 2 + Station……！</p>
+<p>雖然 Padfone 2 手機本身 4.7 吋的面板已不小，但和 10.1 吋平板相比，當然是後者看起來比較過癮。尤其在使用 <a href="http://flipboard.com/">Flipboard</a>、<a href="http://www.feedly.com/">Feedly</a> 或是讀紙本排版直接製成的電子書時，用接近 A4 大小的平板看起來比較舒服。我平常通勤時，站著就看手機，坐下來空間比較大再拿平板出來，非常方便。</p>
+<h3>重量輕</h3>
+<p>沒有實際測量過，不過有 iPad 的朋友們把我的 Padfone 2 手機 + 平板整組拿在手上實際感受，都說感覺不比 iPad 重。我自己拿在手上使用也覺得輕便無負擔，這點對隨身攜帶是一大優勢。</p>
+<h3>電池續航力佳</h3>
+<p>平板本身就是螢幕 + 大電池，手機用到快沒電時，可以插到平板上從平板充電。我幾乎沒遇到用到下午、晚上電量不夠的囧境，除非是我自己前一天忘記充。</p>
+<h3>手機與平板共用 SIM 卡，且資料同步</h3>
+<p>CPU、儲存裝置和 SIM 卡都在手機上，平板基本上只具有顯示（以及充電）功能。因此使用手機和平板時，都可以存取同樣的資料，並且也可以用同一張 SIM 卡連 3G 網路。</p>
+<p>很多人不喜歡這種變形金鋼設計。因為拔出手機的時候，平板一點用處也沒有。但由於兩個裝置都只有我在用，所以我不認為這是個問題，反而覺得兩邊什麼都互通挺方便的。</p>
+<h2>缺點</h2>
+<h3>GPS 定位很不精準</h3>
+<p>這是我個人覺得最可惜的地方。</p>
+<p>在大樓密集的地方，Padfone 2 的定位極弱。但即使在四周樓沒有很高、上方也沒有高架道路的空間，定位也沒有很快……看著身旁阿達和我哥的 Nexus 4 迅速又精準的定位，我只想縮到牆角畫圈圈。</p>
+<p>購買前就知道 ASUS Padfone 2 內建 Garmin 導航，這點非常吸引我，但期待愈高也讓我在使用時失望也愈大。定位和我之前使用的 HTC flyer 相比非常不準，常常車子都開到路口甚至過馬路了，才聽到導航說「前方三百公尺右轉 XX 路」這怎麼來得及啊？</p>
+<p>以下兩個缺點可能是個人使用習慣不良所致，僅供參考。</p>
+<h3>充電線用不到三個月就接觸不良</h3>
+<p>充電線的材質很軟，所以在連接裝置的那頭容易被折到，頗脆弱。現在我這條已有接觸不良的囧狀。這……或許該怪我自己使用習慣不好吧？Orz</p>
+<h3>螢幕易有刮痕</h3>
+<p>聽說現在的手機玻璃都很好，沒那麼容易刮傷，之前使用 HTC flyer 一年多機器的螢幕狀況也不錯，所以我沒打算貼保護膜，也不用保護套。</p>
+<p>於是乎我大概用不到兩個月，手機和平板螢幕上都出現刮痕了……傷心啊。囧rz</p>
+<h2>結論</h2>
+<p>整體而言我相當喜愛華碩的 Padfone 2 + Station，因為這產品不偏不倚命中了我手機、平板都想要帶著的需求。期待華碩能改善不完美的地方，推出更多令人驚豔且創新實用兼備的設計。</p>
     </div><!-- /.entry-content -->
         <div class="comments">
       <h2>Comments</h2>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
-        var disqus_identifier = "blog/2013/02/set-301-moved-permanently-in-nginx.html";
+        var disqus_identifier = "blog/2013/02/asus-padfone-2-station.html";
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://jsliang.disqus.com/embed.js';
