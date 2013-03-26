@@ -57,6 +57,56 @@
                     <article>
                         <header>
                             <h1 class="entry-title">
+                                <a href="./blog/2012/03/linux-time-zone.html" rel="bookmark" title="Permalink to [Linux] 設定時區 (Time Zone)">
+                                   [Linux] 設定時區 (Time Zone)
+                                </a>
+                            </h1>
+                        </header>
+
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/j-s-liang.html">J. S. Liang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
+
+    on 2012-03-10
+
+            |
+        tags:         <a href="./tag/linux.html">Linux</a>
+            
+    
+            |
+        <a href="./blog/2012/03/linux-time-zone.html#disqus_thread">comments</a>
+    
+        
+</footer><!-- /.post-info -->                            <p>我的AWS是買美國的EC2 Instance，預設時區不是台灣的時區，管理上稍有不便。</p>
+<p>我心算很弱，如果每次檢視檔案的最後修改日期時還得換算，簡直會要了我的命。 以下為切換系統時區的指令，留個筆記。 執行</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">tzdata</span>
+</pre></div>
+
+
+<p>Geographic area選Asia，Time zone選Taipei，接著訊息列便會出現如下訊息供確認時區已更改成功：</p>
+<div class="codehilite"><pre><span class="n">Current</span> <span class="k">default</span> <span class="n">time</span> <span class="n">zone</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Asia</span><span class="o">/</span><span class="n">Taipei</span><span class="err">&#39;</span>
+<span class="n">Local</span> <span class="n">time</span> <span class="n">is</span> <span class="n">now</span><span class="o">:</span> <span class="n">Sat</span> <span class="n">Mar</span> <span class="mi">10</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">26</span> <span class="n">CST</span> <span class="mf">2012.</span>
+<span class="n">Universal</span> <span class="n">Time</span> <span class="n">is</span> <span class="n">now</span><span class="o">:</span> <span class="n">Sat</span> <span class="n">Mar</span> <span class="mi">10</span> <span class="mo">02</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">26</span> <span class="n">UTC</span> <span class="mf">2012.</span>
+</pre></div>
+
+
+<p>CST ...</p>
+                            <p class="readmore">
+                                <a class="btn btn-info" href="./blog/2012/03/linux-time-zone.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
+
+                        <hr/>
+                    </article>
+                </li>
+                                                            <li>
+                    <article>
+                        <header>
+                            <h1 class="entry-title">
                                 <a href="./blog/2012/02/xz-1-lc-63a.html" rel="bookmark" title="Permalink to XZ-1原廠鏡頭蓋LC-63A">
                                    XZ-1原廠鏡頭蓋LC-63A
                                 </a>
@@ -553,55 +603,6 @@
 <p>那麼我們聚集在一起的必要 ...</p></blockquote></blockquote>
                             <p class="readmore">
                                 <a class="btn btn-info" href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html">Read more...</a>
-                            </p>
-                        </div><!-- /.entry-content -->
-
-                        <hr/>
-                    </article>
-                </li>
-                                                            <li>
-                    <article>
-                        <header>
-                            <h1 class="entry-title">
-                                <a href="./blog/2011/10/mgo-v-s-coding.html" rel="bookmark" title="Permalink to MgO v.s. Coding">
-                                   MgO v.s. Coding
-                                </a>
-                            </h1>
-                        </header>
-
-                        <div class="entry-content">
-                            <footer class="post-info">
-        <address class="vcard author">
-        by <a class="url fn" href="./author/j-s-liang.html">J. S. Liang</a>
-    </address>
-    
-    in <a href="./category/blog.html">Blog</a>
-
-    on 2011-10-19
-
-            |
-        tags:         <a href="./tag/xin-qing.html">心情</a>
-            
-    
-            |
-        <a href="./blog/2011/10/mgo-v-s-coding.html#disqus_thread">comments</a>
-    
-        
-</footer><!-- /.post-info -->                            <p><img alt="" src="https://lh5.googleusercontent.com/-3_Qtrb_wTZA/Tp526Mpuc0I/AAAAAAAB1WM/c0pfaSbeDlc/s400/PA197661.JPG" /></p>
-<p>這次醫生開給我的藥，藥名難得地簡短：MgO，氧化鎂。</p>
-<p>我努力回想，才想起中學化學的確有教過氧化鎂是很常見的瀉藥。</p>
-<p>然後接著想起一個遺忘更久的事實：我高中讀理組時，最強的科目其實是化學啊！</p>
-<p>而且我理科最弱的就是數學，弱到我非常懷疑大學是不是不該選資工系。</p>
-<p>如果不是因為那時確定自己愛寫程式，在那對未來茫然不知何去何從的高中年代，我應該會參考自己的成績分佈而選填化學相關科系吧。</p>
-<p>Steve Jobs過世後，他<a href="http://www.youtube.com/watch?v=D1R-jKKp3NA">2005年在史丹福大學畢業典禮上的演講</a>開始在社群網路上被廣泛轉載，演講中最被大家關注的重點之一是「不論在哪方面，都要追求自己所愛的人、事、物，別輕易妥協」。</p>
-<p>我覺得自己很幸運，很小的時候就找到一件自己很愛做的事。</p>
-<p>一直都知道自己寫的程式不怎麼樣。操作不比別人寫的好用，效能也不比別人寫的好。（唔，這個句子寫在blog上，以後找工作被想應徵的公司的HR看到會不會因此碰壁啊…… XD）</p>
-<p>但很奇妙的是，即使心裡很清楚這些地方我都不強，我卻不會像在學其他領域時一樣，有強烈的想放棄的挫敗感。</p>
-<p>學跳舞，我常覺得自己怎樣練都無法跳得跟別人一樣好，往往因此挫折到連練習都不想。</p>
-<p>學攝影，我也常覺得自己不論美感和技巧都不如人，因此退縮到「有記錄下想記錄的畫面就夠了」的標準，設備也很乾脆地賣了。</p>
-<p>只有寫程式是真的可以讓我一旦開始思索就廢寢忘食，而且這麼多年來一直如此的。<del>雖然我花了這麼多時間卻沒有寫得特別好實在是頗慚愧 ...</del></p>
-                            <p class="readmore">
-                                <a class="btn btn-info" href="./blog/2011/10/mgo-v-s-coding.html">Read more...</a>
                             </p>
                         </div><!-- /.entry-content -->
 
