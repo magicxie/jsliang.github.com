@@ -57,6 +57,57 @@
                     <article>
                         <header>
                             <h1 class="entry-title">
+                                <a href="./blog/2012/03/git-log-commit-date-local-time-zone.html" rel="bookmark" title="Permalink to [Git] 檢視log時，commit日期以當地時區表示">
+                                   [Git] 檢視log時，commit日期以當地時區表示
+                                </a>
+                            </h1>
+                        </header>
+
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/j-s-liang.html">J. S. Liang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
+
+    on 2012-03-10
+
+            |
+        tags:         <a href="./tag/git.html">Git</a>
+                <a href="./tag/linux.html">Linux</a>
+            
+    
+            |
+        <a href="./blog/2012/03/git-log-commit-date-local-time-zone.html#disqus_thread">comments</a>
+    
+        
+</footer><!-- /.post-info -->                            <p>在Linux執行<code>git log</code>指令時，看到的commit日期可能會是ISO 8601格式：</p>
+<p><code>Date: 2012-02-22 04:46:00 +0000</code></p>
+<p>以台灣時區而言，必須再加上8小時才是台灣時間。</p>
+<p>我心算很弱，實在不想算……Orz</p>
+<p>想使用台灣時區檢視Git的commit log，首先要<a href="http://jsliang.com/blog/2012/03/linux-time-zone.html">設定系統的當地時間</a>。</p>
+<p>之後下<code>git log</code>指令時，加上<code>--date=local</code>參數即可：</p>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">log</span> <span class="o">--</span><span class="n">date</span><span class="o">=</span><span class="n">local</span>
+</pre></div>
+
+
+<p>可看到日期格式變成：</p>
+<p><code>Date:   Wed Feb 22 12:46:00 2012</code></p>
+<p>不想每次都下參數的話，可以設定Git直接使用當地時區顯示commit log：</p>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">log</span><span class="p">.</span><span class="n">date ...</span></pre></div>
+                            <p class="readmore">
+                                <a class="btn btn-info" href="./blog/2012/03/git-log-commit-date-local-time-zone.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
+
+                        <hr/>
+                    </article>
+                </li>
+                                                            <li>
+                    <article>
+                        <header>
+                            <h1 class="entry-title">
                                 <a href="./blog/2012/03/linux-time-zone.html" rel="bookmark" title="Permalink to [Linux] 設定時區 (Time Zone)">
                                    [Linux] 設定時區 (Time Zone)
                                 </a>
@@ -533,76 +584,6 @@
 <p><strong>Shobra and the girls from there, Sabteia, what a gift we have ...</strong></p></blockquote></blockquote>
                             <p class="readmore">
                                 <a class="btn btn-info" href="./blog/2011/12/rico-shubra.html">Read more...</a>
-                            </p>
-                        </div><!-- /.entry-content -->
-
-                        <hr/>
-                    </article>
-                </li>
-                                                            <li>
-                    <article>
-                        <header>
-                            <h1 class="entry-title">
-                                <a href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html" rel="bookmark" title="Permalink to 涼宮ハルヒの憂鬱 - 最強パレパレード">
-                                   涼宮ハルヒの憂鬱 - 最強パレパレード
-                                </a>
-                            </h1>
-                        </header>
-
-                        <div class="entry-content">
-                            <footer class="post-info">
-        <address class="vcard author">
-        by <a class="url fn" href="./author/j-s-liang.html">J. S. Liang</a>
-    </address>
-    
-    in <a href="./category/blog.html">Blog</a>
-
-    on 2011-11-06
-
-            |
-        tags:         <a href="./tag/tu-feng-wu.html">土風舞</a>
-                <a href="./tag/ri-ben-yu.html">日本語</a>
-                <a href="./tag/ge-ci.html">歌詞</a>
-                <a href="./tag/yin-le.html">音樂</a>
-            
-    
-            |
-        <a href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html#disqus_thread">comments</a>
-    
-        
-</footer><!-- /.post-info -->                            <p>對跳舞的熱情冷卻了一段不短的時間，最近有點回溫的趨勢……:P</p>
-<p>這學期首次參加肚皮舞課，跳得很開心。</p>
-<p>週二晚上虹韻社課小乖教的下面這支出自涼宮春日的「最強PARA」我也學得好歡樂啊～^o^</p>
-<iframe width="560" height="315" src="http://www.youtube.com/embed/cApMH6K8uB8" frameborder="0" allowfullscreen></iframe>
-
-<p>這首歌之前聽過很多次，但最近特別覺得它的旋律和歌詞很鼓舞人心，每次聽完都感到好雀躍。:D 附上原文歌詞：</p>
-<h2>涼宮ハルヒの憂鬱 - 最強パレパレード</h2>
-<p>(jsliang不負責任試譯歌詞)</p>
-<blockquote>
-<p>いまや最強・パレパレード</p>
-<p>つまり最高・ハピハッピー</p>
-<p>みんな前進・パレパレード</p>
-<p>つまり行進・ハピハッピー</p>
-<blockquote>
-<p>現在是最強的　PARA遊行</p>
-<p>也就是最大的　開心　開心</p>
-<p>大家前進　PARA遊行</p>
-<p>也就是邁步　開心　開心</p>
-</blockquote>
-<p>未来？宇宙？当然よっ</p>
-<blockquote>
-<p>未來？宇宙？當然囉</p>
-</blockquote>
-<p>何もかもが普通なら</p>
-<p>私たちが集まる必然性　台無しね</p>
-<p>誰もかれも気付かない</p>
-<p>不思議&amp;秘密集めたら</p>
-<p>異次元さえ公園なのよ</p>
-<blockquote>
-<p>如果一切都這麼普通</p>
-<p>那麼我們聚集在一起的必要 ...</p></blockquote></blockquote>
-                            <p class="readmore">
-                                <a class="btn btn-info" href="./blog/2011/11/suzumiya-haruhi-no-yuutsu-saikyo-para-parade.html">Read more...</a>
                             </p>
                         </div><!-- /.entry-content -->
 
