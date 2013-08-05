@@ -76,6 +76,8 @@ li:last-child .hentry { border: 0; margin: 0; }
 .entry-title a:link, .entry-title a:visited { text-decoration: none; color: #333; }
 .entry-title a:hover { color: #113D8B; }
 
+.entry-content img { margin-top: 0; margin-bottom: 1em; }
+
 #posts-list { list-style: none; margin: 0; padding: 1em; }
 
 .paginator { padding-left: 1em; }

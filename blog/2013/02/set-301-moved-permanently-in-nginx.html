@@ -95,46 +95,45 @@
 </ol>
 <p>至於 archives/tags/categories...等彙整性的頁面，我個人覺得不太重要，就沒做轉址處理。</p>
 <p>我 WordPress 的 nginx 設定檔是放在 <code>/etc/nginx/sites-available/wordpress</code>。把原本的設定檔備份後，內容整個改成如下：</p>
-<div class="codehilite"><pre><span class="c"># /etc/nginx/sites-available/wordpress</span>
-server <span class="o">{</span>
+<p>```bash</p>
+<h1 id="etcnginxsites-availablewordpress">/etc/nginx/sites-available/wordpress</h1>
+<p>server {
     listen   80;
-    server_name jsliang.twgogo.org;
+    server_name jsliang.twgogo.org;</p>
+<div class="codehilite"><pre><span class="n">error_log</span>   <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">jsliang</span><span class="o">-</span><span class="n">twgogo</span><span class="o">-</span><span class="n">org</span><span class="p">.</span><span class="n">error</span><span class="p">.</span><span class="n">log</span> <span class="n">warn</span><span class="p">;</span>
+<span class="n">access_log</span>  <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">jsliang</span><span class="o">-</span><span class="n">twgogo</span><span class="o">-</span><span class="n">org</span><span class="p">.</span><span class="n">access</span><span class="p">.</span><span class="n">log</span><span class="p">;</span>
 
-    error_log   /var/log/nginx/jsliang-twgogo-org.error.log warn;
-    access_log  /var/log/nginx/jsliang-twgogo-org.access.log;
+<span class="cp"># 1. Feed</span>
+<span class="cp"># http:</span><span class="c1">//jsliang.twgogo.org/feed/</span>
+<span class="cp"># =&gt;</span>
+<span class="cp"># http:</span><span class="c1">//jsliang.com/feeds/all.atom.xml</span>
+<span class="k">if</span> <span class="p">(</span> <span class="err">$</span><span class="n">request_filename</span> <span class="o">~</span> <span class="n">feed</span><span class="o">/</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">rewrite</span> <span class="o">^</span> <span class="n">http</span><span class="o">:</span><span class="c1">//jsliang.com/feeds/all.atom.xml? permanent;</span>
+<span class="p">}</span>
 
-    <span class="c"># 1. Feed</span>
-    <span class="c"># http://jsliang.twgogo.org/feed/</span>
-    <span class="c"># =&gt;</span>
-    <span class="c"># http://jsliang.com/feeds/all.atom.xml</span>
-    <span class="k">if</span> <span class="o">(</span> <span class="nv">$request_filename</span> ~ feed/ <span class="o">)</span> <span class="o">{</span>
-        rewrite ^ http://jsliang.com/feeds/all.atom.xml? permanent;
-    <span class="o">}</span>
+<span class="cp"># 2. 單篇文章</span>
+<span class="cp"># http:</span><span class="c1">//jsliang.twgogo.org/2013/02/slug/</span>
+<span class="cp"># =&gt;</span>
+<span class="cp"># http:</span><span class="c1">//jsliang.com/blog/2013/02/slug.html</span>
+<span class="k">if</span> <span class="p">(</span> <span class="err">$</span><span class="n">request_filename</span> <span class="o">~</span> <span class="p">.</span><span class="o">+/</span><span class="p">.</span><span class="o">+/</span><span class="p">.</span><span class="o">+</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">rewrite</span> <span class="o">^/</span><span class="p">(.</span><span class="o">+</span><span class="p">)</span><span class="o">/</span><span class="p">(.</span><span class="o">+</span><span class="p">)</span><span class="o">/</span><span class="p">(.</span><span class="o">+</span><span class="p">)</span><span class="o">/</span> <span class="n">http</span><span class="o">:</span><span class="c1">//jsliang.com/blog/$1/$2/$3.html permanent;</span>
+<span class="p">}</span>
 
-    <span class="c"># 2. 單篇文章</span>
-    <span class="c"># http://jsliang.twgogo.org/2013/02/slug/</span>
-    <span class="c"># =&gt;</span>
-    <span class="c"># http://jsliang.com/blog/2013/02/slug.html</span>
-    <span class="k">if</span> <span class="o">(</span> <span class="nv">$request_filename</span> ~ .+/.+/.+ <span class="o">)</span> <span class="o">{</span>
-        rewrite ^/<span class="o">(</span>.+<span class="o">)</span>/<span class="o">(</span>.+<span class="o">)</span>/<span class="o">(</span>.+<span class="o">)</span>/ http://jsliang.com/blog/<span class="nv">$1</span>/<span class="nv">$2</span>/<span class="nv">$3</span>.html permanent;
-    <span class="o">}</span>
-
-    <span class="c"># 3. 網誌首頁</span>
-    <span class="c"># http://jsliang.twgogo.org</span>
-    <span class="c"># =&gt;</span>
-    <span class="c"># http://jsliang.com</span>
-    <span class="k">if</span> <span class="o">(</span> <span class="nv">$request_filename</span> ~ / <span class="o">)</span> <span class="o">{</span>
-        rewrite ^/ http://jsliang.com/ permanent;
-    <span class="o">}</span>
-<span class="o">}</span>
+<span class="cp"># 3. 網誌首頁</span>
+<span class="cp"># http:</span><span class="c1">//jsliang.twgogo.org</span>
+<span class="cp"># =&gt;</span>
+<span class="cp"># http:</span><span class="c1">//jsliang.com</span>
+<span class="k">if</span> <span class="p">(</span> <span class="err">$</span><span class="n">request_filename</span> <span class="o">~</span> <span class="o">/</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">rewrite</span> <span class="o">^/</span> <span class="n">http</span><span class="o">:</span><span class="c1">//jsliang.com/ permanent;</span>
+<span class="p">}</span>
 </pre></div>
 
 
+<p>}
+```</p>
 <p>最後再重啟 nginx 即可：</p>
-<div class="codehilite"><pre><span class="nv">$ </span>sudo /etc/init.d/nginx restart
-</pre></div>
-
-
+<p><code>bash
+$ sudo /etc/init.d/nginx restart</code></p>
 <p>之後連 <a href="http://jsliang.twgogo.org">http://jsliang.twgogo.org</a>，瀏覽器都會自動導到 <a href="http://jsliang.com">http://jsliang.com</a> 了。</p>
     </div><!-- /.entry-content -->
         <div class="comments">
