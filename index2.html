@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="./theme/css/bootstrap-responsive.min.css" type="text/css" />
 
         <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
-                <link href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
+                <link href="http://jsliang.com/feeds\all.atom.xml" type="application/atom+xml" rel="alternate" title="J. S. Liang (Jenny) Atom Feed" />
                 </head>
 
 <body id="index">
@@ -54,6 +54,53 @@
                                                         <section>
                 <ol id="posts-list" class="hfeed" start="9">
                             <li>
+                    <article>
+                        <header>
+                            <h1 class="entry-title">
+                                <a href="./blog/2012/09/autojump-a-cd-command-that-learns.html" rel="bookmark" title="Permalink to [Unix] autojump - 讓 cd 切換目錄不再痛苦的好工具">
+                                   [Unix] autojump - 讓 cd 切換目錄不再痛苦的好工具
+                                </a>
+                            </h1>
+                        </header>
+
+                        <div class="entry-content">
+                            <footer class="post-info">
+        <address class="vcard author">
+        by <a class="url fn" href="./author/j-s-liang.html">J. S. Liang</a>
+    </address>
+    
+    in <a href="./category/blog.html">Blog</a>
+
+    on 2012-09-21
+
+            |
+        tags:         <a href="./tag/linux.html">Linux</a>
+                <a href="./tag/ubuntu.html">Ubuntu</a>
+                <a href="./tag/autojump.html">autojump</a>
+            
+    
+            |
+        <a href="./blog/2012/09/autojump-a-cd-command-that-learns.html#disqus_thread">comments</a>
+    
+        
+</footer><!-- /.post-info -->                            <p>最早知道 autojump 是看到阿達公司在用。</p>
+<p>還記得某天看到小迪克和小白一邊盯著螢幕一邊情不自禁地讚嘆「X～這真是太強了！」，然後隔段時間看到小迪克在他的 blog 寫了<a href="http://nctusdk.blogspot.tw/2010/09/autojump-super-fast-directory-jump-in.html">介紹文</a>。</p>
+<p>好奇安裝後，沒想到我從此也從此一試成主顧，每次新灌一個 Linux 環境就一定要裝 autojump。</p>
+<p>兩年下來這工具幫我節省了很多回想目錄路徑的時間，加上最近工作接觸到的目錄大小比過去學生時代大太多，更加深刻地感受到有 autojump 真是太好了，決定自己再筆記一下。</p>
+<p>一般在 Unix-like 的環境中，切換目錄都是使用 <code>cd</code> 指令 (change directory)。</p>
+<p>使用 Unix-like 環境工作的人應該都知道每次執行 <code>cd</code> 都得背出一長串目錄有多困擾……</p>
+<p>若記得第一層的目錄的話，或許還可以一路按 Tab 鍵試下去。但萬一不幸只記得最底端那一層（更不幸的是大多數人都是遇到這情況），根本無從回想起，使用 <code>find</code> 指令又很花時間……</p>
+<p>有這種困擾的人，就需要 autojump！</p>
+<p>作者 joelthelion ...</p>
+                            <p class="readmore">
+                                <a class="btn btn-info" href="./blog/2012/09/autojump-a-cd-command-that-learns.html">Read more...</a>
+                            </p>
+                        </div><!-- /.entry-content -->
+
+                        <hr/>
+                    </article>
+                </li>
+                                                            <li>
                     <article>
                         <header>
                             <h1 class="entry-title">
@@ -391,7 +438,7 @@
         
 </footer><!-- /.post-info -->                            <p>我的論文是用 LaTeX 寫的，由於內容要包含中文摘要，所以必須支援中文輸出。</p>
 <p>以往以下的寫法使用 XeLaTeX 都可以正常編譯過：</p>
-<div class="codehilite"><pre><span class="n">usepackage</span><span class="p">{</span><span class="n">xeCJK</span><span class="p">}</span>
+<div class="highlight"><pre><span class="n">usepackage</span><span class="p">{</span><span class="n">xeCJK</span><span class="p">}</span>
 <span class="n">setCJKmainfont</span><span class="p">{</span><span class="err">標楷體</span><span class="p">}</span>
 <span class="n">begin</span><span class="p">{</span><span class="n">document</span><span class="p">}</span>
 <span class="err">中文</span>
@@ -450,13 +497,13 @@
 <p>為了方便我選用easy_install安裝。</p>
 <p>首先要安裝easy_install。</p>
 <p>安裝前需確認一下現在機器上的Python版本。執行以下指令：</p>
-<div class="codehilite"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+<div class="highlight"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 
 
 <p>便可得知我的機器上的Python版本是2.7。</p>
 <p>接著到Python的<a href="http://pypi.python.org/pypi/setuptools">setuptools</a>套件網頁找到對應的egg檔，下載並執行：</p>
-<div class="codehilite"><pre><span class="n">wget</span> <span class="n">http</span><span class="o">:</span><span class="c1">//pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea</span>
+<div class="highlight"><pre><span class="n">wget</span> <span class="n">http</span><span class="o">:</span><span class="c1">//pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea</span>
 <span class="n">sudo</span> <span class="n">sh</span> <span class="n">setuptools</span><span class="o">-</span><span class="mf">0.6 ...</span></pre></div>
                             <p class="readmore">
                                 <a class="btn btn-info" href="./blog/2012/03/hg-git.html">Read more...</a>
@@ -498,85 +545,23 @@
 <p>尤其gcin的圖示以往會出現在右上角的系統列，現在沒有了，變得難以判斷目前是在哪個輸入法。在有中文輸入需求的情況下很困擾。</p>
 <p>筆記一下找到的解法。</p>
 <p>首先執行：</p>
-<div class="codehilite"><pre><span class="n">gsettings</span> <span class="n">get</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span>
+<div class="highlight"><pre><span class="n">gsettings</span> <span class="n">get</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span>
 </pre></div>
 
 
 <p>可看到目前的systray-whitelist，預設大概會是長這樣：</p>
-<div class="codehilite"><pre><span class="p">[</span><span class="err">&#39;</span><span class="n">JavaEmbeddedFrame</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Wine</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Skype</span><span class="err">&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><span class="p">[</span><span class="err">&#39;</span><span class="n">JavaEmbeddedFrame</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Wine</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Skype</span><span class="err">&#39;</span><span class="p">]</span>
 </pre></div>
 
 
 <p>重設這個whitelist，加上gcin：</p>
-<div class="codehilite"><pre><span class="n">gsettings</span> <span class="n">set</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span> <span class="s">&quot;[&#39;JavaEmbeddedFrame&#39;, &#39;Wine&#39;, &#39;Skype&#39;, &#39;gcin&#39;]&quot;</span>
+<div class="highlight"><pre><span class="n">gsettings</span> <span class="n">set</span> <span class="n">com</span><span class="p">.</span><span class="n">canonical</span><span class="p">.</span><span class="n">Unity</span><span class="p">.</span><span class="n">Panel</span> <span class="n">systray</span><span class="o">-</span><span class="n">whitelist</span> <span class="s">&quot;[&#39;JavaEmbeddedFrame&#39;, &#39;Wine&#39;, &#39;Skype&#39;, &#39;gcin&#39;]&quot;</span>
 </pre></div>
 
 
 <p>以上執行完成後，重新登入即可看到gcin的圖示出現在右上角的系統列了。</p>
                             <p class="readmore">
                                 <a class="btn btn-info" href="./blog/2012/03/ubuntu-11-04-systray-gcin-ico.html">Read more...</a>
-                            </p>
-                        </div><!-- /.entry-content -->
-
-                        <hr/>
-                    </article>
-                </li>
-                                                            <li>
-                    <article>
-                        <header>
-                            <h1 class="entry-title">
-                                <a href="./blog/2012/03/lifestyle-to-be-cherished.html" rel="bookmark" title="Permalink to 以後會懷念的生活">
-                                   以後會懷念的生活
-                                </a>
-                            </h1>
-                        </header>
-
-                        <div class="entry-content">
-                            <footer class="post-info">
-        <address class="vcard author">
-        by <a class="url fn" href="./author/j-s-liang.html">J. S. Liang</a>
-    </address>
-    
-    in <a href="./category/blog.html">Blog</a>
-
-    on 2012-03-23
-
-            |
-        tags:         <a href="./tag/nctu.html">NCTU</a>
-                <a href="./tag/nthu.html">NTHU</a>
-                <a href="./tag/olympus.html">Olympus</a>
-                <a href="./tag/olympus-xz-1.html">Olympus XZ-1</a>
-                <a href="./tag/xz-1.html">XZ-1</a>
-                <a href="./tag/xin-qing.html">心情</a>
-                <a href="./tag/xin-zhu.html">新竹</a>
-                <a href="./tag/zhao-pian.html">照片</a>
-                <a href="./tag/yan-jiu-suo.html">研究所</a>
-            
-    
-            |
-        <a href="./blog/2012/03/lifestyle-to-be-cherished.html#disqus_thread">comments</a>
-    
-        
-</footer><!-- /.post-info -->                            <p>午後坐在咖啡廳的窗邊，斜射的陽光透過輕薄的窗簾灑在手中的書頁上，另一隻手拿起香醇的咖啡啜飲……的這種浪漫畫面幾乎沒出現在我的學校生活裡。</p>
-<p>要舉出最貼近上面所描述的場景，那就是在這裡了：</p>
-<p><img alt="" src="https://lh5.googleusercontent.com/-uUX6MmCUNYQ/T2tPgi6PQqI/AAAAAAAB5n0/oMrn_a97ry0/s500/P3228668.JPG" /></p>
-<p>雖然大一就知道清大有水木漫畫屋，不過真正想到可以來這裡放鬆是認識阿達之後的事。:P</p>
-<p>這個學期，每經過一回殺死一堆腦細胞的論文寫作奮戰後，我總會到清大的水木漫畫屋充電。</p>
-<p><img alt="" src="https://lh3.googleusercontent.com/-sKBtNCDrUk8/T0RnncZ9iJI/AAAAAAAB3oM/b4x0D51skU8/s500/P2178564.JPG" /></p>
-<p>最近尤其愛挑靠近櫃台的面牆單人座，點一杯飲料和一片披薩，抽一集《侍酒師》窩在沙發裡看。</p>
-<p>雖然《侍酒師》嚴格說來是由各種老梗的熱血、友情、親情、愛情單元劇所組成，有不少朋友嫌劇情略顯平淡，但裡面各個短篇非常適合現在的我。</p>
-<p>葡萄酒從葡萄的種植、採收到釀造的過程中充滿各種變數，相較之下我寫的論文難度真的低很多，實在沒資格每天在那邊焦慮。</p>
-<p>（說是這麼說，看完漫畫回到實驗室，我還是無法不瞪著Texmaker的畫面發牢騷……Orz）</p>
-<p>看完漫畫後，偶爾會再往下走到清夜的有茶氏買飲料。</p>
-<p><img alt="" src="https://lh5.googleusercontent.com/-isLrs4bYic0/T2tPjb_YzHI/AAAAAAAB5m4/xuYddpr80bA/s500/P3228676.JPG" /></p>
-<p>然後再穿過清大走回交大繼續奮鬥……:P</p>
-<p>正值論文難產期，總是哀聲嘆氣，希望能拿到電影The Click裡的遙控器，直接快轉到論文寫完的那一天。</p>
-<p>但是近來走在校園，我漸漸感覺到，以後我一定會懷念這樣的日子的。</p>
-<p>不是單純的漫畫屋、飲料店的問題，而是學生時代的生活方式。</p>
-<p><img alt="" src="https://lh6.googleusercontent.com/-byPqy0mU3jg/T2tPiYkRt1I/AAAAAAAB5ng/hEH2nog2qv0/s500/P3228675.JPG" /></p>
-<p>嚷著想要快點寫完論文、快點畢業 ...</p>
-                            <p class="readmore">
-                                <a class="btn btn-info" href="./blog/2012/03/lifestyle-to-be-cherished.html">Read more...</a>
                             </p>
                         </div><!-- /.entry-content -->
 
@@ -604,7 +589,7 @@
                                                                     <div>
                                 <h2>Social</h2>
                                 <ul>
-                                    <li><a href="http://jsliang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                                    <li><a href="http://jsliang.com/feeds\all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
                                     
                                                                     <li><a href="http://www.linkedin.com/in/juishanliang">Linkedin</a></li>
                                                                     <li><a href="https://github.com/jsliang">GitHub</a></li>
@@ -613,98 +598,100 @@
                                                                     <div>
                                 <h2>Tags</h2>
                                 <ul id="cloud">
-                                                                          <li class="tag-1"><a href="./tag/ge-ci.html">歌詞</a></li>
-                                                                          <li class="tag-2"><a href="./tag/chong-wu.html">寵物</a></li>
-                                                                          <li class="tag-3"><a href="./tag/shou-gong-yi.html">手工藝</a></li>
-                                                                          <li class="tag-4"><a href="./tag/jie-hun.html">結婚</a></li>
-                                                                          <li class="tag-4"><a href="./tag/shi.html">食</a></li>
-                                                                          <li class="tag-4"><a href="./tag/wxformbuilder.html">wxFormBuilder</a></li>
-                                                                          <li class="tag-4"><a href="./tag/coolpix-s220.html">COOLPIX S220</a></li>
-                                                                          <li class="tag-3"><a href="./tag/reportlab.html">reportlab</a></li>
-                                                                          <li class="tag-2"><a href="./tag/optio-a36.html">OPTIO A36</a></li>
-                                                                          <li class="tag-4"><a href="./tag/sublime-text.html">Sublime Text</a></li>
-                                                                          <li class="tag-2"><a href="./tag/d80.html">D80</a></li>
-                                                                          <li class="tag-1"><a href="./tag/yin-le.html">音樂</a></li>
-                                                                          <li class="tag-4"><a href="./tag/padfone-2.html">Padfone 2</a></li>
-                                                                          <li class="tag-4"><a href="./tag/wedding.html">wedding</a></li>
-                                                                          <li class="tag-2"><a href="./tag/xin-zhu.html">新竹</a></li>
-                                                                          <li class="tag-2"><a href="./tag/nikon.html">Nikon</a></li>
-                                                                          <li class="tag-2"><a href="./tag/xi-ju.html">戲劇</a></li>
-                                                                          <li class="tag-1"><a href="./tag/canon.html">Canon</a></li>
-                                                                          <li class="tag-4"><a href="./tag/panasonic.html">Panasonic</a></li>
-                                                                          <li class="tag-1"><a href="./tag/she-ying.html">攝影</a></li>
-                                                                          <li class="tag-4"><a href="./tag/gou-zhen.html">鉤針</a></li>
-                                                                          <li class="tag-4"><a href="./tag/movie.html">movie</a></li>
-                                                                          <li class="tag-4"><a href="./tag/pypdf.html">pyPdf</a></li>
-                                                                          <li class="tag-3"><a href="./tag/ji-shu-bi-ji.html">技術筆記</a></li>
-                                                                          <li class="tag-3"><a href="./tag/linux.html">Linux</a></li>
-                                                                          <li class="tag-2"><a href="./tag/olympus.html">Olympus</a></li>
-                                                                          <li class="tag-2"><a href="./tag/yan-jiu-suo.html">研究所</a></li>
-                                                                          <li class="tag-1"><a href="./tag/xin-qing.html">心情</a></li>
-                                                                          <li class="tag-4"><a href="./tag/wxpython.html">wxPython</a></li>
-                                                                          <li class="tag-2"><a href="./tag/pentax-optio-a36.html">Pentax Optio A36</a></li>
-                                                                          <li class="tag-4"><a href="./tag/qi-qun-ke-ji.html">奇群科技</a></li>
-                                                                          <li class="tag-1"><a href="./tag/ri-ben-yu.html">日本語</a></li>
-                                                                          <li class="tag-4"><a href="./tag/sheetaholics.html">Sheetaholics</a></li>
-                                                                          <li class="tag-4"><a href="./tag/nthu.html">NTHU</a></li>
-                                                                          <li class="tag-4"><a href="./tag/wotancraft.html">WotanCraft</a></li>
-                                                                          <li class="tag-4"><a href="./tag/wordpress.html">WordPress</a></li>
                                                                           <li class="tag-3"><a href="./tag/fo-lang-ming-ge.html">佛朗明哥</a></li>
-                                                                          <li class="tag-4"><a href="./tag/aws.html">AWS</a></li>
+                                                                          <li class="tag-3"><a href="./tag/linux.html">Linux</a></li>
                                                                           <li class="tag-2"><a href="./tag/yue-du.html">閱讀</a></li>
-                                                                          <li class="tag-2"><a href="./tag/sheng-huo.html">生活</a></li>
-                                                                          <li class="tag-4"><a href="./tag/phone.html">phone</a></li>
-                                                                          <li class="tag-4"><a href="./tag/project-365.html">Project 365</a></li>
-                                                                          <li class="tag-4"><a href="./tag/du-pi-wu.html">肚皮舞</a></li>
-                                                                          <li class="tag-4"><a href="./tag/django.html">Django</a></li>
-                                                                          <li class="tag-2"><a href="./tag/tu-feng-wu.html">土風舞</a></li>
-                                                                          <li class="tag-4"><a href="./tag/google.html">Google</a></li>
-                                                                          <li class="tag-2"><a href="./tag/ubuntu.html">Ubuntu</a></li>
-                                                                          <li class="tag-1"><a href="./tag/zhao-pian.html">照片</a></li>
-                                                                          <li class="tag-4"><a href="./tag/tai-zhong.html">台中</a></li>
-                                                                          <li class="tag-4"><a href="./tag/ding-ban.html">釘板</a></li>
-                                                                          <li class="tag-3"><a href="./tag/mercurial-hg.html">Mercurial Hg</a></li>
-                                                                          <li class="tag-4"><a href="./tag/ec2.html">EC2</a></li>
-                                                                          <li class="tag-4"><a href="./tag/nginx.html">nginx</a></li>
-                                                                          <li class="tag-2"><a href="./tag/git.html">Git</a></li>
-                                                                          <li class="tag-3"><a href="./tag/picasa.html">Picasa</a></li>
-                                                                          <li class="tag-4"><a href="./tag/.html"></a></li>
-                                                                          <li class="tag-4"><a href="./tag/github-pages.html">GitHub Pages</a></li>
-                                                                          <li class="tag-4"><a href="./tag/svglib.html">svglib</a></li>
-                                                                          <li class="tag-2"><a href="./tag/python.html">Python</a></li>
-                                                                          <li class="tag-4"><a href="./tag/dong-man.html">動漫</a></li>
-                                                                          <li class="tag-4"><a href="./tag/thailand.html">Thailand</a></li>
-                                                                          <li class="tag-2"><a href="./tag/tai-bei.html">台北</a></li>
-                                                                          <li class="tag-3"><a href="./tag/pelican.html">Pelican</a></li>
-                                                                          <li class="tag-2"><a href="./tag/gou-wu.html">購物</a></li>
-                                                                          <li class="tag-4"><a href="./tag/zillians.html">Zillians</a></li>
-                                                                          <li class="tag-1"><a href="./tag/eos-500d.html">EOS 500D</a></li>
-                                                                          <li class="tag-3"><a href="./tag/english.html">English</a></li>
-                                                                          <li class="tag-3"><a href="./tag/zte.html">ZTE</a></li>
-                                                                          <li class="tag-2"><a href="./tag/gong-zuo.html">工作</a></li>
-                                                                          <li class="tag-4"><a href="./tag/autojump.html">autojump</a></li>
-                                                                          <li class="tag-2"><a href="./tag/xz-1.html">XZ-1</a></li>
-                                                                          <li class="tag-4"><a href="./tag/asus.html">ASUS</a></li>
-                                                                          <li class="tag-4"><a href="./tag/pyinstaller.html">PyInstaller</a></li>
-                                                                          <li class="tag-4"><a href="./tag/github.html">GitHub</a></li>
-                                                                          <li class="tag-3"><a href="./tag/f188.html">F188</a></li>
-                                                                          <li class="tag-4"><a href="./tag/tortoisehg.html">TortoiseHg</a></li>
-                                                                          <li class="tag-4"><a href="./tag/latex.html">LaTeX</a></li>
-                                                                          <li class="tag-4"><a href="./tag/xiang-ji-bao.html">相機包</a></li>
-                                                                          <li class="tag-4"><a href="./tag/sql.html">SQL</a></li>
-                                                                          <li class="tag-4"><a href="./tag/padfone-2-station.html">Padfone 2 Station</a></li>
-                                                                          <li class="tag-4"><a href="./tag/pywin32.html">pywin32</a></li>
-                                                                          <li class="tag-1"><a href="./tag/canon-eos-500d.html">Canon EOS 500D</a></li>
-                                                                          <li class="tag-4"><a href="./tag/pad.html">pad</a></li>
-                                                                          <li class="tag-4"><a href="./tag/acg.html">ACG</a></li>
-                                                                          <li class="tag-4"><a href="./tag/dmc-zs3.html">DMC-ZS3</a></li>
-                                                                          <li class="tag-2"><a href="./tag/olympus-xz-1.html">Olympus XZ-1</a></li>
+                                                                          <li class="tag-4"><a href="./tag/qi-qun-ke-ji.html">奇群科技</a></li>
+                                                                          <li class="tag-2"><a href="./tag/pentax-optio-a36.html">Pentax Optio A36</a></li>
                                                                           <li class="tag-2"><a href="./tag/pentax.html">Pentax</a></li>
-                                                                          <li class="tag-2"><a href="./tag/nctu.html">NCTU</a></li>
-                                                                          <li class="tag-2"><a href="./tag/wen-ju.html">文具</a></li>
+                                                                          <li class="tag-4"><a href="./tag/du-pi-wu.html">肚皮舞</a></li>
+                                                                          <li class="tag-2"><a href="./tag/gong-zuo.html">工作</a></li>
+                                                                          <li class="tag-4"><a href="./tag/sql.html">SQL</a></li>
+                                                                          <li class="tag-1"><a href="./tag/ge-ci.html">歌詞</a></li>
+                                                                          <li class="tag-1"><a href="./tag/canon.html">Canon</a></li>
+                                                                          <li class="tag-4"><a href="./tag/django.html">Django</a></li>
+                                                                          <li class="tag-3"><a href="./tag/shou-gong-yi.html">手工藝</a></li>
+                                                                          <li class="tag-3"><a href="./tag/english.html">English</a></li>
+                                                                          <li class="tag-4"><a href="./tag/pyinstaller.html">PyInstaller</a></li>
+                                                                          <li class="tag-1"><a href="./tag/xin-qing.html">心情</a></li>
+                                                                          <li class="tag-2"><a href="./tag/python.html">Python</a></li>
                                                                           <li class="tag-3"><a href="./tag/lu-you.html">旅遊</a></li>
-                                                                          <li class="tag-4"><a href="./tag/a-la-bo-wen.html">阿拉伯文</a></li>
+                                                                          <li class="tag-4"><a href="./tag/zillians.html">Zillians</a></li>
+                                                                          <li class="tag-4"><a href="./tag/pypdf.html">pyPdf</a></li>
+                                                                          <li class="tag-2"><a href="./tag/yan-jiu-suo.html">研究所</a></li>
+                                                                          <li class="tag-4"><a href="./tag/pad.html">pad</a></li>
+                                                                          <li class="tag-3"><a href="./tag/pelican.html">Pelican</a></li>
+                                                                          <li class="tag-4"><a href="./tag/ec2.html">EC2</a></li>
+                                                                          <li class="tag-4"><a href="./tag/dong-man.html">動漫</a></li>
+                                                                          <li class="tag-4"><a href="./tag/tai-zhong.html">台中</a></li>
+                                                                          <li class="tag-4"><a href="./tag/github.html">GitHub</a></li>
+                                                                          <li class="tag-2"><a href="./tag/git.html">Git</a></li>
+                                                                          <li class="tag-3"><a href="./tag/f188.html">F188</a></li>
+                                                                          <li class="tag-3"><a href="./tag/wedding.html">wedding</a></li>
+                                                                          <li class="tag-4"><a href="./tag/github-pages.html">GitHub Pages</a></li>
+                                                                          <li class="tag-4"><a href="./tag/shi.html">食</a></li>
+                                                                          <li class="tag-4"><a href="./tag/wxpython.html">wxPython</a></li>
+                                                                          <li class="tag-2"><a href="./tag/xin-zhu.html">新竹</a></li>
+                                                                          <li class="tag-4"><a href="./tag/google.html">Google</a></li>
+                                                                          <li class="tag-2"><a href="./tag/sheng-huo.html">生活</a></li>
+                                                                          <li class="tag-2"><a href="./tag/d80.html">D80</a></li>
+                                                                          <li class="tag-1"><a href="./tag/canon-eos-500d.html">Canon EOS 500D</a></li>
+                                                                          <li class="tag-1"><a href="./tag/zhao-pian.html">照片</a></li>
+                                                                          <li class="tag-4"><a href="./tag/wotancraft.html">WotanCraft</a></li>
+                                                                          <li class="tag-4"><a href="./tag/.html"></a></li>
+                                                                          <li class="tag-4"><a href="./tag/project-365.html">Project 365</a></li>
+                                                                          <li class="tag-4"><a href="./tag/sublime-text.html">Sublime Text</a></li>
+                                                                          <li class="tag-4"><a href="./tag/nthu.html">NTHU</a></li>
+                                                                          <li class="tag-1"><a href="./tag/ri-ben-yu.html">日本語</a></li>
+                                                                          <li class="tag-4"><a href="./tag/wordpress.html">WordPress</a></li>
+                                                                          <li class="tag-3"><a href="./tag/ji-shu-bi-ji.html">技術筆記</a></li>
+                                                                          <li class="tag-4"><a href="./tag/qing-lu-xie-zhen.html">情侶寫真</a></li>
+                                                                          <li class="tag-2"><a href="./tag/olympus-xz-1.html">Olympus XZ-1</a></li>
+                                                                          <li class="tag-3"><a href="./tag/jie-hun.html">結婚</a></li>
+                                                                          <li class="tag-4"><a href="./tag/padfone-2-station.html">Padfone 2 Station</a></li>
+                                                                          <li class="tag-4"><a href="./tag/dmc-zs3.html">DMC-ZS3</a></li>
+                                                                          <li class="tag-2"><a href="./tag/wen-ju.html">文具</a></li>
+                                                                          <li class="tag-4"><a href="./tag/pywin32.html">pywin32</a></li>
+                                                                          <li class="tag-1"><a href="./tag/she-ying.html">攝影</a></li>
+                                                                          <li class="tag-4"><a href="./tag/movie.html">movie</a></li>
+                                                                          <li class="tag-4"><a href="./tag/couple.html">couple</a></li>
+                                                                          <li class="tag-4"><a href="./tag/coolpix-s220.html">COOLPIX S220</a></li>
+                                                                          <li class="tag-4"><a href="./tag/thailand.html">Thailand</a></li>
+                                                                          <li class="tag-4"><a href="./tag/nginx.html">nginx</a></li>
+                                                                          <li class="tag-2"><a href="./tag/xi-ju.html">戲劇</a></li>
+                                                                          <li class="tag-4"><a href="./tag/autojump.html">autojump</a></li>
+                                                                          <li class="tag-2"><a href="./tag/tu-feng-wu.html">土風舞</a></li>
+                                                                          <li class="tag-4"><a href="./tag/ding-ban.html">釘板</a></li>
+                                                                          <li class="tag-4"><a href="./tag/acg.html">ACG</a></li>
+                                                                          <li class="tag-4"><a href="./tag/asus.html">ASUS</a></li>
+                                                                          <li class="tag-2"><a href="./tag/nikon.html">Nikon</a></li>
+                                                                          <li class="tag-4"><a href="./tag/gou-zhen.html">鉤針</a></li>
+                                                                          <li class="tag-3"><a href="./tag/picasa.html">Picasa</a></li>
+                                                                          <li class="tag-3"><a href="./tag/reportlab.html">reportlab</a></li>
                                                                           <li class="tag-3"><a href="./tag/a-gen-ting-tan-ge.html">阿根廷探戈</a></li>
+                                                                          <li class="tag-4"><a href="./tag/xiang-ji-bao.html">相機包</a></li>
+                                                                          <li class="tag-4"><a href="./tag/panasonic.html">Panasonic</a></li>
+                                                                          <li class="tag-2"><a href="./tag/tai-bei.html">台北</a></li>
+                                                                          <li class="tag-2"><a href="./tag/ubuntu.html">Ubuntu</a></li>
+                                                                          <li class="tag-4"><a href="./tag/svglib.html">svglib</a></li>
+                                                                          <li class="tag-4"><a href="./tag/sheetaholics.html">Sheetaholics</a></li>
+                                                                          <li class="tag-2"><a href="./tag/xz-1.html">XZ-1</a></li>
+                                                                          <li class="tag-4"><a href="./tag/phone.html">phone</a></li>
+                                                                          <li class="tag-4"><a href="./tag/a-la-bo-wen.html">阿拉伯文</a></li>
+                                                                          <li class="tag-1"><a href="./tag/yin-le.html">音樂</a></li>
+                                                                          <li class="tag-3"><a href="./tag/zte.html">ZTE</a></li>
+                                                                          <li class="tag-4"><a href="./tag/wxformbuilder.html">wxFormBuilder</a></li>
+                                                                          <li class="tag-4"><a href="./tag/tortoisehg.html">TortoiseHg</a></li>
+                                                                          <li class="tag-2"><a href="./tag/chong-wu.html">寵物</a></li>
+                                                                          <li class="tag-4"><a href="./tag/aws.html">AWS</a></li>
+                                                                          <li class="tag-1"><a href="./tag/eos-500d.html">EOS 500D</a></li>
+                                                                          <li class="tag-2"><a href="./tag/gou-wu.html">購物</a></li>
+                                                                          <li class="tag-2"><a href="./tag/nctu.html">NCTU</a></li>
+                                                                          <li class="tag-4"><a href="./tag/padfone-2.html">Padfone 2</a></li>
+                                                                          <li class="tag-4"><a href="./tag/latex.html">LaTeX</a></li>
+                                                                          <li class="tag-2"><a href="./tag/optio-a36.html">OPTIO A36</a></li>
+                                                                          <li class="tag-3"><a href="./tag/mercurial-hg.html">Mercurial Hg</a></li>
+                                                                          <li class="tag-2"><a href="./tag/olympus.html">Olympus</a></li>
                                                                      </ul>
                              </div>
                     <!-- /.Tags -->
